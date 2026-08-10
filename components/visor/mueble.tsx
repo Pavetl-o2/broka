@@ -83,9 +83,10 @@ function geometriaDe(pt: Part): THREE.BufferGeometry {
  */
 function rotacionDe(pt: Part): [number, number, number] {
   const eje = ejeEspesor(pt);
-  if (eje === 'x') return [0, Math.PI / 2, 0];
-  if (eje === 'z') return [-Math.PI / 2, 0, 0];
-  return [0, 0, 0];
+  const giro = ((pt.giro ?? 0) * Math.PI) / 180;
+  if (eje === 'x') return [giro, Math.PI / 2, 0];
+  if (eje === 'z') return [-Math.PI / 2 + giro, 0, 0];
+  return [giro, 0, 0];
 }
 
 export function Mueble({

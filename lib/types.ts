@@ -82,6 +82,13 @@ export type Part = {
   perfil?: Punto2[];
   /** Calados pasantes dentro del perfil, en las mismas coordenadas. */
   huecos?: Punto2[][];
+  /**
+   * Grados que la pieza gira sobre el eje X al montarse. Solo para lo que el
+   * plano pone en diagonal — la tapa inclinada de la silla. sx/sy/sz siguen
+   * siendo las medidas reales del tablero, así que el costo y el anidado no se
+   * enteran del giro: es puro montaje.
+   */
+  giro?: number;
 };
 
 /** Punto sobre la cara de una pieza, en mm desde su esquina mínima. */
