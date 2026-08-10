@@ -43,15 +43,20 @@ type Salida = {
 };
 
 /**
- * El solver crece de forma codiciosa y se queda con el primer armado
- * consistente, que no siempre es el correcto: en la mesa acierta el lado de
- * los cuatro marcos pero a uno lo corre casi un metro sobre su propio eje.
+ * Cierra el molinete de la familia "panel + perimetrales".
  *
- * Cuando una misma pieza se repite alrededor de un panel, las copias buenas
- * ya dicen cual es la simetria. Aqui se toma una que caiga dentro de la huella
- * del panel y se rehacen las demas girandola en cuartos de vuelta sobre el eje
- * vertical del panel. No inventa una colocacion: propaga la que el solver ya
- * encontro.
+ * El solver crece de forma codiciosa y se queda con el primer armado
+ * consistente, que no siempre es el correcto. En la mesa deja dos marcos sobre
+ * el mismo lado -a uno lo corre 889 mm sobre su eje- y el cuarto lado vacio.
+ *
+ * Los cuatro marcos son la MISMA pieza: misma area, y el signo cambia solo
+ * porque el DXF traza unos al derecho y otros al reves. Asi que la colocacion
+ * correcta es el molinete: la misma pieza girada un cuarto de vuelta cada vez,
+ * y por eso la espiga de cada pata entra en la cuna de la siguiente.
+ *
+ * No se inventa una colocacion: se toma la copia que el solver dejo mas
+ * centrada, se la centra sobre su eje -que es lo unico que el solver falla,
+ * el lado y la orientacion los acierta- y las otras tres salen de girarla.
  */
 function cerrarSimetria(arm: Armadura, piezas: ContornoCnc[]) {
   const area = (id: string) => piezas.find((p) => p.id === id)?.areaMm2 ?? 0;
@@ -87,26 +92,51 @@ function cerrarSimetria(arm: Armadura, piezas: ContornoCnc[]) {
            h.lo[1] >= hp.lo[1] - m && h.hi[1] <= hp.hi[1] + m;
   };
 
-  for (const inst of arm.instancias) {
-    if (inst === panel || dentro(inst)) continue;
-    const h = huella(inst);
-    // Se corrige SOLO el eje que se desborda, y llevando su centro al del
-    // panel. El lado y la orientacion los acerto el solver; lo que fallo es
-    // cuanto la deslizo a lo largo de su propio eje.
-    const d: [number, number] = [0, 0];
-    for (const k of [0, 1] as const) {
-      const c = [cx, cz][k];
-      if (h.lo[k] < hp.lo[k] - 40 || h.hi[k] > hp.hi[k] + 40) {
-        d[k] = c - (h.lo[k] + h.hi[k]) / 2;
-      }
-    }
-    if (!d[0] && !d[1]) continue;
-    inst.pose = { ...inst.pose, o: [inst.pose.o[0] + d[0], inst.pose.o[1], inst.pose.o[2] + d[1]] };
-    console.log(
-      `   ${inst.piezaId}: se salia de la huella del panel; recentrada ` +
-        `${Math.round(Math.hypot(d[0], d[1]))} mm sobre su eje`
-    );
-  }
+  // Los perimetrales: cuatro piezas de la misma area. Que el signo del area
+  // cambie entre ellas solo dice que el DXF las traza al reves, no que sean
+  // distintas: es una sola pieza repetida cuatro veces.
+  const perim = arm.instancias.filter(
+    (i) => i !== panel && Math.abs(Math.abs(area(i.piezaId)) - Math.abs(area(orden[1].piezaId))) < 100
+  );
+  if (perim.length !== 4) return;
+
+  const giraY = (p: Pose, t: number): Pose => {
+    const co = Math.cos(t), si = Math.sin(t);
+    const rd = (d: V3): V3 => [d[0] * co + d[2] * si, d[1], -d[0] * si + d[2] * co];
+    const ro = (q: V3): V3 => {
+      const x = q[0] - cx, z = q[2] - cz;
+      return [cx + x * co + z * si, q[1], cz - x * si + z * co];
+    };
+    return { o: ro(p.o), u: rd(p.u), v: rd(p.v), w: rd(p.w) };
+  };
+
+  // Semilla: la copia que el solver dejo mas centrada sobre el panel.
+  const desvio = (i: Instancia) => {
+    const h = huella(i);
+    return Math.abs((h.lo[0] + h.hi[0]) / 2 - cx) + Math.abs((h.lo[1] + h.hi[1]) / 2 - cz);
+  };
+  const semilla = [...perim].sort((a, b) => desvio(a) - desvio(b))[0];
+
+  // Se centra sobre el eje en el que corre, que es donde el solver falla: el
+  // lado y la orientacion los acierta, cuanto la desliza no.
+  const h0 = huella(semilla);
+  const largoX = h0.hi[0] - h0.lo[0] > h0.hi[1] - h0.lo[1];
+  const eje = largoX ? 0 : 1;
+  const d = [cx, cz][eje] - (h0.lo[eje] + h0.hi[eje]) / 2;
+  const base: Pose = {
+    ...semilla.pose,
+    o: [semilla.pose.o[0] + (eje === 0 ? d : 0), semilla.pose.o[1], semilla.pose.o[2] + (eje === 1 ? d : 0)],
+  };
+
+  // Molinete: las cuatro son la misma pieza girada un cuarto de vuelta cada
+  // vez, y asi la espiga de cada pata entra en la cuna de la siguiente.
+  perim.forEach((inst, k) => {
+    inst.piezaId = semilla.piezaId;
+    inst.pose = giraY(base, (k * Math.PI) / 2);
+  });
+  console.log(
+    `   ${semilla.piezaId} x4 en molinete; la semilla se recentro ${Math.round(d)} mm sobre su eje`
+  );
 }
 
 const out: Record<string, Salida> = {};
