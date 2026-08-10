@@ -2,6 +2,12 @@
 // convencion de broka: mm, X ancho, Y profundidad, Z alto, Z hacia arriba,
 // origen en la esquina minima del mueble y z = 0 en el piso.
 //
+// NO CORRE EN ESTE REPO. Importa lib/cnc y lib/cncSolver de `mueble-calc`, que
+// es donde vive el solver. Se copia a scripts/ de un clon de ese repo (rama
+// claude/fix-cve-md-apply-zibftp) y se corre con `npx tsx scripts/broka.ts`;
+// escribe lib/parametric/armado-cnc.json aqui. Vive en broka para que quede
+// asentado de donde salio ese JSON, y por eso tsconfig excluye scripts/.
+//
 // El solver trabaja con Y hacia arriba (convenio de three), asi que aqui se
 // cambia de ejes una sola vez:  cad = (x, -z, y).
 import { readFileSync, writeFileSync } from "fs";

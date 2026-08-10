@@ -19,5 +19,6 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "//": "scripts/ no entra al build: son utilidades de taller que corren en otro repo, contra las librerías de mueble-calc.",
+  "exclude": ["node_modules", "scripts"]
 }
