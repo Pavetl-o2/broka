@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+
+/* Paleta estrictamente monocromática (dirección C).
+   Los nombres siguen la luminosidad oklch del prototipo para conservar la fidelidad 1:1.
+   El único color del sitio son los tonos de madera de los swatches, que viven en los datos. */
+@theme {
+  --color-paper: oklch(0.987 0.002 100);
+  --color-ink: oklch(0.15 0.004 100);
+  --color-white: oklch(0.99 0.002 100);
+  --color-n93: oklch(0.93 0.003 100);
+  --color-n92: oklch(0.92 0.004 100);
+  --color-n82: oklch(0.82 0.004 100);
+  --color-n80: oklch(0.8 0.004 100);
+  --color-n76: oklch(0.76 0.004 100);
+  --color-n75: oklch(0.75 0.004 100);
+  --color-n63: oklch(0.63 0.004 100);
+  --color-n62: oklch(0.62 0.004 100);
+  --color-n60: oklch(0.6 0.004 100);
+  --color-n56: oklch(0.56 0.004 100);
+  --color-n55: oklch(0.55 0.004 100);
+  --color-n53: oklch(0.53 0.004 100);
+  --color-n52: oklch(0.52 0.004 100);
+  --color-n50: oklch(0.5 0.004 100);
+  --color-n48: oklch(0.48 0.004 100);
+  --color-n46: oklch(0.46 0.004 100);
+  --color-n45: oklch(0.45 0.004 100);
+  --color-n44: oklch(0.44 0.004 100);
+  --color-n42: oklch(0.42 0.004 100);
+  --color-n40: oklch(0.4 0.004 100);
+  --color-n35: oklch(0.35 0.004 100);
+  --color-n30: oklch(0.3 0.004 100);
+  --color-n28: oklch(0.28 0.004 100);
+  --color-n24: oklch(0.24 0.004 100);
+
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+/* Los estilos de elemento van en @layer base a propósito: sin capa ganarían a
+   cualquier utilidad de Tailwind y `a { color }` volvería negro el texto de los
+   botones sólidos. */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-paper);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    font-family: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background: oklch(0.5 0.1 78 / 0.24);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-n63);
+  }
+
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    background: var(--color-n80);
+    outline: none;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-ink);
+    cursor: grab;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-ink);
+    cursor: grab;
+  }
+
+  details > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@keyframes brk-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes brk-slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes brk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.brk-fade {
+  animation: brk-fade 0.3s ease;
+}
+
+.brk-fade-slow {
+  animation: brk-fade 0.4s ease;
+}
+
+.brk-slide {
+  animation: brk-slide 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brk-spin {
+  animation: brk-spin 0.9s linear infinite;
+}
