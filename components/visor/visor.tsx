@@ -7,7 +7,7 @@ import * as THREE from 'three';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { Mueble } from '@/components/visor/mueble';
 import { bounds, camDistance, CAM_DIR } from '@/lib/parametric/geometria';
-import { partList } from '@/lib/parametric/partList';
+import { armados } from '@/lib/parametric/armados';
 import type { Dims, MuebleType } from '@/lib/types';
 
 const FOV = 32;
@@ -35,7 +35,7 @@ function Encuadre({
   const primero = useRef(true);
 
   const esfera = useMemo(
-    () => bounds(partList(type, dims.w, dims.d, dims.h), explode),
+    () => bounds(armados(type, dims.w, dims.d, dims.h), explode),
     [type, dims.w, dims.d, dims.h, explode],
   );
 

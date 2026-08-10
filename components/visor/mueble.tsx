@@ -3,8 +3,8 @@
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
-import { partList } from '@/lib/parametric/partList';
-import { explodeDir, S } from '@/lib/parametric/geometria';
+import { armados } from '@/lib/parametric/armados';
+import { center3, ejeEspesor, espesor, explodeDir, faceDims, S } from '@/lib/parametric/geometria';
 import type { Dims, MuebleType, Part } from '@/lib/types';
 
 /** Veta procedural: da textura al tablero sin depender de archivos externos. */
@@ -34,43 +34,58 @@ function useGrain() {
   }, []);
 }
 
-function roundedPath(path: THREE.Shape | THREE.Path, x: number, y: number, w: number, h: number, r: number) {
-  const rr = Math.max(0, Math.min(r, w / 2, h / 2));
-  path.moveTo(x + rr, y);
-  path.lineTo(x + w - rr, y);
-  path.quadraticCurveTo(x + w, y, x + w, y + rr);
-  path.lineTo(x + w, y + h - rr);
-  path.quadraticCurveTo(x + w, y + h, x + w - rr, y + h);
-  path.lineTo(x + rr, y + h);
-  path.quadraticCurveTo(x, y + h, x, y + h - rr);
-  path.lineTo(x, y + rr);
-  path.quadraticCurveTo(x, y, x + rr, y);
-}
-
+/**
+ * Malla de una pieza, centrada en su propio origen. Sin perfil es la caja; con
+ * perfil se extruye el contorno de la cara a lo largo del espesor. En ambos
+ * casos la geometría se construye en el plano local (u, v) y la rotación de la
+ * pieza la lleva al eje que le toca.
+ */
 function geometriaDe(pt: Part): THREE.BufferGeometry {
-  const w = pt.w * S;
-  const h = pt.h * S;
-  const t = pt.t * S;
+  const [fu, fv] = faceDims(pt);
+  const t = espesor(pt) * S;
 
-  if (pt.routed && pt.hole) {
-    const shape = new THREE.Shape();
-    roundedPath(shape, -w / 2, -h / 2, w, h, Math.min(w, h) * 0.06);
-    const hole = new THREE.Path();
-    roundedPath(
-      hole,
-      -(pt.hole.w * S) / 2,
-      pt.hole.y * S - (pt.hole.h * S) / 2,
-      pt.hole.w * S,
-      pt.hole.h * S,
-      Math.min(pt.hole.w, pt.hole.h) * S * 0.45,
-    );
-    shape.holes.push(hole);
-    const geo = new THREE.ExtrudeGeometry(shape, { depth: t, bevelEnabled: false, curveSegments: 10 });
-    geo.translate(0, 0, -t / 2);
-    return geo;
+  if (!pt.perfil && !pt.huecos?.length) {
+    return new THREE.BoxGeometry(fu * S, fv * S, t);
   }
 
-  return new THREE.BoxGeometry(w, h, t);
+  const contorno: [number, number][] =
+    pt.perfil ?? [[0, 0], [fu, 0], [fu, fv], [0, fv]];
+
+  const shape = new THREE.Shape();
+  contorno.forEach(([u, v], i) => {
+    const x = (u - fu / 2) * S;
+    const y = (v - fv / 2) * S;
+    if (i === 0) shape.moveTo(x, y);
+    else shape.lineTo(x, y);
+  });
+  shape.closePath();
+
+  for (const hueco of pt.huecos ?? []) {
+    const path = new THREE.Path();
+    hueco.forEach(([u, v], i) => {
+      const x = (u - fu / 2) * S;
+      const y = (v - fv / 2) * S;
+      if (i === 0) path.moveTo(x, y);
+      else path.lineTo(x, y);
+    });
+    path.closePath();
+    shape.holes.push(path);
+  }
+
+  const geo = new THREE.ExtrudeGeometry(shape, { depth: t, bevelEnabled: false, curveSegments: 8 });
+  geo.translate(0, 0, -t / 2);
+  return geo;
+}
+
+/**
+ * Lleva el plano local de la cara al eje del espesor de la pieza:
+ * x → la cara mira a lo ancho, y → mira al frente, z → mira arriba.
+ */
+function rotacionDe(pt: Part): [number, number, number] {
+  const eje = ejeEspesor(pt);
+  if (eje === 'x') return [0, Math.PI / 2, 0];
+  if (eje === 'z') return [-Math.PI / 2, 0, 0];
+  return [0, 0, 0];
 }
 
 export function Mueble({
@@ -87,7 +102,7 @@ export function Mueble({
   const grain = useGrain();
   const group = useRef<THREE.Group>(null);
 
-  const parts = useMemo(() => partList(type, dims.w, dims.d, dims.h), [type, dims.w, dims.d, dims.h]);
+  const parts = useMemo(() => armados(type, dims.w, dims.d, dims.h), [type, dims.w, dims.d, dims.h]);
 
   const geometries = useMemo(() => parts.map(geometriaDe), [parts]);
   useEffect(() => () => geometries.forEach((g) => g.dispose()), [geometries]);
@@ -143,12 +158,12 @@ export function Mueble({
   return (
     <group ref={group}>
       {parts.map((pt, i) => {
-        const base = new THREE.Vector3(pt.pos[0] * S, pt.pos[1] * S, pt.pos[2] * S);
+        const base = new THREE.Vector3(...center3(pt));
         const d = explodeDir(pt, i);
-        const rotation: [number, number, number] =
-          pt.axis === 'x' ? [0, Math.PI / 2, 0] : pt.axis === 'y' ? [-Math.PI / 2, 0, 0] : [0, 0, 0];
+        const rotation = rotacionDe(pt);
+        const extruida = !!pt.perfil || !!pt.huecos?.length;
         // ExtrudeGeometry: 0 = caras, 1 = canto. BoxGeometry: ±z son las caras.
-        const material = pt.routed && pt.hole ? [face, edge] : [edge, edge, edge, edge, face, face];
+        const material = extruida ? [face, edge] : [edge, edge, edge, edge, face, face];
 
         return (
           <mesh

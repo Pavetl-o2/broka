@@ -1,4 +1,5 @@
-import { partList } from '@/lib/parametric/partList';
+import { armados } from '@/lib/parametric/armados';
+import { faceDims } from '@/lib/parametric/geometria';
 import type { CostBreakdown, FinishKey, Producto } from '@/lib/types';
 
 /**
@@ -51,12 +52,14 @@ export function cost(
   H: number,
   finishKey: FinishKey,
 ): CostBreakdown {
-  const parts = partList(prod.type, W, D, H);
+  const parts = armados(prod.type, W, D, H);
   let area = 0;
   let perim = 0;
   for (const p of parts) {
-    area += (p.w * p.h) / 1e6;
-    perim += (2 * (p.w + p.h)) / 1000;
+    // La cara de la pieza son sus dos lados mayores; el menor es el espesor.
+    const [a, b] = faceDims(p);
+    area += (a * b) / 1e6;
+    perim += (2 * (a + b)) / 1000;
   }
 
   const hojas = area / (HOJA.largo * HOJA.ancho * TARIFA.nesting);

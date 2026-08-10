@@ -3,19 +3,61 @@ import type { Part } from '@/lib/types';
 /** mm → metros. La escena 3D trabaja en metros. */
 export const S = 0.001;
 
-/** Tamaño de la pieza ya montada, en metros. Todas las rotaciones son de 90°. */
+/**
+ * Las piezas viven en coordenadas de taller (Z arriba, y = 0 al frente) y la
+ * escena de three.js es Y arriba. El cambio de ejes ocurre aquí y en ningún
+ * otro lugar:
+ *
+ *   escena.x =  cad.x        ancho
+ *   escena.y =  cad.z        alto
+ *   escena.z = −cad.y        profundidad, negada para que el frente mire a la cámara
+ *
+ * Negar Y es lo que deja el frente del mueble del lado del observador; sin eso
+ * la cámara encuadraría la trasera.
+ */
+
+/** Espesor de la pieza: el menor de sus tres lados. */
+export function espesor(p: Part): number {
+  return Math.min(p.sx, p.sy, p.sz);
+}
+
+/** Eje sobre el que se mide el espesor. Es la normal de la cara. */
+export function ejeEspesor(p: Part): 'x' | 'y' | 'z' {
+  const t = espesor(p);
+  if (p.sx === t) return 'x';
+  if (p.sy === t) return 'y';
+  return 'z';
+}
+
+/**
+ * Los dos lados de la cara, en orden x → y → z saltando el del espesor.
+ * Es el mismo orden en que `hole` mide u y v, para que no puedan desalinearse.
+ */
+export function faceDims(p: Part): [number, number] {
+  const eje = ejeEspesor(p);
+  if (eje === 'x') return [p.sy, p.sz];
+  if (eje === 'y') return [p.sx, p.sz];
+  return [p.sx, p.sy];
+}
+
+/** Tamaño de la caja en la escena, en metros. */
 export function extent(p: Part): [number, number, number] {
-  if (p.axis === 'x') return [p.t * S, p.h * S, p.w * S];
-  if (p.axis === 'y') return [p.w * S, p.t * S, p.h * S];
-  return [p.w * S, p.h * S, p.t * S];
+  return [p.sx * S, p.sz * S, p.sy * S];
+}
+
+/** Centro de la pieza en la escena, en metros. La pieza se declara por su esquina mínima. */
+export function center3(p: Part): [number, number, number] {
+  return [(p.px + p.sx / 2) * S, (p.pz + p.sz / 2) * S, -(p.py + p.sy / 2) * S];
 }
 
 /** Hacia dónde sale cada pieza al abrir el despiece, en metros. */
 export function explodeDir(p: Part, i: number): [number, number, number] {
+  const eje = ejeEspesor(p);
+  const [cx, , cz] = center3(p);
   return [
-    p.axis === 'x' ? Math.sign(p.pos[0] || (i % 2 ? 1 : -1)) * 0.34 : 0,
-    p.axis === 'y' ? 0.3 + i * 0.035 : 0.06,
-    p.axis === 'z' ? Math.sign(p.pos[2] || -1) * 0.34 : 0,
+    eje === 'x' ? Math.sign(cx || (i % 2 ? 1 : -1)) * 0.34 : 0,
+    eje === 'z' ? 0.3 + i * 0.035 : 0.06,
+    eje === 'y' ? Math.sign(cz || 1) * 0.34 : 0,
   ];
 }
 
@@ -33,10 +75,11 @@ export function bounds(parts: Part[], explode: boolean) {
 
   parts.forEach((p, i) => {
     const [ex, ey, ez] = extent(p);
+    const c = center3(p);
     const d = explode ? explodeDir(p, i) : [0, 0, 0];
-    const cx = p.pos[0] * S + d[0];
-    const cy = p.pos[1] * S + d[1];
-    const cz = p.pos[2] * S + d[2];
+    const cx = c[0] + d[0];
+    const cy = c[1] + d[1];
+    const cz = c[2] + d[2];
     minX = Math.min(minX, cx - ex / 2);
     maxX = Math.max(maxX, cx + ex / 2);
     minY = Math.min(minY, cy - ey / 2);

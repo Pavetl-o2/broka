@@ -30,7 +30,7 @@ export type Producto = {
   id: string;
   nameES: string;
   category: Categoria;
-  /** Elige el partList que genera geometría, costo y despiece. */
+  /** Elige el armado que genera geometría, costo y despiece. */
   type: MuebleType;
   materialES: string;
   /** Determina el precio de hoja. */
@@ -47,19 +47,45 @@ export type Producto = {
   model3d?: string;
 };
 
-/** Una pieza del despiece. Alimenta 3D, costo y DXF. */
+/**
+ * Una pieza del despiece. Alimenta 3D, costo y DXF.
+ *
+ * Convención de `mueble-calc`: cada pieza es una caja alineada a ejes.
+ *
+ *   X = ancho, Y = profundidad, Z = alto  ·  Z hacia arriba
+ *   px, py, pz = esquina MÍNIMA de la pieza
+ *   y = 0 es el FRENTE del mueble; y crece hacia atrás
+ *   z = 0 es el piso
+ *
+ * Todo en milímetros. El eje menor de los tres es el espesor: no se declara
+ * aparte, se deduce. Así una pieza no puede contradecirse a sí misma.
+ */
 export type Part = {
   nombre: string;
-  /** Milímetros. */
-  w: number;
-  h: number;
-  t: number;
-  /** Eje normal de la pieza una vez montada. */
-  axis: 'x' | 'y' | 'z';
-  pos: [number, number, number];
-  routed: boolean;
-  hole?: { w: number; h: number; y: number };
+  /** Agrupa piezas iguales en el despiece. */
+  grupo: string;
+  sx: number;
+  sy: number;
+  sz: number;
+  px: number;
+  py: number;
+  pz: number;
+  /**
+   * Contorno de la cara, en mm desde la esquina mínima, sobre los dos ejes
+   * mayores (orden x → y → z saltando el del espesor). Sin perfil la pieza es
+   * la caja entera; con perfil se extruye ese contorno a lo largo del espesor.
+   *
+   * La caja manda igual: encuadre, costo y anidado siguen leyendo sx/sy/sz. El
+   * perfil solo decide qué se dibuja dentro. Es lo que deja representar la A de
+   * la silla o la costilla curva de la banca sin salirse de la convención.
+   */
+  perfil?: Punto2[];
+  /** Calados pasantes dentro del perfil, en las mismas coordenadas. */
+  huecos?: Punto2[][];
 };
+
+/** Punto sobre la cara de una pieza, en mm desde su esquina mínima. */
+export type Punto2 = [number, number];
 
 export type CostBreakdown = {
   total: number;

@@ -1,5 +1,6 @@
-import { partList } from '@/lib/parametric/partList';
-import type { Dims, MuebleType, Part } from '@/lib/types';
+import { armados } from '@/lib/parametric/armados';
+import { faceDims } from '@/lib/parametric/geometria';
+import type { Dims, MuebleType, Part, Punto2 } from '@/lib/types';
 
 /** Hoja de tablero en mm. */
 const HOJA_W = 2440;
@@ -10,6 +11,11 @@ const MARGEN = 15;
 
 type Colocada = { part: Part; hoja: number; x: number; y: number; girada: boolean };
 
+/** Cara de la pieza tal como se corta: los dos lados mayores. */
+function cara(p: Part): [number, number] {
+  return faceDims(p);
+}
+
 /**
  * Anidado por estantes: ordena las piezas de mayor a menor alto y las va
  * acostando en filas. No es óptimo — el aprovechamiento real hay que medirlo
@@ -18,7 +24,7 @@ type Colocada = { part: Part; hoja: number; x: number; y: number; girada: boolea
 export function anidar(parts: Part[]): Colocada[] {
   const orden = parts
     .map((part, i) => ({ part, i }))
-    .sort((a, b) => Math.max(b.part.w, b.part.h) - Math.max(a.part.w, a.part.h));
+    .sort((a, b) => Math.max(...cara(b.part)) - Math.max(...cara(a.part)));
 
   const out: Colocada[] = [];
   let hoja = 0;
@@ -27,10 +33,11 @@ export function anidar(parts: Part[]): Colocada[] {
   let altoFila = 0;
 
   for (const { part } of orden) {
+    const [pw, ph] = cara(part);
     // Acuesta la pieza si así cabe a lo ancho de la hoja.
-    const girada = part.w < part.h && part.h <= HOJA_W - 2 * MARGEN;
-    const w = girada ? part.h : part.w;
-    const h = girada ? part.w : part.h;
+    const girada = pw < ph && ph <= HOJA_W - 2 * MARGEN;
+    const w = girada ? ph : pw;
+    const h = girada ? pw : ph;
 
     if (cursorX + w > HOJA_W - MARGEN) {
       cursorX = MARGEN;
@@ -82,6 +89,20 @@ function rect(x: number, y: number, w: number, h: number, capa: string): string 
   ].join('\n');
 }
 
+/** Contorno cerrado, ya colocado en la hoja. */
+function poly(pts: Punto2[], ox: number, oy: number, girada: boolean, alto: number, capa: string): string {
+  const map = (p: Punto2): [number, number] =>
+    // Al acostar la pieza, la cara gira 90°: (u, v) → (v, alto − u).
+    girada ? [ox + p[1], oy + alto - p[0]] : [ox + p[0], oy + p[1]];
+  const out: string[] = [];
+  for (let i = 0; i < pts.length; i++) {
+    const a = map(pts[i]);
+    const b = map(pts[(i + 1) % pts.length]);
+    out.push(line(a[0], a[1], b[0], b[1], capa));
+  }
+  return out.join('\n');
+}
+
 function texto(x: number, y: number, s: string): string {
   return ['0', 'TEXT', '8', 'TEXTO', '10', x.toFixed(3), '20', y.toFixed(3), '30', '0.0', '40', '18', '1', s].join(
     '\n',
@@ -97,7 +118,7 @@ function texto(x: number, y: number, s: string): string {
  * en un solo archivo.
  */
 export function despieceDXF(type: MuebleType, dims: Dims, etiqueta: string): string {
-  const parts = partList(type, dims.w, dims.d, dims.h);
+  const parts = armados(type, dims.w, dims.d, dims.h);
   const colocadas = anidar(parts);
 
   const cuerpo: string[] = [];
@@ -111,19 +132,20 @@ export function despieceDXF(type: MuebleType, dims: Dims, etiqueta: string): str
 
   for (const c of colocadas) {
     const offsetX = c.hoja * (HOJA_W + 200);
-    const w = c.girada ? c.part.h : c.part.w;
-    const h = c.girada ? c.part.w : c.part.h;
-    cuerpo.push(rect(offsetX + c.x, c.y, w, h, 'CORTE'));
-    cuerpo.push(texto(offsetX + c.x + 8, c.y + 8, c.part.nombre));
+    const [pw, ph] = cara(c.part);
+    const w = c.girada ? ph : pw;
+    const h = c.girada ? pw : ph;
+    const ox = offsetX + c.x;
 
-    if (c.part.routed && c.part.hole) {
-      const hw = c.girada ? c.part.hole.h : c.part.hole.w;
-      const hh = c.girada ? c.part.hole.w : c.part.hole.h;
-      // hole.y viene medido desde el centro de la pieza.
-      const cx = offsetX + c.x + w / 2;
-      const cy = c.y + h / 2 + (c.girada ? 0 : c.part.hole.y);
-      const cxg = c.girada ? cx + c.part.hole.y : cx;
-      cuerpo.push(rect(cxg - hw / 2, cy - hh / 2, hw, hh, 'INTERIOR'));
+    if (c.part.perfil) {
+      cuerpo.push(poly(c.part.perfil, ox, c.y, c.girada, ph, 'CORTE'));
+    } else {
+      cuerpo.push(rect(ox, c.y, w, h, 'CORTE'));
+    }
+    cuerpo.push(texto(ox + 8, c.y + 8, c.part.nombre));
+
+    for (const hueco of c.part.huecos ?? []) {
+      cuerpo.push(poly(hueco, ox, c.y, c.girada, ph, 'INTERIOR'));
     }
   }
 
