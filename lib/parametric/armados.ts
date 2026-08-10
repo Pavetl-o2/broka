@@ -175,11 +175,11 @@ export function armados(type: MuebleType, W: number, D: number, H: number): Part
     // más baja, y de ahí se sabe que la curva es un valle.
     const n = Math.max(9, Math.round(W / 57.5) | 1);
     const paso = (W - t) / (n - 1);
-    // El DXF baja hasta 0.40 del alto, pero a lo largo de sus 1781 mm. En los
-    // 1100 del TRAMO esa misma caída parte la banca en dos; la foto pide una
-    // curva que se hunda sin quebrarse.
-    const hCentro = H * 0.62;
-    const dExtremo = D * 0.94;
+    // Medidas del plano: la costilla del extremo mide 450 de alto por 527.8 de
+    // fondo, y la del centro 182.1 por 604.2. La impar es la más baja, y de ahí
+    // se sabe que la curva es un valle y no un arco.
+    const hCentro = H * (182.1 / 450);
+    const dExtremo = D * (527.8 / 604.2);
     const vigaH = H * 0.22;
 
     for (let i = 0; i < n; i++) {
