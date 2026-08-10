@@ -47,7 +47,55 @@ export function extent(p: Part): [number, number, number] {
 
 /** Centro de la pieza en la escena, en metros. La pieza se declara por su esquina mínima. */
 export function center3(p: Part): [number, number, number] {
+  if (p.pose) {
+    const c = centroPose(p);
+    return [c[0] * S, c[2] * S, -c[1] * S];
+  }
   return [(p.px + p.sx / 2) * S, (p.pz + p.sz / 2) * S, -(p.py + p.sy / 2) * S];
+}
+
+/** Centro del dibujo de una pieza, en sus propias coordenadas. */
+function centroPlano(p: Part): [number, number] {
+  const pts = p.perfil ?? [];
+  if (!pts.length) return [0, 0];
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const [x, y] of pts) {
+    x0 = Math.min(x0, x); x1 = Math.max(x1, x);
+    y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+  }
+  return [(x0 + x1) / 2, (y0 + y1) / 2];
+}
+
+/** Centro de la pieza colocada, en mm de taller. */
+function centroPose(p: Part): [number, number, number] {
+  const { o, u, v } = p.pose!;
+  const [cx, cy] = centroPlano(p);
+  return [
+    o[0] + u[0] * cx + v[0] * cy,
+    o[1] + u[1] * cx + v[1] * cy,
+    o[2] + u[2] * cx + v[2] * cy,
+  ];
+}
+
+/**
+ * Esquinas de una pieza colocada, en la escena y en metros. Con pose la caja
+ * alineada a ejes ya no la describe, así que el encuadre mide el contorno real.
+ */
+export function esquinas3(p: Part): [number, number, number][] {
+  const { o, u, v, w } = p.pose!;
+  const e = espesor(p) / 2;
+  const out: [number, number, number][] = [];
+  for (const [x, y] of p.perfil ?? [[0, 0]]) {
+    for (const s of [-1, 1]) {
+      const cad = [
+        o[0] + u[0] * x + v[0] * y + w[0] * e * s,
+        o[1] + u[1] * x + v[1] * y + w[1] * e * s,
+        o[2] + u[2] * x + v[2] * y + w[2] * e * s,
+      ];
+      out.push([cad[0] * S, cad[2] * S, -cad[1] * S]);
+    }
+  }
+  return out;
 }
 
 /** Hacia dónde sale cada pieza al abrir el despiece, en metros. */
@@ -74,18 +122,31 @@ export function bounds(parts: Part[], explode: boolean) {
   let maxZ = -Infinity;
 
   parts.forEach((p, i) => {
-    const [ex, ey, ez] = extent(p);
-    const c = center3(p);
     const d = explode ? explodeDir(p, i) : [0, 0, 0];
-    const cx = c[0] + d[0];
-    const cy = c[1] + d[1];
-    const cz = c[2] + d[2];
-    minX = Math.min(minX, cx - ex / 2);
-    maxX = Math.max(maxX, cx + ex / 2);
-    minY = Math.min(minY, cy - ey / 2);
-    maxY = Math.max(maxY, cy + ey / 2);
-    minZ = Math.min(minZ, cz - ez / 2);
-    maxZ = Math.max(maxZ, cz + ez / 2);
+    const puntos: [number, number, number][] = [];
+
+    if (p.pose) {
+      puntos.push(...esquinas3(p));
+    } else {
+      const [ex, ey, ez] = extent(p);
+      const c = center3(p);
+      for (const sx of [-1, 1]) {
+        for (const sy of [-1, 1]) {
+          for (const sz of [-1, 1]) {
+            puntos.push([c[0] + (sx * ex) / 2, c[1] + (sy * ey) / 2, c[2] + (sz * ez) / 2]);
+          }
+        }
+      }
+    }
+
+    for (const q of puntos) {
+      minX = Math.min(minX, q[0] + d[0]);
+      maxX = Math.max(maxX, q[0] + d[0]);
+      minY = Math.min(minY, q[1] + d[1]);
+      maxY = Math.max(maxY, q[1] + d[1]);
+      minZ = Math.min(minZ, q[2] + d[2]);
+      maxZ = Math.max(maxZ, q[2] + d[2]);
+    }
   });
 
   const center: [number, number, number] = [

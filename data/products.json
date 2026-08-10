@@ -18,8 +18,8 @@
         "id": "450",
         "nameES": "Estándar",
         "w": 450,
-        "d": 721,
-        "h": 723
+        "d": 719,
+        "h": 761
       },
       {
         "id": "alta",
@@ -31,16 +31,16 @@
     ],
     "rango": {
       "w": [
-        400,
-        620
+        315,
+        720
       ],
       "d": [
-        600,
-        820
+        503,
+        1150
       ],
       "h": [
-        660,
-        900
+        646,
+        989
       ]
     },
     "descriptionES": "Una silla de tres planos: dos costados ruteados que hacen de estructura y de pata, un asiento que entra a presión y un respaldo que curva apenas lo necesario. Sin tornillos a la vista.",
@@ -69,8 +69,8 @@
         "id": "116",
         "nameES": "Cuadrada, cuatro personas",
         "w": 1160,
-        "d": 1160,
-        "h": 730
+        "d": 1198,
+        "h": 802
       },
       {
         "id": "200",
@@ -89,16 +89,16 @@
     ],
     "rango": {
       "w": [
-        900,
+        812,
         2800
       ],
       "d": [
-        900,
-        1300
+        838,
+        1916
       ],
       "h": [
-        700,
-        780
+        681,
+        1042
       ]
     },
     "descriptionES": "La mesa de la casa. Dos caballetes ruteados con un arco que aligera el volumen, un travesaño que amarra la estructura y una cubierta de canto vivo. Se arma en veinte minutos y se desarma igual.",
@@ -185,7 +185,7 @@
         "nameES": "Dos plazas",
         "w": 1781,
         "d": 604,
-        "h": 450
+        "h": 452
       },
       {
         "id": "150",
@@ -198,15 +198,15 @@
     "rango": {
       "w": [
         800,
-        2400
+        2849
       ],
       "d": [
-        520,
-        700
+        422,
+        966
       ],
       "h": [
-        400,
-        500
+        384,
+        587
       ]
     },
     "descriptionES": "Un asiento largo para la entrada, el pie de cama o la mesa. Mismo caballete que la Mesa LLANO, a la mitad de altura, para que las piezas de la casa se lean como familia.",

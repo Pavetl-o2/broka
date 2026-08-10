@@ -83,12 +83,31 @@ export type Part = {
   /** Calados pasantes dentro del perfil, en las mismas coordenadas. */
   huecos?: Punto2[][];
   /**
-   * Grados que la pieza gira sobre el eje X al montarse. Solo para lo que el
-   * plano pone en diagonal — la tapa inclinada de la silla. sx/sy/sz siguen
-   * siendo las medidas reales del tablero, así que el costo y el anidado no se
-   * enteran del giro: es puro montaje.
+   * Colocación completa, cuando la pieza no va a escuadra. Viene del solver de
+   * juntas: no hay ángulos que componer, la base ya está resuelta.
+   *
+   * Con pose, `perfil` y `huecos` están en las coordenadas del dibujo de corte
+   * y es la pose la que los lleva al mueble; sx/sy/sz siguen siendo el tablero
+   * plano, que es lo que miran el costo y el anidado.
    */
-  giro?: number;
+  pose?: Pose;
+};
+
+export type V3 = [number, number, number];
+
+/**
+ * Sitio de una pieza en el espacio, en la convención de `mueble-calc`:
+ * dónde cae el (0,0) del dibujo y en qué se convierten sus ejes.
+ */
+export type Pose = {
+  /** Dónde cae el (0,0) del dibujo. */
+  o: V3;
+  /** Imagen del eje X del dibujo. */
+  u: V3;
+  /** Imagen del eje Y del dibujo. */
+  v: V3;
+  /** Normal de la cara: el tablero ocupa ±espesor/2 en esta dirección. */
+  w: V3;
 };
 
 /** Punto sobre la cara de una pieza, en mm desde su esquina mínima. */

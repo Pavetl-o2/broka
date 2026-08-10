@@ -48,27 +48,37 @@ function geometriaDe(pt: Part): THREE.BufferGeometry {
     return new THREE.BoxGeometry(fu * S, fv * S, t);
   }
 
+  // Con pose el contorno viene en las coordenadas del dibujo de corte; se
+  // centra en su propia caja porque el origen de la malla es ese centro.
   const contorno: [number, number][] =
     pt.perfil ?? [[0, 0], [fu, 0], [fu, fv], [0, fv]];
+  let ox = fu / 2;
+  let oy = fv / 2;
+  if (pt.pose) {
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const [x, y] of contorno) {
+      x0 = Math.min(x0, x); x1 = Math.max(x1, x);
+      y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+    }
+    ox = (x0 + x1) / 2;
+    oy = (y0 + y1) / 2;
+  }
 
-  const shape = new THREE.Shape();
-  contorno.forEach(([u, v], i) => {
-    const x = (u - fu / 2) * S;
-    const y = (v - fv / 2) * S;
-    if (i === 0) shape.moveTo(x, y);
-    else shape.lineTo(x, y);
-  });
-  shape.closePath();
-
-  for (const hueco of pt.huecos ?? []) {
-    const path = new THREE.Path();
-    hueco.forEach(([u, v], i) => {
-      const x = (u - fu / 2) * S;
-      const y = (v - fv / 2) * S;
+  const traza = (pts: [number, number][], path: THREE.Shape | THREE.Path) => {
+    pts.forEach(([u, v], i) => {
+      const x = (u - ox) * S;
+      const y = (v - oy) * S;
       if (i === 0) path.moveTo(x, y);
       else path.lineTo(x, y);
     });
     path.closePath();
+  };
+
+  const shape = new THREE.Shape();
+  traza(contorno, shape);
+  for (const hueco of pt.huecos ?? []) {
+    const path = new THREE.Path();
+    traza(hueco, path);
     shape.holes.push(path);
   }
 
@@ -78,15 +88,43 @@ function geometriaDe(pt: Part): THREE.BufferGeometry {
 }
 
 /**
+ * Matriz de una pieza colocada por el solver. La pose ya es una base completa,
+ * así que se pasa entera y three no tiene que interpretar ángulos. El cambio
+ * de ejes de taller a escena (Z arriba → Y arriba) se aplica a los tres
+ * vectores y al origen por igual.
+ */
+function matrizDe(pt: Part): THREE.Matrix4 {
+  const { o, u, v, w } = pt.pose!;
+  // El origen es un punto y va en metros; u, v y w son direcciones y se quedan
+  // como están: la malla ya viene en metros y volver a escalarlas la encogería.
+  const punto = (p: readonly number[]) => new THREE.Vector3(p[0] * S, p[2] * S, -p[1] * S);
+  const dir = (p: readonly number[]) => new THREE.Vector3(p[0], p[2], -p[1]);
+  const [cx, cy] = (() => {
+    const pts = pt.perfil ?? [[0, 0]];
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const [x, y] of pts) {
+      x0 = Math.min(x0, x); x1 = Math.max(x1, x);
+      y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+    }
+    return [(x0 + x1) / 2, (y0 + y1) / 2];
+  })();
+
+  const U = dir(u);
+  const V = dir(v);
+  const W = dir(w);
+  const pos = punto(o).addScaledVector(U, cx * S).addScaledVector(V, cy * S);
+  return new THREE.Matrix4().makeBasis(U, V, W).setPosition(pos);
+}
+
+/**
  * Lleva el plano local de la cara al eje del espesor de la pieza:
  * x → la cara mira a lo ancho, y → mira al frente, z → mira arriba.
  */
 function rotacionDe(pt: Part): [number, number, number] {
   const eje = ejeEspesor(pt);
-  const giro = ((pt.giro ?? 0) * Math.PI) / 180;
-  if (eje === 'x') return [giro, Math.PI / 2, 0];
-  if (eje === 'z') return [-Math.PI / 2 + giro, 0, 0];
-  return [giro, 0, 0];
+  if (eje === 'x') return [0, Math.PI / 2, 0];
+  if (eje === 'z') return [-Math.PI / 2, 0, 0];
+  return [0, 0, 0];
 }
 
 export function Mueble({
@@ -165,6 +203,21 @@ export function Mueble({
         const extruida = !!pt.perfil || !!pt.huecos?.length;
         // ExtrudeGeometry: 0 = caras, 1 = canto. BoxGeometry: ±z son las caras.
         const material = extruida ? [face, edge] : [edge, edge, edge, edge, face, face];
+
+        // Colocada por el solver: la pose ya trae la base, no hay nada que componer.
+        if (pt.pose) {
+          return (
+            <mesh
+              key={`${pt.nombre}-${i}`}
+              geometry={geometries[i]}
+              material={material}
+              matrixAutoUpdate={false}
+              matrix={matrizDe(pt)}
+              castShadow
+              receiveShadow
+            />
+          );
+        }
 
         return (
           <mesh
