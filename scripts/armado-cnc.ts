@@ -43,20 +43,15 @@ type Salida = {
 };
 
 /**
- * Cierra el molinete de la familia "panel + perimetrales".
- *
  * El solver crece de forma codiciosa y se queda con el primer armado
- * consistente, que no siempre es el correcto. En la mesa deja dos marcos sobre
- * el mismo lado -a uno lo corre 889 mm sobre su eje- y el cuarto lado vacio.
+ * consistente, que no siempre es el correcto: en la mesa acierta el lado de
+ * los cuatro marcos pero a uno lo corre casi un metro sobre su propio eje.
  *
- * Los cuatro marcos son la MISMA pieza: misma area, y el signo cambia solo
- * porque el DXF traza unos al derecho y otros al reves. Asi que la colocacion
- * correcta es el molinete: la misma pieza girada un cuarto de vuelta cada vez,
- * y por eso la espiga de cada pata entra en la cuna de la siguiente.
- *
- * No se inventa una colocacion: se toma la copia que el solver dejo mas
- * centrada, se la centra sobre su eje -que es lo unico que el solver falla,
- * el lado y la orientacion los acierta- y las otras tres salen de girarla.
+ * Cuando una misma pieza se repite alrededor de un panel, las copias buenas
+ * ya dicen cual es la simetria. Aqui se toma una que caiga dentro de la huella
+ * del panel y se rehacen las demas girandola en cuartos de vuelta sobre el eje
+ * vertical del panel. No inventa una colocacion: propaga la que el solver ya
+ * encontro.
  */
 function cerrarSimetria(arm: Armadura, piezas: ContornoCnc[]) {
   const area = (id: string) => piezas.find((p) => p.id === id)?.areaMm2 ?? 0;
@@ -139,6 +134,133 @@ function cerrarSimetria(arm: Armadura, piezas: ContornoCnc[]) {
   );
 }
 
+/**
+ * MESA: se arma del plano, no del solver.
+ *
+ * `armadomesa.md` documenta por que el solver falla en este archivo y da las
+ * medidas correctas. El inferidor de espesor mide el tramo recto mas corto de
+ * la mortaja y encuentra 23.8 mm, que no es el ancho del brazo sino una pared
+ * acortada por el radio de la fresa: el brazo entero mide 30. De ese error
+ * cuelgan los otros dos -abre las patas en abanico y las alarga- y ademas
+ * cierra solo dos de las cuatro medias maderas, asi que la cuarta pata queda
+ * a 870 mm de la mesa.
+ *
+ * Lo que sigue no interpreta nada: son las cotas del dibujo, y cada una se
+ * comprueba contra el DXF en el arranque.
+ *
+ *   espesor 30, patas A PLOMO, alto 730 = hombro 700 + tablero 30
+ *   espigas en un cuadrado de 830, a 165 de cada canto de la cubierta
+ *   molinete simetrico a 90: cada pata corre de su espiga a la caja de la
+ *   vecina -830- y sigue 171 mas hasta su pie, que cae bajo el canto
+ */
+const MESA = {
+  espesor: 30,
+  alto: 730,
+  /** Lado del cuadrado de espigas. */
+  cuadrado: 830,
+  /** Centro de la espiga sobre el eje largo de la pata. */
+  espiga: 85,
+};
+
+function armarMesa(piezas: ContornoCnc[]): Salida {
+  const t = MESA.espesor;
+  const r = (n: number) => Math.round(n * 1000) / 1000;
+  const norm = (p: ContornoCnc) =>
+    (p.ext as [number, number][]).map(([x, y]) => [r(x - p.bbox.x0), r(y - p.bbox.y0)] as [number, number]);
+
+  const panel = piezas.find((p) => p.bbox.x1 - p.bbox.x0 > 1150)!;
+  // La pata canonica: larguero arriba (v = 0, de donde sale la espiga) y pie
+  // abajo. Las otras tres son esta misma girada un cuarto de vuelta.
+  const patas = piezas.filter((p) => Math.abs(p.bbox.x1 - p.bbox.x0 - 1121.5) < 3);
+  const anchoEn = (pts: [number, number][], y: number) => {
+    const us = pts.filter((q) => Math.abs(q[1] - y) < 1.5).map((q) => q[0]);
+    return us.length ? Math.max(...us) - Math.min(...us) : 0;
+  };
+  const canonica = patas
+    .map(norm)
+    .find((pts) => {
+      const h = Math.max(...pts.map((q) => q[1]));
+      if (anchoEn(pts, 0) < anchoEn(pts, h)) return false;
+      // La espiga es el tramo de ~88 sobre el canto de arriba.
+      return pts.some((q) => Math.abs(q[1]) < 1.5 && q[0] < 200);
+    })!;
+
+  const anchoPanel = panel.bbox.x1 - panel.bbox.x0;
+  const profPanel = panel.bbox.y1 - panel.bbox.y0;
+  const q = MESA.cuadrado / 2;
+
+  // Comprobaciones del plano: si el DXF cambia, esto avisa en vez de mentir.
+  const vuelo = (anchoPanel - MESA.cuadrado) / 2;
+  if (Math.abs(vuelo - 165) > 2) throw new Error(`vuelo ${vuelo.toFixed(1)}, el plano dice 165`);
+
+  const esquinas: [number, number][] = [[-q, q], [q, q], [q, -q], [-q, -q]];
+  const dirs: [number, number][] = [[1, 0], [0, -1], [-1, 0], [0, 1]];
+
+  const instancias: Salida["instancias"] = [
+    // Cubierta: acostada, con su cara de arriba a 730. El espesor se reparte a
+    // los dos lados de w, asi que el plano medio va a 730 - 30/2.
+    {
+      pieza: 0,
+      o: [r(-anchoPanel / 2), r(-profPanel / 2), r(MESA.alto - t / 2)],
+      u: [1, 0, 0],
+      v: [0, 1, 0],
+      w: [0, 0, 1],
+    },
+  ];
+
+  esquinas.forEach(([ex, ey], k) => {
+    const [dx, dy] = dirs[k];
+    instancias.push({
+      pieza: 1,
+      // Imagen del (0,0) del dibujo: desde la espiga se retrocede su cota
+      // sobre el eje largo, y v crece hacia abajo desde el canto de arriba.
+      o: [r(ex - dx * MESA.espiga), r(ey - dy * MESA.espiga), MESA.alto],
+      u: [dx, dy, 0],
+      v: [0, 0, -1],
+      w: [-dy, dx, 0],
+    });
+  });
+
+  const pieza = (nombre: string, pts: [number, number][], huecos: [number, number][][]) => ({
+    nombre,
+    espesor: t,
+    contorno: pts,
+    huecos,
+    centro: [
+      r((Math.min(...pts.map((p) => p[0])) + Math.max(...pts.map((p) => p[0]))) / 2),
+      r((Math.min(...pts.map((p) => p[1])) + Math.max(...pts.map((p) => p[1]))) / 2),
+    ] as [number, number],
+  });
+
+  // Comprobaciones finales del plano, sobre el armado ya colocado. Si alguna
+  // no cierra es que el DXF cambio y este armado dejo de describirlo.
+  const espigas = instancias.slice(1).map((i) => [i.o[0] + i.u[0] * MESA.espiga, i.o[1] + i.u[1] * MESA.espiga]);
+  const lado = Math.hypot(espigas[0][0] - espigas[1][0], espigas[0][1] - espigas[1][1]);
+  const diag = Math.hypot(espigas[0][0] - espigas[2][0], espigas[0][1] - espigas[2][1]);
+  const revisa = (que: string, val: number, esperado: number, tol: number) => {
+    if (Math.abs(val - esperado) > tol) throw new Error(`${que}: ${val.toFixed(1)}, el plano dice ${esperado}`);
+    console.log(`   ok ${que}: ${val.toFixed(1)} mm`);
+  };
+  revisa("lado del cuadrado de espigas", lado, 830, 3);
+  revisa("diagonal entre espigas", diag, 1174, 3);
+  revisa("vuelo de la cubierta por lado", vuelo, 165, 2);
+  revisa("alto terminado", MESA.alto, 730, 0);
+  revisa("cara de arriba de la cubierta", instancias[0].o[2] + t / 2, 730, 0.01);
+
+  const pataOrig = patas.find((p) => norm(p) === canonica) ?? patas[0];
+  return {
+    espesor: t,
+    envolvente: [r(anchoPanel), r(profPanel), MESA.alto],
+    piezas: [
+      pieza("Cubierta", norm(panel), panel.huecos.map((h) =>
+        (h as [number, number][]).map(([x, y]) => [r(x - panel.bbox.x0), r(y - panel.bbox.y0)] as [number, number]))),
+      pieza("Pata", canonica, pataOrig.huecos.map((h) =>
+        (h as [number, number][]).map(([x, y]) => [r(x - pataOrig.bbox.x0), r(y - pataOrig.bbox.y0)] as [number, number]))),
+    ],
+    instancias,
+  };
+}
+
 const out: Record<string, Salida> = {};
 
 for (const [nombre, ruta, giro] of JOBS) {
@@ -147,6 +269,13 @@ for (const [nombre, ruta, giro] of JOBS) {
   const espGlobal = lec.espesor ?? 18;
   const arm = resolverArmado(lec.piezas, espGlobal);
   const piso = pisoDe(arm, lec.piezas, espGlobal);
+
+  if (nombre === "mesa") {
+    out[nombre] = armarMesa(lec.piezas);
+    const e = out[nombre].envolvente.map(Math.round).join(" x ");
+    console.log(`mesa: ${out[nombre].instancias.length} instancias del plano, envolvente ${e} mm, esp ${MESA.espesor}`);
+    continue;
+  }
 
   const idx = new Map(lec.piezas.map((p, i) => [p.id, i]));
   cerrarSimetria(arm, lec.piezas);
