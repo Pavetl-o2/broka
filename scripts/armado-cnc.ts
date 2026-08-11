@@ -158,8 +158,6 @@ const MESA = {
   alto: 730,
   /** Lado del cuadrado de espigas. */
   cuadrado: 830,
-  /** Centro de la espiga sobre el eje largo de la pata. */
-  espiga: 85,
 };
 
 function armarMesa(piezas: ContornoCnc[]): Salida {
@@ -178,12 +176,52 @@ function armarMesa(piezas: ContornoCnc[]): Salida {
   };
   const canonica = patas
     .map(norm)
-    .find((pts) => {
-      const h = Math.max(...pts.map((q) => q[1]));
-      if (anchoEn(pts, 0) < anchoEn(pts, h)) return false;
-      // La espiga es el tramo de ~88 sobre el canto de arriba.
-      return pts.some((q) => Math.abs(q[1]) < 1.5 && q[0] < 200);
-    })!;
+    .find((pts) => anchoEn(pts, 0) >= anchoEn(pts, Math.max(...pts.map((q) => q[1]))))!;
+
+  /**
+   * Los dos extremos que suben al tablero, leidos del contorno.
+   *
+   * Cada pata remata en DOS espigas, no en una: la de un extremo es maciza y
+   * la del otro viene partida al medio por una ranura de 30. En la esquina se
+   * cruzan la maciza de una pata y la ranurada de su vecina, y ese cruce es la
+   * cruceta que cae dentro de la mortaja en cruz del tablero. Por eso la cruz
+   * tiene dos brazos y cada pata ocupa uno.
+   *
+   * Se miden del dibujo y no se fijan a mano: las cuatro patas del nesting son
+   * la misma pieza, pero dos vienen volteadas, y entonces la espiga maciza cae
+   * en u = 85 o en u = 1036.5 segun cual toque.
+   */
+  const tramosArriba = (() => {
+    const segs: [number, number][] = [];
+    for (let i = 0; i < canonica.length; i++) {
+      const a = canonica[i];
+      const b = canonica[(i + 1) % canonica.length];
+      if (Math.abs(a[1]) < 1.5 && Math.abs(b[1]) < 1.5) {
+        segs.push([Math.min(a[0], b[0]), Math.max(a[0], b[0])]);
+      }
+    }
+    segs.sort((x, y) => x[0] - y[0]);
+    const runs: [number, number][] = [];
+    for (const s of segs) {
+      const u = runs[runs.length - 1];
+      if (u && s[0] <= u[1] + 1) u[1] = Math.max(u[1], s[1]);
+      else runs.push([...s] as [number, number]);
+    }
+    return runs;
+  })();
+
+  const largo = (s: [number, number]) => s[1] - s[0];
+  const maciza = tramosArriba.find((s) => Math.abs(largo(s) - 89) < 3);
+  const orejas = tramosArriba.filter((s) => Math.abs(largo(s) - 29.5) < 3);
+  if (!maciza || orejas.length !== 2) {
+    throw new Error(`no reconoci las espigas: tramos ${tramosArriba.map(largo).map((n) => n.toFixed(1)).join(", ")}`);
+  }
+  const uMaciza = (maciza[0] + maciza[1]) / 2;
+  const uRanurada = (orejas[0][0] + orejas[1][1]) / 2;
+  const paso = uRanurada - uMaciza;
+  if (Math.abs(Math.abs(paso) - MESA.cuadrado) > 2) {
+    throw new Error(`espiga a espiga ${paso.toFixed(1)}, el plano dice ${MESA.cuadrado}`);
+  }
 
   const anchoPanel = panel.bbox.x1 - panel.bbox.x0;
   const profPanel = panel.bbox.y1 - panel.bbox.y0;
@@ -208,13 +246,16 @@ function armarMesa(piezas: ContornoCnc[]): Salida {
     },
   ];
 
+  // u avanza de la espiga maciza hacia la ranurada, que es de una esquina a la
+  // siguiente. Si el dibujo las trae al reves, se recorre u en sentido opuesto.
+  const sgn = Math.sign(paso);
   esquinas.forEach(([ex, ey], k) => {
-    const [dx, dy] = dirs[k];
+    const [dx, dy] = dirs[k].map((c) => c * sgn) as [number, number];
     instancias.push({
       pieza: 1,
-      // Imagen del (0,0) del dibujo: desde la espiga se retrocede su cota
-      // sobre el eje largo, y v crece hacia abajo desde el canto de arriba.
-      o: [r(ex - dx * MESA.espiga), r(ey - dy * MESA.espiga), MESA.alto],
+      // Imagen del (0,0) del dibujo: desde la espiga maciza se retrocede su
+      // cota, y v crece hacia abajo desde el canto de arriba.
+      o: [r(ex - dx * uMaciza), r(ey - dy * uMaciza), MESA.alto],
       u: [dx, dy, 0],
       v: [0, 0, -1],
       w: [-dy, dx, 0],
@@ -234,7 +275,17 @@ function armarMesa(piezas: ContornoCnc[]): Salida {
 
   // Comprobaciones finales del plano, sobre el armado ya colocado. Si alguna
   // no cierra es que el DXF cambio y este armado dejo de describirlo.
-  const espigas = instancias.slice(1).map((i) => [i.o[0] + i.u[0] * MESA.espiga, i.o[1] + i.u[1] * MESA.espiga]);
+  const enU = (i: Salida["instancias"][0], u: number) => [i.o[0] + i.u[0] * u, i.o[1] + i.u[1] * u];
+  const espigas = instancias.slice(1).map((i) => enU(i, uMaciza));
+  // La ranurada de cada pata tiene que caer sobre la maciza de la vecina: ese
+  // encuentro es la cruceta, y es justo lo que faltaba comprobar.
+  instancias.slice(1).forEach((i, k) => {
+    const ran = enU(i, uRanurada);
+    const vec = espigas[(k + 1) % 4];
+    const d = Math.hypot(ran[0] - vec[0], ran[1] - vec[1]);
+    if (d > 2) throw new Error(`la espiga ranurada de la pata ${k + 1} cae a ${d.toFixed(1)} mm de la maciza de su vecina`);
+  });
+  console.log(`   ok cruceta: las cuatro ranuradas caen sobre la maciza vecina`);
   const lado = Math.hypot(espigas[0][0] - espigas[1][0], espigas[0][1] - espigas[1][1]);
   const diag = Math.hypot(espigas[0][0] - espigas[2][0], espigas[0][1] - espigas[2][1]);
   const revisa = (que: string, val: number, esperado: number, tol: number) => {
