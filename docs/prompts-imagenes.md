@@ -30,32 +30,88 @@ salga en la foto es lo que el taller corta.
 
 Va **al final** de cada prompt de locación. No repetirlo en los de estudio.
 
-```
-LIGHT — Overcast dawn, tropical. Heavy grey cloud cover with a single break
-where diffuse crepuscular rays fan downward. No hard direct sun, no visible
-sun disc. Cool blue-grey palette, silver highlights on water and wet surfaces,
-open shadows with detail. Soft, humid, still atmosphere. High dynamic range,
-gentle contrast. Golden hour warmth is WRONG — this is cold, quiet, dramatic.
+Está escrito contra el fallo real de la primera tanda: los modelos entregaron
+un paisaje con un mueble diminuto adentro, porque eso fue lo que se les pidió.
+Un catálogo de muebles recorta el paisaje sin piedad — mira cualquier ficha de
+Vondom, Gandia Blasco o Tribù: el mueble llena el cuadro y el entorno queda
+desenfocado y cortado.
 
-MATERIAL — Birch plywood, CNC cut, flat-pack. The panel FACES carry the
-finish. Every cut EDGE shows the raw laminated plywood core: a warm tan
-striped band, clearly visible against the face colour. This edge line must
-read on every single part — it is the signature of the product.
+```
+FRAMING — This is a FURNITURE CATALOGUE photograph, not a landscape. The
+PIECE is the subject and must fill roughly 60% of the frame. The location is
+context, not content: it is allowed to be cropped, thrown out of focus, and
+to run out of frame. Do not centre the horizon. Do not show the whole vista.
+Do not shrink the piece to fit the scenery in — crop the scenery instead.
+
+CAMERA — 85 mm lens on full frame. Camera 90 cm above the ground, about
+2.5 m from the piece, tilted very slightly down. Telephoto compression: the
+background reads flattened and pushed close. Aperture f/2.8 — the piece is
+razor sharp front to back, the background dissolves into soft shapes, the far
+horizon is a gentle blur. No wide angle, no fisheye, no deep focus.
+
+COMPOSITION — Place the piece off-centre, on a third. Horizon high in the
+frame or hidden behind the piece, never cutting through the middle. Leave the
+foreground ground plane open and textured — it is the stage the piece stands
+on.
+
+LIGHT — Overcast dawn, tropical. Heavy grey cloud with a single break where
+diffuse rays fan down. No hard sun, no visible sun disc. Cool blue-grey
+palette, silver on water and wet stone, open shadows with detail. Soft,
+humid, still. Golden hour warmth is WRONG — this is cold, quiet, dramatic.
+
+INTEGRATION — The piece is physically present in the scene, not pasted on
+top. It must show ALL of this:
+· a dark contact shadow where each foot meets the ground — tight and dark at
+  the point of contact, softening outward
+· ambient occlusion in every inside corner, under the top, between parts
+· the ground's own colour bouncing up onto the underside of the piece
+· the SAME light direction as the background. If the sky behind is bright,
+  the piece is in relative shade with a bright rim along its upper edges —
+  never lit flatly from the camera
+· if the ground is wet or polished, a soft vertical reflection of the piece
+  in it
+· the same atmospheric haze, grain and colour cast as the background
+
+MATERIAL — Birch plywood, CNC cut. The panel FACES carry the finish. Every
+cut EDGE shows the raw laminated core: a warm tan striped band, clearly
+visible against the face colour, on every single part. Surface is real, not
+CG: faint mill marks, slightly soft arrises, a little dust in the corners.
 
 NON-NEGOTIABLE — Reproduce the object in IMAGE 1 exactly: same number of
 parts, same proportions, same joints, same angles. Do not restyle it, do not
-add or remove parts, do not soften or round anything, do not add upholstery,
-cushions, hardware or visible screws. Keep the location in IMAGE 2 as it is:
-same architecture, same ground, same vegetation, same horizon. Only add the
-furniture and relight the scene.
+add or remove parts, do not add cushions or hardware.
 
-OUTPUT — Photographic realism. Full-frame camera look, natural perspective,
-no fisheye. The piece rests on the ground with a soft contact shadow that
-matches the overcast light. No text, no watermark, no logos, no people unless
-the prompt asks for them.
+OUTPUT — Photographic realism, full-frame camera look. Natural perspective.
+No text, no watermark, no logos.
 ```
 
 ---
+
+## 1b. Cómo trabajarlo
+
+**Dos pasadas.** Los dos modelos corrigen mejor de lo que crean. Pasada 1:
+sacar la escena con la geometría correcta, aunque quede plana. Pasada 2:
+volver a meter ese resultado como referencia con sólo esto:
+
+```
+Keep the composition and the object exactly as they are. Only fix the
+integration: add the contact shadow under each foot, ambient occlusion in the
+inside corners, bounce light from the ground onto the underside, rim light on
+the top edges from the bright sky, and a soft reflection in the wet floor.
+Throw the background further out of focus. The object must look photographed
+in place, not composited.
+```
+
+**Si la locación pelea.** Las fotos de locación son vistas amplias tomadas de
+lejos: no tienen primer plano que sostenga un teleobjetivo a 2.5 m. Cuando el
+modelo insista en alejar el mueble, dejar de componer sobre la foto y usarla
+sólo como referencia de estilo:
+
+```
+Use IMAGE 2 only as a reference for the PLACE and the LIGHT — the palette,
+the vegetation, the water, the weather, the tiled terrace. Do not copy its
+framing. Build a new, closer view of that same place around the piece.
+```
 
 ## 2. Portada
 
@@ -64,21 +120,32 @@ the prompt asks for them.
 Referencias: render de la mesa + foto de la laguna al amanecer.
 
 ```
-IMAGE 1 = a CNC-cut birch plywood square table. IMAGE 2 = a terrace
-overlooking a lagoon at dawn.
+IMAGE 1 = a CNC-cut birch plywood square table. IMAGE 2 = a tiled terrace
+overlooking a lagoon at dawn — use it for the PLACE and the LIGHT.
 
-Place the table from IMAGE 1 on the terrace of IMAGE 2, in the lower left
-third, seen from a standing height of about 1.6 m, three-quarter view. The
-table is 116 × 116 cm and 73 cm tall — keep that scale honest against the
-railing and the vegetation. The lagoon, the cloud break and the rays stay as
-the background and fill the upper two thirds. Wet terrace floor reflecting
-the sky. Finish: natural birch, warm pale wood.
+Photograph the table from IMAGE 1 close up on that wet tiled terrace, seen
+from the front-left at three-quarters, the camera low and near. The table
+fills the left two thirds of the frame and its left edge runs OUT of the
+frame — do not fit the whole table in. Its top edge sits above the horizon
+line, so the table reads against water and sky, not against the floor. The
+lagoon and the cloud break are a soft, out-of-focus band across the top
+quarter only. A single ceramic cup on the table, nothing else.
 
-Wide horizontal framing, 2:1. 35 mm lens, everything sharp from the table to
-the far shore.
+The table is 116 × 116 cm and 73 cm tall — the camera is below its top, so we
+see the underside of the overhang and the crossing of the legs.
+
+Finish: natural birch, warm pale wood, cool grey light on it.
+
+Wide 2:1 crop.
 
 [BLOQUE BASE]
 ```
+
+> Lo que cambió respecto al primer intento: la mesa pasa de ~12 % a ~60 % del
+> cuadro y se sale por un lado, la cámara baja de 1.6 m a 90 cm, el lente sube
+> de 35 a 85 mm, el fondo pasa de nítido a desenfocado, y la laguna deja de
+> ocupar dos tercios para quedarse en un cuarto. La foto es de la mesa, no del
+> lago.
 
 ### `brk-vp-1` · 3:2 apaisado · macro de unión
 
