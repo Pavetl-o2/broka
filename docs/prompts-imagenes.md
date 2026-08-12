@@ -122,6 +122,48 @@ the vegetation, the water, the weather, the tiled terrace. Do not copy its
 framing. Build a new, closer view of that same place around the piece.
 ```
 
+---
+
+## 1c. Bloque base de estudio
+
+Para **todos los close-ups** y las tomas de ficha. El taller no funciona de
+cerca: el banco astillado, el aserrín y la madera vieja compiten con el canto
+del triplay, que es justo lo único que hay que mirar. De cerca la toma es de
+producto — fondo blanco de estudio, luz envolvente, y la franja rayada del
+corazón como único color de la foto.
+
+```
+BACKGROUND — Pure white seamless studio sweep. No horizon line, no visible
+surface, no workshop, no bench, no floor texture, no props. The background
+reads as clean white (240-255) and dissolves behind the subject.
+
+LIGHT — One very large soft source high and slightly behind the piece, plus
+a white bounce from the front. Wraparound light, almost shadowless: only a
+faint cool-grey contact shadow and a soft gradient on the shaded face. No
+hard shadow, no visible light shape, no colour cast.
+
+SUBJECT — Fill the frame with the joint. It runs edge to edge and is cropped
+by the frame; there is no room around it. The camera is a hand's width away.
+
+CAMERA — 100 mm macro at 25-35 cm, f/4. Focus on the joint line itself; the
+rest of the piece falls off into soft white within a few centimetres.
+
+MATERIAL — Brand-new birch plywood, clean and unhandled. Faces carry the
+finish; every cut edge shows the laminated core as a striped tan band, seven
+to nine plies, with the tiny occasional void of real birch ply. Router-cut
+edges: crisp, with the small radius the bit leaves. No dust, no sawdust, no
+fingerprints, no wear, no tools, no hands.
+
+COLOUR — The striped core is the only warm, saturated thing in the frame.
+Everything else is white, off-white or cool grey.
+
+OUTPUT — Photographic realism, full-frame camera look. No text, no
+watermark, no logos.
+```
+
+**La regla que ordena todo esto:** de lejos manda la locación, de cerca manda
+el material. En cuanto la toma es macro, fuera el taller.
+
 ## 2. Portada
 
 ### `brk-hero` · 2:1 apaisado · Mesa LLANO, abedul natural
@@ -158,24 +200,51 @@ Wide 2:1 crop.
 
 ### `brk-vp-1` · 3:2 apaisado · macro de unión
 
-Sin locación. Sólo el render de la silla o de la mesa, muy cerca.
+Sin locación: estudio. Referencia, sólo el render de la silla.
+
+La unión real, medida en `armado-cnc.json`: la espiga del asiento sale 18 mm
+del hombro y el costado tiene 18 mm de espesor, así que **cruza el costado y
+queda enrasada con la cara de afuera**. No sobresale y **no hay cuña**. Lo que
+se ve desde fuera es un rectángulo de canto rayado, del tamaño de la espiga,
+metido a ras en la cara del costado, con la línea fina de la junta alrededor.
 
 ```
 IMAGE 1 = a CNC-cut birch plywood chair.
 
-Extreme close-up of the joint where the through-tenon passes through the side
-panel and is locked by the wedge. Fill the frame with the joint: the tenon
-coming through, the wedge driven into it, the striped plywood edge of both
-parts. Shallow depth of field, sharp on the wedge, background falling off.
+Extreme close-up of a through-tenon joint on the chair from IMAGE 1, shot on
+a pure white studio sweep.
 
-Workshop context, barely readable: a plywood workbench, sawdust in the seams,
-cold north light from a high window. Overcast, no direct sun.
+THE JOINT — A 65 x 18 mm rectangular tenon passes right through an 18 mm
+plywood side panel and stops dead flush with its outer face. From this side
+you see: the flat finished face of the panel, and set into it a rectangle of
+striped plywood end-grain — the end of the tenon — sitting perfectly level
+with the surface, ringed by the hairline gap of the joint. Nothing sticks
+out. There is no wedge, no peg, no screw, no dowel, no visible hardware.
 
-Horizontal 3:2. 100 mm macro lens, f/4.
+FRAMING — The joint fills the frame and is cropped by it: the rectangle of
+striped end-grain sits just off centre, the panel runs edge to edge, and the
+board it locks recedes to one side and out of focus. Camera a hand's width
+away, angled about 20 degrees off the panel face so the flushness reads.
 
-Birch plywood. The cut edges show the laminated core as a striped tan band —
-this is the subject of the photograph. Reproduce the joint in IMAGE 1 exactly;
-do not invent a different joinery. No text, no watermark, no hands.
+BACKGROUND — Pure white seamless studio sweep, dissolving behind the piece.
+No workshop, no bench, no sawdust, no props, no floor.
+
+LIGHT — One very large soft source high and slightly behind, white bounce
+from the front. Wraparound and almost shadowless, just a faint cool-grey
+gradient and the thin shadow line inside the joint gap. No hard shadow, no
+colour cast.
+
+CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the tenon end-grain; the panel
+falls off into soft white.
+
+MATERIAL — Brand-new birch plywood, clean and unhandled. Faces matte natural
+birch; every cut edge shows the laminated core as a striped tan band, seven
+to nine plies. Crisp router-cut edges with the small radius the bit leaves.
+The striped core is the only warm colour in the frame.
+
+Reproduce the joint in IMAGE 1 exactly. Do not invent a different joinery, do
+not add a wedge, do not let the tenon protrude. No text, no watermark, no
+hands, no tools.
 ```
 
 ### `brk-vp-2` · 3:2 apaisado · la máquina cortando
@@ -200,18 +269,33 @@ Photographic realism. No text, no watermark, no people.
 
 ### `brk-vp-3` · 3:2 apaisado · cantos apilados
 
+Estudio. Sin referencia de mueble: es una foto de material.
+
 ```
-A tight stack of CNC-cut birch plywood parts seen end-on, so the camera looks
-straight into the laminated edges. Dozens of thin light and dark plies
-stacked into stripes, edges crisp from the router, slight fuzz of fibre. Some
-parts finished on the face in matte white, some in matte black, some raw —
-but every edge shows the same raw striped core.
+A tight stack of CNC-cut birch plywood parts seen end-on, on a pure white
+studio sweep, so the camera looks straight into the laminated edges.
 
-Cold overcast light, soft and directionless. Blue-grey shadows, warm tan wood.
+SUBJECT — The stack fills the frame and is cropped by it, left to right.
+Every visible edge is a band of seven to nine thin light and dark plies read
+as stripes, crisp from the router, with the occasional tiny core void. The
+faces of the boards are finished — some matte white, some matte black, some
+raw birch — but every edge shows the same raw striped core. The stripes run
+across the frame in near-parallel lines.
 
-Horizontal 3:2. 85 mm lens, f/5.6. The stripes run across the frame.
+BACKGROUND — Pure white seamless studio sweep above and behind the stack,
+dissolving to clean white at the edges of the frame. No workshop, no bench,
+no floor, no props.
 
-Photographic realism. No text, no watermark.
+LIGHT — Very large soft source high and slightly behind, white bounce from
+the front. Almost shadowless, only thin cool-grey shadow lines between
+boards. No hard shadow, no colour cast.
+
+CAMERA — 100 mm macro at 40 cm, f/5.6. Sharp on the front third of the
+stack, the rest falling off into soft white.
+
+The striped tan core is the only warm colour in the frame. Brand-new stock,
+clean and unhandled: no dust, no sawdust, no fingerprints, no tools, no
+hands. Photographic realism. No text, no watermark.
 ```
 
 ### `brk-life-1` · 3:4 vertical · Mesa LLANO en la terraza de la laguna
@@ -333,7 +417,8 @@ Referencia: sólo el render del mueble en el acabado que pida el prompt.
 IMAGE 1 = a CNC-cut birch plywood chair.
 
 Studio product photograph of the chair from IMAGE 1, three-quarter front
-view, camera at seat height. Seamless warm grey backdrop, no horizon line.
+view, camera at seat height. Pure white seamless studio sweep, no horizon
+line.
 Large soft light from the upper left, subtle fill from the right, soft
 gradient shadow under the chair. Finish: natural birch.
 
@@ -346,22 +431,39 @@ laminated core as a striped tan band. Reproduce the chair in IMAGE 1 exactly
 visible hardware. No text, no watermark.
 ```
 
-**1 · detalle de la cuña**
+**1 · detalle de la unión**
 ```
 IMAGE 1 = a CNC-cut birch plywood chair.
 
-Extreme close-up of the wedge locking the through-tenon on the side frame of
-the chair in IMAGE 1. The tenon emerges through the panel, the tapered wedge
-is driven through it. Fill the frame with those two parts. The striped
-plywood edges of tenon, wedge and panel are the subject.
+Extreme close-up of a through-tenon joint on the chair from IMAGE 1, shot on
+a pure white studio sweep.
 
-Workshop bench, cold overcast light from the side, dust in the crevices.
-Shallow depth of field, sharp on the wedge.
+THE JOINT — A 65 x 18 mm rectangular tenon passes right through an 18 mm
+plywood side panel and stops dead flush with its outer face: a rectangle of
+striped plywood end-grain set level into the finished face of the panel,
+ringed by the hairline gap of the joint. Nothing protrudes. No wedge, no peg,
+no screw, no dowel, no visible hardware.
 
-Square 1:1. 100 mm macro, f/4.
+FRAMING — Square 1:1. The joint fills the frame and is cropped by it, the
+rectangle of end-grain just off centre, the seat board receding out of focus
+to one side. Camera a hand's width away, about 20 degrees off the panel face
+so the flushness reads.
 
-Reproduce the joint exactly as in IMAGE 1. No hands, no tools in frame, no
-text, no watermark.
+BACKGROUND — Pure white seamless studio sweep, dissolving behind the piece.
+No workshop, no bench, no sawdust, no props.
+
+LIGHT — Very large soft source high and slightly behind, white bounce from
+the front. Wraparound, almost shadowless: a faint cool-grey gradient and the
+thin shadow line inside the joint gap. No hard shadow, no colour cast.
+
+CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the tenon end-grain.
+
+MATERIAL — Brand-new birch plywood, matte natural birch faces, every cut edge
+a striped tan band of seven to nine plies, crisp router-cut edges with the
+bit's small radius. The striped core is the only warm colour in the frame.
+
+Reproduce the joint in IMAGE 1 exactly: do not add a wedge, do not let the
+tenon protrude. No hands, no tools, no text, no watermark.
 ```
 
 **2 · lateral, taller**
@@ -388,7 +490,7 @@ IMAGE 1 = a CNC-cut birch plywood square table.
 
 Studio product photograph of the table from IMAGE 1, three-quarter view,
 camera slightly above the top so the four cross-shaped keys on the surface
-are legible. Seamless warm grey backdrop. Large soft light from the upper
+are legible. Pure white seamless studio sweep. Large soft light from the upper
 left, soft gradient shadow beneath. Finish: natural birch.
 
 Square 1:1, table centred with margin. 85 mm lens, f/8, sharp throughout.
@@ -402,18 +504,37 @@ frame, the four crosses in the top. No text, no watermark.
 ```
 IMAGE 1 = a CNC-cut birch plywood square table.
 
-Extreme close-up, from above and slightly to the side, of one corner of the
-table top where the cross-shaped mortise sits: the two tenons of the crossing
-legs come up through it and finish flush with the surface, forming a cross of
-end-grain plywood inside the square. Fill the frame with that corner.
+Extreme close-up of one of the four cross-shaped keys in the table top from
+IMAGE 1, shot on a pure white studio sweep.
 
-Workshop light, cold and overcast, raking across the top so the flushness
-reads. Shallow depth of field, sharp on the cross.
+THE JOINT — Two legs cross underneath and each sends a tenon up through the
+30 mm top; the two tenons interlock and stop dead flush with the surface,
+reading from above as a cross of striped plywood end-grain set level into the
+finished top, ringed by the hairline gap of the mortise. Nothing protrudes,
+nothing is glued proud. No screws, no plugs, no visible hardware.
 
-Square 1:1. 100 mm macro, f/5.6.
+FRAMING — Square 1:1, camera from above and about 30 degrees to the side so
+both the cross and the flatness of the top read at once. The cross fills the
+centre, the top surface runs out of frame on every side.
 
-Reproduce the joint exactly as in IMAGE 1: two tenons meeting in the cross,
-flush with the top. No text, no watermark.
+BACKGROUND — Pure white. The top itself is most of the frame; anything beyond
+its edge dissolves into clean white. No workshop, no bench, no props.
+
+LIGHT — Very large soft source high and slightly behind, white bounce from
+the front, plus a low raking component along the top so the flush surface and
+the joint gap read. Almost shadowless otherwise. No hard shadow, no colour
+cast.
+
+CAMERA — 100 mm macro at 35 cm, f/5.6. Sharp on the cross, the far edge of
+the top falling off.
+
+MATERIAL — Brand-new birch plywood, matte natural birch faces, the end-grain
+of the cross a striped tan band of plies. Crisp router-cut edges with the
+bit's radius and the small relief notches the cutter leaves in the inside
+corners of the mortise. The striped core is the only warm colour in frame.
+
+Reproduce the joint in IMAGE 1 exactly: two tenons meeting in a cross, flush
+with the top. No dust, no fingerprints, no text, no watermark.
 ```
 
 **2 · la pata, taller**
@@ -442,7 +563,8 @@ IMAGE 1 = a tall CNC-cut birch plywood shelving unit.
 
 Studio product photograph of the unit from IMAGE 1, straight-on front
 elevation, camera at mid height, no perspective distortion, so the grid of
-shelves and vertical fins reads flat and even. Seamless warm grey backdrop,
+shelves and vertical fins reads flat and even. Pure white seamless studio
+sweep,
 soft shadow at the feet. Empty shelves. Finish: natural birch.
 
 Square 1:1, the unit centred and fully in frame with margin above and below.
@@ -458,17 +580,35 @@ watermark.
 ```
 IMAGE 1 = a tall CNC-cut birch plywood shelving unit.
 
-Extreme close-up of one crossing where a vertical fin meets a shelf: the
-half-lap slot, the two boards interlocking, the striped plywood edges of both
-meeting at ninety degrees. Fill the frame with that intersection.
+Extreme close-up of one crossing where a vertical fin meets a shelf in the
+unit from IMAGE 1, shot on a pure white studio sweep.
 
-Workshop light, cold overcast, raking from the left so the shadow line in the
-slot reads. Shallow depth of field.
+THE JOINT — A 12 mm shelf running horizontally and a 12 mm vertical fin
+meeting at ninety degrees, their two striped plywood edges crossing in the
+middle of the frame in a clean T, with the hairline joint line between them.
+No screws, no brackets, no dowels, no visible hardware of any kind.
 
-Square 1:1. 100 mm macro, f/4.
+FRAMING — Square 1:1. The crossing fills the frame and is cropped by it; both
+boards run out of the frame. Camera a hand's width away, slightly off axis so
+the 12 mm thickness of both boards reads as a striped band.
 
-Reproduce the joint exactly as in IMAGE 1 — a slotted half-lap, no screws, no
-brackets, no dowels. No text, no watermark.
+BACKGROUND — Pure white seamless studio sweep, dissolving behind the boards.
+No workshop, no bench, no books, no props.
+
+LIGHT — Very large soft source high and slightly behind, white bounce from
+the front. Almost shadowless, with just enough direction that a thin cool-grey
+shadow line marks where the shelf meets the fin. No hard shadow, no colour
+cast.
+
+CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the crossing, both boards
+falling off into soft white as they recede.
+
+MATERIAL — Brand-new birch plywood, matte natural birch faces, every cut edge
+a striped tan band, crisp router-cut edges with the bit's small radius. The
+striped core is the only warm colour in frame.
+
+Reproduce the crossing in IMAGE 1 exactly. No dust, no fingerprints, no
+hands, no text, no watermark.
 ```
 
 **2 · tres cuartos, taller**
@@ -496,7 +636,8 @@ seat.
 Studio product photograph of the bench from IMAGE 1 in pure side elevation,
 camera level with the seat, no perspective distortion, so the curve of the
 top edge — high at both ends, dipping at the centre — reads as a clean
-silhouette. Seamless warm grey backdrop, soft shadow beneath. Finish: natural
+silhouette. Pure white seamless studio sweep, soft shadow beneath. Finish:
+natural
 birch.
 
 Square 1:1, bench centred, its full length in frame. 85 mm lens, f/8.
@@ -510,18 +651,35 @@ no watermark.
 ```
 IMAGE 1 = a long CNC-cut birch plywood slatted bench.
 
-Extreme close-up along the bench from IMAGE 1, camera almost at the level of
-the seat and looking down the row of ribs, so they recede into the frame as a
-comb of parallel plates with even gaps between them, and the two spines
-threading through them are visible in the shadow underneath.
+Extreme close-up along the bench from IMAGE 1, shot on a pure white studio
+sweep.
 
-Workshop light, cold overcast, raking along the ribs so each one casts a thin
-shadow on the next. Sharp on the third or fourth rib, the rest falling off.
+SUBJECT — Camera almost at the level of the seat, looking down the row of
+ribs so they recede into the frame as a comb of parallel plates with even
+gaps between them. Every rib is a different width — they taper from wide at
+the centre of the bench to narrow at the ends — and the two long spines
+threading through them are visible in the gaps underneath. The top edge of
+each rib is the striped plywood core.
 
-Square 1:1. 85 mm lens, f/2.8.
+FRAMING — Square 1:1. The comb fills the frame and is cropped by it; no rib
+is fully contained.
 
-Reproduce the rib spacing and the two spines exactly as in IMAGE 1. No text,
-no watermark.
+BACKGROUND — Pure white seamless studio sweep. Beyond the last rib in focus
+everything dissolves to clean white. No workshop, no floor, no props.
+
+LIGHT — Very large soft source high and slightly behind, white bounce from
+the front, with just enough direction that each rib lays a thin cool-grey
+shadow on the next. No hard shadow, no colour cast.
+
+CAMERA — 100 mm macro at 35 cm, f/2.8. Sharp on the third or fourth rib, the
+rest falling off fast into soft white.
+
+MATERIAL — Brand-new birch plywood, matte natural birch faces, every cut edge
+a striped tan band, crisp router-cut edges. The striped core is the only warm
+colour in frame.
+
+Reproduce the rib spacing, the varying rib widths and the two spines exactly
+as in IMAGE 1. No dust, no fingerprints, no text, no watermark.
 ```
 
 **2 · tres cuartos, taller**
