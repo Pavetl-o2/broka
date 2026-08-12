@@ -85,6 +85,15 @@ OUTPUT — Photographic realism, full-frame camera look. Natural perspective.
 No text, no watermark, no logos.
 ```
 
+**Resolución.** 2K para todo, menos el hero, que va en 4K. `next/image` sirve
+variantes recortadas a la pantalla de cada visitante, así que el peso del
+original es problema del repo, no del que navega: el mayor `deviceSize` que
+Next genera es 3840 px y ningún hueco salvo el hero lo pide. Con pantalla 2×:
+el hero llega a 3840, la galería de producto a ~2300, las viñetas a ~1290 y
+las lifestyle a ~800 (se pintan a 400 px CSS). Si el 4K sale al mismo costo,
+pedirlo y bajarlo al recibirlo — el hero pasó de 5824×2880 / 6.6 MB a
+3840×1899 / 0.38 MB sin pérdida visible. Lo que no sirve es subir el 4K crudo.
+
 ---
 
 ## 1b. Cómo trabajarlo
