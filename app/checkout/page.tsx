@@ -193,7 +193,7 @@ function CheckoutInner() {
                 <div className="min-w-0 flex-1">
                   <p className="text-[13.5px]">{i.n}</p>
                   <p className="mt-[3px] text-[11px] leading-[1.5] text-n53">
-                    {i.finishName} · {i.sizeName} · {i.dimsLabel}
+                    {i.finishName} · {i.dimsLabel}
                     {i.qty > 1 ? ` · ×${i.qty}` : ''}
                   </p>
                 </div>

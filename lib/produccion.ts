@@ -14,15 +14,12 @@ export async function abrirOrdenDeProduccion(pedido: string, lineas: LineaPedido
   const adjuntos = lineas.flatMap((l) => {
     const p = getProduct(l.id);
     if (!p) return [];
-    const size = p.sizes.find((s) => s.id === l.size);
-    if (!size) return [];
-
-    const etiqueta = `${pedido} · ${p.nameES} · ${size.nameES} · ${l.finish}`;
+    const etiqueta = `${pedido} · ${p.nameES} · ${l.finish}`;
     return [
       {
-        filename: `${pedido}-${p.id}-${size.id}.dxf`,
+        filename: `${pedido}-${p.id}.dxf`,
         content: Buffer.from(
-          despieceDXF(p.type, { w: size.w, d: size.d, h: size.h }, etiqueta),
+          despieceDXF(p.type, etiqueta),
           'utf8',
         ).toString('base64'),
         piezas: `${p.nameES} × ${l.qty}`,

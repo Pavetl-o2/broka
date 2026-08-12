@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { Component, type ReactNode } from 'react';
-import type { Dims, MuebleType } from '@/lib/types';
+import type { MuebleType } from '@/lib/types';
 
 function Cargando() {
   return (
@@ -40,7 +40,6 @@ class SiFalla extends Component<{ onFail: () => void; children: ReactNode }, { f
 
 export function Lienzo({
   type,
-  dims,
   color,
   rotate,
   explode,
@@ -49,7 +48,6 @@ export function Lienzo({
   onFail,
 }: {
   type: MuebleType;
-  dims: Dims;
   color: string;
   rotate: boolean;
   explode: boolean;
@@ -61,7 +59,6 @@ export function Lienzo({
     <SiFalla onFail={onFail}>
       <Visor
         type={type}
-        dims={dims}
         color={color}
         rotate={rotate}
         explode={explode}

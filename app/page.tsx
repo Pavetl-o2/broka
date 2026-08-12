@@ -59,8 +59,8 @@ const LIFESTYLE = [
 const PASOS = [
   {
     no: '01',
-    t: 'Modelo paramétrico',
-    b: 'Eliges talla y acabado, o defines tu medida especial. El modelo se regenera y con él el despiece.',
+    t: 'Modelo del archivo de corte',
+    b: 'Cada mueble sale de un archivo de corte probado en taller. Eliges el acabado y ves el despiece real, pieza por pieza.',
   },
   {
     no: '02',
@@ -84,7 +84,7 @@ export default function HomePage() {
     <main>
       <section className="px-[clamp(16px,4vw,52px)] pt-[clamp(46px,7vw,110px)] pb-[clamp(34px,4.4vw,64px)]">
         <h1 className="max-w-[13ch] text-[clamp(38px,8.6vw,142px)] leading-[0.9] font-normal tracking-[-0.045em] text-balance">
-          Mobiliario cortado a la medida del milímetro
+          Mobiliario cortado al milímetro
         </h1>
         <div className="mt-[clamp(30px,4vw,58px)] grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-[clamp(18px,3vw,48px)] border-t border-ink pt-5">
           <p className="text-[10px] tracking-[0.16em] uppercase">
@@ -155,7 +155,7 @@ export default function HomePage() {
             Colección
           </h2>
           <Link href="/catalogo" className="text-[10px] tracking-[0.16em] uppercase">
-            Seis piezas · configuraciones infinitas
+            Cuatro piezas · cuatro acabados
           </Link>
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[clamp(20px,2.4vw,38px)]">

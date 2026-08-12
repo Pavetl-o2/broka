@@ -53,7 +53,7 @@ export function CartDrawer() {
                   <div className="min-w-0 flex-1">
                     <p className="text-[19px]">{i.n}</p>
                     <p className="mt-1 text-[11px] leading-[1.5] text-n53">
-                      {i.finishName} · {i.sizeName} · {i.dimsLabel}
+                      {i.finishName} · {i.dimsLabel}
                     </p>
                     <div className="mt-[10px] flex items-center gap-[14px]">
                       <div className="flex items-center border border-ink">

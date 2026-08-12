@@ -8,7 +8,7 @@ import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { Mueble } from '@/components/visor/mueble';
 import { bounds, camDistance, CAM_DIR } from '@/lib/parametric/geometria';
 import { armados } from '@/lib/parametric/armados';
-import type { Dims, MuebleType } from '@/lib/types';
+import type { MuebleType } from '@/lib/types';
 
 const FOV = 32;
 
@@ -19,13 +19,11 @@ const FOV = 32;
  */
 function Encuadre({
   type,
-  dims,
   explode,
   recentrar,
   controls,
 }: {
   type: MuebleType;
-  dims: Dims;
   explode: boolean;
   recentrar: number;
   controls: React.RefObject<OrbitControlsImpl | null>;
@@ -35,8 +33,8 @@ function Encuadre({
   const primero = useRef(true);
 
   const esfera = useMemo(
-    () => bounds(armados(type, dims.w, dims.d, dims.h), explode),
-    [type, dims.w, dims.d, dims.h, explode],
+    () => bounds(armados(type), explode),
+    [type, explode],
   );
 
   useEffect(() => {
@@ -70,7 +68,6 @@ function Encuadre({
 
 export default function Visor({
   type,
-  dims,
   color,
   rotate,
   explode,
@@ -78,7 +75,6 @@ export default function Visor({
   recentrar,
 }: {
   type: MuebleType;
-  dims: Dims;
   color: string;
   rotate: boolean;
   explode: boolean;
@@ -131,7 +127,7 @@ export default function Visor({
         />
       )}
 
-      <Mueble type={type} dims={dims} color={color} explode={explode} />
+      <Mueble type={type} color={color} explode={explode} />
 
       <OrbitControls
         ref={controls}
@@ -144,7 +140,6 @@ export default function Visor({
       />
       <Encuadre
         type={type}
-        dims={dims}
         explode={explode}
         recentrar={recentrar}
         controls={controls}

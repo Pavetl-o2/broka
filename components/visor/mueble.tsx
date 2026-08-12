@@ -5,7 +5,8 @@ import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { armados } from '@/lib/parametric/armados';
 import { center3, ejeEspesor, espesor, explodeDir, faceDims, S } from '@/lib/parametric/geometria';
-import type { Dims, MuebleType, Part } from '@/lib/types';
+import { CANTO } from '@/lib/parametric/precio';
+import type { MuebleType, Part } from '@/lib/types';
 
 /** Veta procedural: da textura al tablero sin depender de archivos externos. */
 function useGrain() {
@@ -129,19 +130,17 @@ function rotacionDe(pt: Part): [number, number, number] {
 
 export function Mueble({
   type,
-  dims,
   color,
   explode,
 }: {
   type: MuebleType;
-  dims: Dims;
   color: string;
   explode: boolean;
 }) {
   const grain = useGrain();
   const group = useRef<THREE.Group>(null);
 
-  const parts = useMemo(() => armados(type, dims.w, dims.d, dims.h), [type, dims.w, dims.d, dims.h]);
+  const parts = useMemo(() => armados(type), [type]);
 
   const geometries = useMemo(() => parts.map(geometriaDe), [parts]);
   useEffect(() => () => geometries.forEach((g) => g.dispose()), [geometries]);
@@ -168,9 +167,11 @@ export function Mueble({
     [grain],
   );
 
+  // El acabado cubre la CARA; el canto queda con el corazón del triplay a la
+  // vista. Por eso no se deriva del color: es el material, no el acabado.
   useEffect(() => {
     face.color = new THREE.Color(color);
-    edge.color = new THREE.Color(color).lerp(new THREE.Color('#ffffff'), 0.28);
+    edge.color = new THREE.Color(CANTO);
   }, [color, face, edge]);
 
   useEffect(() => () => {

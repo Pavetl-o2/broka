@@ -8,40 +8,15 @@
     "panel": "abedul",
     "herraje": 180,
     "finishes": [
-      "roble",
-      "nogal",
+      "abedul",
       "blanco",
-      "grafito"
+      "negro",
+      "azul"
     ],
-    "sizes": [
-      {
-        "id": "450",
-        "nameES": "Estándar",
-        "w": 450,
-        "d": 719,
-        "h": 761
-      },
-      {
-        "id": "alta",
-        "nameES": "Alta, para barra",
-        "w": 460,
-        "d": 520,
-        "h": 1080
-      }
-    ],
-    "rango": {
-      "w": [
-        315,
-        720
-      ],
-      "d": [
-        503,
-        1150
-      ],
-      "h": [
-        646,
-        989
-      ]
+    "medida": {
+      "w": 450,
+      "d": 719,
+      "h": 761
     },
     "descriptionES": "Una silla de tres planos: dos costados ruteados que hacen de estructura y de pata, un asiento que entra a presión y un respaldo que curva apenas lo necesario. Sin tornillos a la vista.",
     "images": [
@@ -59,47 +34,15 @@
     "panel": "abedul",
     "herraje": 340,
     "finishes": [
-      "roble",
-      "nogal",
-      "encino",
-      "blanco"
+      "abedul",
+      "blanco",
+      "negro",
+      "azul"
     ],
-    "sizes": [
-      {
-        "id": "116",
-        "nameES": "Cuadrada, cuatro personas",
-        "w": 1160,
-        "d": 1161,
-        "h": 730
-      },
-      {
-        "id": "200",
-        "nameES": "Ocho personas",
-        "w": 2000,
-        "d": 950,
-        "h": 750
-      },
-      {
-        "id": "240",
-        "nameES": "Diez personas",
-        "w": 2400,
-        "d": 1000,
-        "h": 750
-      }
-    ],
-    "rango": {
-      "w": [
-        812,
-        2800
-      ],
-      "d": [
-        812,
-        1916
-      ],
-      "h": [
-        620,
-        1042
-      ]
+    "medida": {
+      "w": 1160,
+      "d": 1161,
+      "h": 730
     },
     "descriptionES": "La mesa de la casa. Dos caballetes ruteados con un arco que aligera el volumen, un travesaño que amarra la estructura y una cubierta de canto vivo. Se arma en veinte minutos y se desarma igual.",
     "images": [
@@ -117,47 +60,15 @@
     "panel": "abedul",
     "herraje": 260,
     "finishes": [
-      "roble",
       "abedul",
       "blanco",
-      "grafito"
+      "negro",
+      "azul"
     ],
-    "sizes": [
-      {
-        "id": "110",
-        "nameES": "Estándar",
-        "w": 1100,
-        "d": 380,
-        "h": 1825
-      },
-      {
-        "id": "120",
-        "nameES": "Medio",
-        "w": 1200,
-        "d": 340,
-        "h": 1800
-      },
-      {
-        "id": "180",
-        "nameES": "Amplio",
-        "w": 1800,
-        "d": 340,
-        "h": 1800
-      }
-    ],
-    "rango": {
-      "w": [
-        600,
-        2000
-      ],
-      "d": [
-        280,
-        440
-      ],
-      "h": [
-        1200,
-        2400
-      ]
+    "medida": {
+      "w": 1100,
+      "d": 380,
+      "h": 1825
     },
     "descriptionES": "Costados pasantes y entrepaños que entran en caja. La retícula se calcula sola: al cambiar la altura, el librero reparte los entrepaños para que ningún claro se venza.",
     "images": [
@@ -175,147 +86,21 @@
     "panel": "abedul",
     "herraje": 140,
     "finishes": [
-      "roble",
-      "nogal",
-      "abedul"
+      "abedul",
+      "blanco",
+      "negro",
+      "azul"
     ],
-    "sizes": [
-      {
-        "id": "178",
-        "nameES": "Dos plazas",
-        "w": 1781,
-        "d": 604,
-        "h": 452
-      },
-      {
-        "id": "150",
-        "nameES": "Tres plazas",
-        "w": 1500,
-        "d": 360,
-        "h": 450
-      }
-    ],
-    "rango": {
-      "w": [
-        800,
-        2849
-      ],
-      "d": [
-        422,
-        966
-      ],
-      "h": [
-        384,
-        587
-      ]
+    "medida": {
+      "w": 1781,
+      "d": 604,
+      "h": 452
     },
     "descriptionES": "Un asiento largo para la entrada, el pie de cama o la mesa. Mismo caballete que la Mesa LLANO, a la mitad de altura, para que las piezas de la casa se lean como familia.",
     "images": [
       "Banco TRAMO · fondo neutro, lateral",
       "Banco TRAMO · detalle de canto",
       "Banco TRAMO · en tres cuartos"
-    ]
-  },
-  {
-    "id": "vertiente",
-    "type": "escritorio",
-    "nameES": "Escritorio VERTIENTE",
-    "category": "Escritorios",
-    "materialES": "MDF de fibra fina",
-    "panel": "mdf",
-    "herraje": 420,
-    "finishes": [
-      "roble",
-      "encino",
-      "blanco",
-      "grafito"
-    ],
-    "sizes": [
-      {
-        "id": "140",
-        "nameES": "Compacto",
-        "w": 1400,
-        "d": 660,
-        "h": 750
-      },
-      {
-        "id": "170",
-        "nameES": "Amplio",
-        "w": 1700,
-        "d": 700,
-        "h": 750
-      }
-    ],
-    "rango": {
-      "w": [
-        1000,
-        2000
-      ],
-      "d": [
-        600,
-        800
-      ],
-      "h": [
-        720,
-        780
-      ]
-    },
-    "descriptionES": "Cubierta limpia, faldón que esconde el cableado y costados llenos que dan rigidez sin travesaño. Pensado para verse bien también por detrás, cuando el escritorio flota en la habitación.",
-    "images": [
-      "Escritorio VERTIENTE · fondo neutro, tres cuartos",
-      "Escritorio VERTIENTE · detalle de faldón",
-      "Escritorio VERTIENTE · vista posterior"
-    ]
-  },
-  {
-    "id": "nudo",
-    "type": "buro",
-    "nameES": "Buró NUDO",
-    "category": "Casegoods",
-    "materialES": "MDF de fibra fina",
-    "panel": "mdf",
-    "herraje": 520,
-    "finishes": [
-      "nogal",
-      "abedul",
-      "blanco",
-      "grafito"
-    ],
-    "sizes": [
-      {
-        "id": "std",
-        "nameES": "Estándar",
-        "w": 450,
-        "d": 400,
-        "h": 520
-      },
-      {
-        "id": "alto",
-        "nameES": "Alto",
-        "w": 550,
-        "d": 420,
-        "h": 620
-      }
-    ],
-    "rango": {
-      "w": [
-        380,
-        700
-      ],
-      "d": [
-        350,
-        480
-      ],
-      "h": [
-        440,
-        760
-      ]
-    },
-    "descriptionES": "Caja cerrada con un entrepaño y un cajón de tirador ruteado en el propio frente. La unión de caja va a la vista en las esquinas: es el detalle que delata que salió de una máquina y no de una línea de montaje.",
-    "images": [
-      "Buró NUDO · fondo neutro, tres cuartos",
-      "Buró NUDO · cajón abierto",
-      "Buró NUDO · detalle de esquina"
     ]
   }
 ]

@@ -23,13 +23,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Broka · Mobiliario CNC a la medida',
+    default: 'Broka · Mobiliario CNC en abedul',
     template: '%s · Broka',
   },
   description:
-    'Broka — mobiliario CNC a la medida. Panel de ingeniería ruteado a 0.1 mm. Configura medida y acabado en 3D.',
+    'Broka — mobiliario CNC en contrachapado de abedul. Panel de ingeniería ruteado a 0.1 mm. Elige acabado y ve el despiece real en 3D.',
   openGraph: {
-    title: 'Broka · Mobiliario CNC a la medida',
+    title: 'Broka · Mobiliario CNC en abedul',
     description:
       'Diseño paramétrico, corte de control numérico, entrega plana. Fabricado en Guadalajara, México.',
     locale: 'es_MX',

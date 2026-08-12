@@ -1,6 +1,6 @@
 import { armados } from '@/lib/parametric/armados';
 import { faceDims } from '@/lib/parametric/geometria';
-import type { Dims, MuebleType, Part, Punto2 } from '@/lib/types';
+import type { MuebleType, Part, Punto2 } from '@/lib/types';
 
 /** Hoja de tablero en mm. */
 const HOJA_W = 2440;
@@ -117,8 +117,8 @@ function texto(x: number, y: number, s: string): string {
  * Las hojas se emiten una junto a otra en X, separadas, para poder revisarlas
  * en un solo archivo.
  */
-export function despieceDXF(type: MuebleType, dims: Dims, etiqueta: string): string {
-  const parts = armados(type, dims.w, dims.d, dims.h);
+export function despieceDXF(type: MuebleType, etiqueta: string): string {
+  const parts = armados(type);
   const colocadas = anidar(parts);
 
   const cuerpo: string[] = [];

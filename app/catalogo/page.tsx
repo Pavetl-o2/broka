@@ -7,7 +7,7 @@ import { CATEGORIAS } from '@/lib/data/products';
 export const metadata: Metadata = {
   title: 'Catálogo',
   description:
-    'Seis piezas de mobiliario CNC, configurables en medida y acabado. Sillas, mesas, libreros, bancos, escritorios y casegoods.',
+    'Cuatro piezas de mobiliario CNC en contrachapado de abedul, en cuatro acabados. Sillas, mesas, libreros y bancos.',
 };
 
 const MATERIALES = ['Todo', 'Contrachapado de abedul', 'MDF de fibra fina'];

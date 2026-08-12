@@ -1,30 +1,19 @@
 export type PanelKey = 'abedul' | 'mdf';
 
-export type FinishKey = 'roble' | 'nogal' | 'encino' | 'abedul' | 'blanco' | 'grafito';
+export type FinishKey = 'abedul' | 'blanco' | 'negro' | 'azul';
 
-export type MuebleType = 'silla' | 'mesa' | 'librero' | 'banco' | 'escritorio' | 'buro';
+/**
+ * Muebles en catálogo. Uno por armado probado.
+ *
+ * Para sumar otro: se corre `scripts/armado-cnc.ts` con su DXF, se agrega la
+ * clave aquí y su entrada en `data/products.json`. Nada más. Un tipo sin
+ * armado no compila, que es justamente lo que se quiere.
+ */
+export type MuebleType = 'silla' | 'mesa' | 'librero' | 'banco';
 
-export type Categoria =
-  | 'Sillas'
-  | 'Mesas'
-  | 'Libreros'
-  | 'Bancos'
-  | 'Escritorios'
-  | 'Casegoods';
-
-export type Size = {
-  id: string;
-  nameES: string;
-  /** Milímetros. */
-  w: number;
-  d: number;
-  h: number;
-};
+export type Categoria = 'Sillas' | 'Mesas' | 'Libreros' | 'Bancos';
 
 export type Dims = { w: number; d: number; h: number };
-
-/** Límites de medida especial, en milímetros. */
-export type Rango = { w: [number, number]; d: [number, number]; h: [number, number] };
 
 export type Producto = {
   id: string;
@@ -38,8 +27,12 @@ export type Producto = {
   /** MXN fijos. */
   herraje: number;
   finishes: FinishKey[];
-  sizes: Size[];
-  rango: Rango;
+  /**
+   * La medida del mueble, en mm. Una sola y no negociable: es la del DXF con el
+   * que se cortó y se probó el armado. Cambiarla sin un DXF nuevo detrás daría
+   * un render y un precio que el taller no puede cumplir.
+   */
+  medida: Dims;
   descriptionES: string;
   /** Descripción de la foto que va en cada hueco de la galería. */
   images: string[];
@@ -128,15 +121,13 @@ export type CostBreakdown = {
 };
 
 export type CartLine = {
-  /** producto|acabado|talla — identidad de la línea. */
+  /** producto|acabado — identidad de la línea. */
   key: string;
   id: string;
   n: string;
   ph: string;
   finish: FinishKey;
-  sizeId: string;
   finishName: string;
-  sizeName: string;
   dimsLabel: string;
   /** Precio unitario sin IVA. El servidor lo recalcula antes de cobrar. */
   unit: number;

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ImageSlot } from '@/components/image-slot';
 import { numeroDe } from '@/lib/data/products';
 import { money } from '@/lib/format';
-import { desdeOf, FIN } from '@/lib/parametric/precio';
+import { precioDe, FIN } from '@/lib/parametric/precio';
 import type { Producto } from '@/lib/types';
 
 /** Ficha del Home: numerada, con tira de swatches rectangular y botón sólido. */
@@ -33,11 +33,11 @@ export function ProductCardHome({ p }: { p: Producto }) {
         <Link href={`/producto/${p.id}`}>{p.nameES}</Link>
       </h3>
       <p className="mt-1.5 text-[12px] leading-[1.5] text-n44">
-        Disponible en {p.sizes.length} medidas y {p.finishes.length} acabados
+        Medida única · {p.finishes.length} acabados
       </p>
 
       <div className="mt-auto flex items-baseline justify-between gap-3 pt-4">
-        <span className="text-[14px] tracking-[-0.01em]">Desde {money(desdeOf(p))}</span>
+        <span className="text-[14px] tracking-[-0.01em]">{money(precioDe(p))}</span>
         <span className="text-[10px] tracking-[0.12em] text-n52 uppercase">Sin IVA</span>
       </div>
 
@@ -74,11 +74,11 @@ export function ProductCardGrid({ p, children }: { p: Producto; children?: React
         <h3 className="text-[23px] font-normal">
           <Link href={`/producto/${p.id}`}>{p.nameES}</Link>
         </h3>
-        <span className="text-[12px] whitespace-nowrap text-n30">Desde {money(desdeOf(p))}</span>
+        <span className="text-[12px] whitespace-nowrap text-n30">{money(precioDe(p))}</span>
       </div>
 
       <p className="mt-[7px] text-[11px] tracking-[0.09em] text-n53 uppercase">
-        Disponible en {p.sizes.length} medidas y {p.finishes.length} acabados
+        Medida única · {p.finishes.length} acabados
       </p>
       <p className="mt-1 text-[10.5px] text-n60">{p.materialES} · sin IVA</p>
 

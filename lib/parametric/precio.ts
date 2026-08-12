@@ -32,27 +32,28 @@ export const ENVIO_GRATIS_DESDE = 10000;
 /** Costo de envío cuando el pedido no alcanza el mínimo. */
 export const ENVIO = 890;
 
+/**
+ * Acabados. `c` es el color de la CARA; el canto va aparte.
+ *
+ * El canto queda siempre a la vista con el corazón del triplay, que es lo que
+ * distingue una pieza cortada de una laminada: en el natural apenas se nota, y
+ * en los cubrientes es la línea que delata el material.
+ */
+export const CANTO = '#B98F5E';
+
 export const FIN: Record<FinishKey, { n: string; c: string; mult: number }> = {
-  roble: { n: 'Roble natural', c: '#C9A97A', mult: 1.0 },
-  nogal: { n: 'Nogal', c: '#6B4A32', mult: 1.18 },
-  encino: { n: 'Encino ahumado', c: '#8A7259', mult: 1.12 },
-  abedul: { n: 'Abedul crudo', c: '#DCC9A6', mult: 0.96 },
+  abedul: { n: 'Abedul natural', c: '#DCC9A6', mult: 1.0 },
   blanco: { n: 'Blanco mate', c: '#EDE9E1', mult: 1.06 },
-  grafito: { n: 'Negro grafito', c: '#2E2E2C', mult: 1.09 },
+  negro: { n: 'Negro mate', c: '#2E2E2C', mult: 1.09 },
+  azul: { n: 'Azul', c: '#2F4B6B', mult: 1.09 },
 };
 
 /**
- * Precio de una configuración concreta. Medidas en mm.
- * Devuelve también el desglose, que el configurador muestra en medida especial.
+ * Precio del mueble con un acabado. No toma medidas: cada mueble tiene una
+ * sola, la de su DXF, y el despiece sale de ahí.
  */
-export function cost(
-  prod: Producto,
-  W: number,
-  D: number,
-  H: number,
-  finishKey: FinishKey,
-): CostBreakdown {
-  const parts = armados(prod.type, W, D, H);
+export function cost(prod: Producto, finishKey: FinishKey): CostBreakdown {
+  const parts = armados(prod.type);
   let area = 0;
   let perim = 0;
   for (const p of parts) {
@@ -81,7 +82,7 @@ export function cost(
   };
 }
 
-/** Precio de la talla más chica con el primer acabado: el "Desde $X" del catálogo. */
-export function desdeOf(p: Producto): number {
-  return cost(p, p.sizes[0].w, p.sizes[0].d, p.sizes[0].h, p.finishes[0]).total;
+/** Precio con el primer acabado: el que se muestra en el catálogo. */
+export function precioDe(p: Producto): number {
+  return cost(p, p.finishes[0]).total;
 }

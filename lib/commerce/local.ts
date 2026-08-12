@@ -3,7 +3,7 @@ import 'server-only';
 import Stripe from 'stripe';
 import type { Cotizacion, DatosPedido, Filtros } from '@/lib/commerce';
 import { getProduct as findProduct, PRODUCTS } from '@/lib/data/products';
-import { cost, desdeOf, ENVIO, ENVIO_GRATIS_DESDE, IVA } from '@/lib/parametric/precio';
+import { cost, precioDe, ENVIO, ENVIO_GRATIS_DESDE, IVA } from '@/lib/parametric/precio';
 import type { CartLine, Producto } from '@/lib/types';
 
 /**
@@ -17,14 +17,14 @@ export async function listProducts(f: Filtros = {}): Promise<Producto[]> {
   if (f.material && f.material !== 'Todo') list = list.filter((x) => x.materialES === f.material);
   if (f.precio && f.precio !== 'Todo') {
     list = list.filter((x) => {
-      const v = desdeOf(x);
+      const v = precioDe(x);
       if (f.precio === 'Hasta $8,000') return v <= 8000;
       if (f.precio === '$8,000 – $16,000') return v > 8000 && v <= 16000;
       return v > 16000;
     });
   }
-  if (f.orden === 'Precio ascendente') list.sort((a, b) => desdeOf(a) - desdeOf(b));
-  if (f.orden === 'Precio descendente') list.sort((a, b) => desdeOf(b) - desdeOf(a));
+  if (f.orden === 'Precio ascendente') list.sort((a, b) => precioDe(a) - precioDe(b));
+  if (f.orden === 'Precio descendente') list.sort((a, b) => precioDe(b) - precioDe(a));
   return list;
 }
 
@@ -43,12 +43,10 @@ export async function quoteLines(lines: CartLine[]) {
   for (const l of lines) {
     const p = findProduct(l.id);
     if (!p) continue;
-    const size = p.sizes.find((s) => s.id === l.sizeId);
-    if (!size) continue;
     if (!p.finishes.includes(l.finish)) continue;
 
     const qty = Math.max(1, Math.min(99, Math.floor(l.qty)));
-    const unit = cost(p, size.w, size.d, size.h, l.finish).total;
+    const unit = cost(p, l.finish).total;
     validas.push({ ...l, n: p.nameES, unit, qty });
   }
 
@@ -81,7 +79,7 @@ export async function createCheckoutSession(
       unit_amount: l.unit * 100,
       product_data: {
         name: l.n,
-        description: `${l.finishName} · ${l.sizeName} · ${l.dimsLabel}`,
+        description: `${l.finishName} · ${l.dimsLabel}`,
       },
     },
   }));
@@ -116,7 +114,7 @@ export async function createCheckoutSession(
     // El webhook lee esto para generar el despiece y abrir la orden de producción.
     metadata: {
       despiece: JSON.stringify(
-        validas.map((l) => ({ id: l.id, finish: l.finish, size: l.sizeId, qty: l.qty })),
+        validas.map((l) => ({ id: l.id, finish: l.finish, qty: l.qty })),
       ),
       envio: `${datos.nombre} ${datos.apellidos} · ${datos.calle}, ${datos.colonia}, ${datos.cp} ${datos.ciudad}, ${datos.estado} · tel ${datos.telefono}`.slice(
         0,
@@ -144,7 +142,7 @@ export async function requestQuote(payload: Cotizacion) {
   ].join('\n');
 
   if (!apiKey || !destino) {
-    console.info('[cotización — medida especial]\n%s', cuerpo);
+    console.info('[cotización]\n%s', cuerpo);
     return;
   }
 

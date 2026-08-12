@@ -5,7 +5,7 @@ import { Configurador } from '@/components/configurador';
 import { ImageSlot } from '@/components/image-slot';
 import { getProduct, PRODUCTS } from '@/lib/data/products';
 import { money } from '@/lib/format';
-import { desdeOf } from '@/lib/parametric/precio';
+import { precioDe } from '@/lib/parametric/precio';
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ id: p.id }));
@@ -50,7 +50,7 @@ export default async function ProductoPage({ params }: { params: Promise<{ id: s
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'MXN',
-      lowPrice: desdeOf(p),
+      lowPrice: precioDe(p),
       availability: 'https://schema.org/PreOrder',
     },
   };
@@ -109,7 +109,7 @@ export default async function ProductoPage({ params }: { params: Promise<{ id: s
                   <Link href={`/producto/${r.id}`}>{r.nameES}</Link>
                 </h3>
                 <span className="text-[11.5px] whitespace-nowrap text-n45">
-                  Desde {money(desdeOf(r))}
+                  {money(precioDe(r))}
                 </span>
               </div>
             </article>
