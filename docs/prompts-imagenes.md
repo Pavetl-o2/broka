@@ -256,10 +256,13 @@ colour cast.
 CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the tenon end-grain; the panel
 falls off into soft white.
 
-FACES — All panel faces are matte blue laminate: a deep, desaturated slate
-blue, roughly #2F4B6B. Smooth and perfectly even — no wood grain showing
+FACES — All panel faces are matte navy laminate, very dark: midnight navy
+ink, much closer to black than to blue. The typical face reads #081C34, the
+planes turned away go down to #041830 and #000C1C, and only the one plane
+facing the light reaches #2C4868. Not slate blue, not petrol, not denim, not
+royal blue — dark navy. Smooth and perfectly even: no wood grain showing
 through, no stucco or orange-peel texture, no brush marks, a slight satin
-sheen only. The blue stops dead at the arris; no edge is ever painted blue.
+sheen only. The navy stops dead at the arris; no edge is ever painted.
 
 EDGES — Every exposed plywood edge in the frame is cut from the same sheet
 and must read that way: same ply count, same tone, same stripe rhythm — pale
@@ -491,10 +494,12 @@ thin shadow line inside the joint gap. No hard shadow, no colour cast.
 
 CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the tenon end-grain.
 
-FACES — All panel faces are matte black laminate. Smooth and
-perfectly even — no wood grain showing through, no stucco or orange-peel
-texture, no brush marks, a slight satin sheen only. The face colour stops
-dead at the arris; no edge is ever painted.
+FACES — All panel faces are matte black laminate, very dark and nearly
+neutral: the typical face reads #080808, the planes turned away go to pure
+black, and only the plane facing the light reaches #2C2C2C. Not charcoal, not
+dark grey — black. Smooth and perfectly even: no wood grain showing through,
+no stucco or orange-peel texture, no brush marks, a slight satin sheen only.
+The black stops dead at the arris; no edge is ever painted.
 
 EDGES — Every exposed plywood edge in the frame is cut from the same
 sheet and must read that way: same ply count, same tone, same stripe
@@ -573,11 +578,13 @@ cast.
 CAMERA — 100 mm macro at 35 cm, f/5.6. Sharp on the cross, the far edge of
 the top falling off.
 
-FACES — All panel faces are matte blue laminate, a deep desaturated slate blue,
-roughly #2F4B6B. Smooth and
-perfectly even — no wood grain showing through, no stucco or orange-peel
-texture, no brush marks, a slight satin sheen only. The face colour stops
-dead at the arris; no edge is ever painted.
+FACES — All panel faces are matte navy laminate, very dark: midnight navy
+ink, much closer to black than to blue. The top reads #081C34, the planes
+turned away go down to #041830, and only the plane facing the light reaches
+#2C4868. Not slate blue, not petrol, not denim. Smooth and perfectly even —
+no wood grain showing through, no stucco or orange-peel texture, no brush
+marks, a slight satin sheen only. The navy stops dead at the arris; no edge
+is ever painted.
 
 EDGES — Every exposed plywood edge in the frame is cut from the same
 sheet and must read that way: same ply count, same tone, same stripe
@@ -661,10 +668,13 @@ cast.
 CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the crossing, both boards
 falling off into soft white as they recede.
 
-FACES — All panel faces are matte white laminate. Smooth and
-perfectly even — no wood grain showing through, no stucco or orange-peel
-texture, no brush marks, a slight satin sheen only. The face colour stops
-dead at the arris; no edge is ever painted.
+FACES — All panel faces are matte white laminate, reading a touch darker
+than the white sweep behind them so the piece separates: the typical face is
+#ACA8A4, the planes turned away go to #7C7C74, and only the plane facing the
+light reaches #C8C4BC. Warm off-white, never pure paper white. Smooth and
+perfectly even: no wood grain showing through, no stucco or orange-peel
+texture, no brush marks, a slight satin sheen only. The white stops dead at
+the arris; no edge is ever painted.
 
 EDGES — Every exposed plywood edge in the frame is cut from the same
 sheet and must read that way: same ply count, same tone, same stripe
@@ -744,10 +754,12 @@ shadow on the next. No hard shadow, no colour cast.
 CAMERA — 100 mm macro at 35 cm, f/2.8. Sharp on the third or fourth rib, the
 rest falling off fast into soft white.
 
-FACES — All panel faces are matte black laminate. Smooth and
-perfectly even — no wood grain showing through, no stucco or orange-peel
-texture, no brush marks, a slight satin sheen only. The face colour stops
-dead at the arris; no edge is ever painted.
+FACES — All panel faces are matte black laminate, very dark and nearly
+neutral: the typical face reads #080808, the planes turned away go to pure
+black, and only the plane facing the light reaches #2C2C2C. Not charcoal, not
+dark grey — black. Smooth and perfectly even: no wood grain showing through,
+no stucco or orange-peel texture, no brush marks, a slight satin sheen only.
+The black stops dead at the arris; no edge is ever painted.
 
 EDGES — Every exposed plywood edge in the frame is cut from the same
 sheet and must read that way: same ply count, same tone, same stripe
@@ -796,6 +808,30 @@ Para que los cuatro aparezcan y el conjunto no se vea monótono:
 obliga al modelo a inventar veta y sale una superficie rugosa que no existe:
 el triplay lacado es liso. Los detalles van en acabado de color, que además
 separa la cara del canto — que es lo que la foto tiene que contar.
+
+### Los colores, como se ven en el catálogo
+
+**No usar los hex de `precio.ts` en los prompts.** Ésos son el color base del
+material; el visor los pasa por tone mapping ACES (`visor.tsx:93`), que baja
+todo a ~0.7×. Pedirle a la IA el hex crudo da una foto lavada que no coincide
+con el 3D de la misma ficha. Estos valores están medidos sobre el canvas del
+visor —histograma de la silla, sin interfaz— y son los que van en el prompt:
+
+| Acabado | base en `precio.ts` | cara dominante | 2ª cara | sombra | plano a la luz |
+|---|---|---|---|---|---|
+| Azul | `#2F4B6B` | **`#081C34`** | `#041830` | `#000C1C` | `#2C4868` |
+| Negro | `#2E2E2C` | **`#080808`** | `#000000` | `#000000` | `#2C2C2C` |
+| Blanco | `#EDE9E1` | **`#ACA8A4`** | `#A8A4A0` | `#7C7C74` | `#C8C4BC` |
+| Abedul | `#DCC9A6` | **`#A09478`** | `#9C8C70` | `#70644C` | `#B8AC94` |
+
+Dar siempre los tres o cuatro valores, no uno solo: con un único hex el
+modelo pinta la pieza plana. El rango es lo que le da volumen.
+
+**El canto.** En el visor es un café liso, `#906C40` medido, porque el 3D
+pinta el corazón del triplay como un color sólido. En foto ese mismo canto es
+una franja rayada de chapas crema y líneas de cola más cálidas; el promedio
+cae justo ahí. Describirlo rayado en el prompt y no forzarle el hex, o sale
+un canto café plano.
 
 ---
 
