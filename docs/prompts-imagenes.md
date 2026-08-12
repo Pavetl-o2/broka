@@ -148,14 +148,25 @@ by the frame; there is no room around it. The camera is a hand's width away.
 CAMERA — 100 mm macro at 25-35 cm, f/4. Focus on the joint line itself; the
 rest of the piece falls off into soft white within a few centimetres.
 
-MATERIAL — Brand-new birch plywood, clean and unhandled. Faces carry the
-finish; every cut edge shows the laminated core as a striped tan band, seven
-to nine plies, with the tiny occasional void of real birch ply. Router-cut
-edges: crisp, with the small radius the bit leaves. No dust, no sawdust, no
+MATERIAL — Brand-new birch plywood, clean and unhandled. Router-cut edges:
+crisp, with the small radius the bit leaves. No dust, no sawdust, no
 fingerprints, no wear, no tools, no hands.
 
-COLOUR — The striped core is the only warm, saturated thing in the frame.
-Everything else is white, off-white or cool grey.
+FACES — The panel faces are a smooth matte laminate in the finish colour:
+flat and even, no wood grain showing through, no stucco or orange-peel
+texture, no brush marks, a slight satin sheen only. The face colour stops
+dead at the arris — the edges are never painted or tinted.
+
+EDGES — Every exposed plywood edge in the frame is the SAME material: the
+same ply count, the same tone, the same stripe rhythm — pale cream veneers
+with slightly warmer tan glue lines, low contrast, light overall. This
+applies equally to the end-grain of a tenon seen face-on and to a panel edge
+seen from the side: they must read as cut from one sheet. Do not make one
+edge darker, warmer, coarser or more contrasty than another. No dark
+hardwood, no oak, no OSB, no dark glue lines, no MDF core.
+
+COLOUR — Two colours only: the finish on the faces, and the tan striped core
+on every edge. Background white or cool grey. Nothing else.
 
 OUTPUT — Photographic realism, full-frame camera look. No text, no
 watermark, no logos.
@@ -163,6 +174,14 @@ watermark, no logos.
 
 **La regla que ordena todo esto:** de lejos manda la locación, de cerca manda
 el material. En cuanto la toma es macro, fuera el taller.
+
+**Los dos fallos de material que se repiten.** Primero, la cara: si se pide
+"abedul natural" el modelo dibuja una superficie rugosa tipo estuco, porque
+intenta pintar veta sobre un laminado. Pedir un acabado de color —azul,
+blanco, negro— resuelve el problema y además hace saltar el canto. Segundo,
+los cantos: el modelo trata cada canto como una madera distinta y saca uno
+claro de frente y otro oscuro de perfil. Por eso el bloque EDGES insiste en
+que salieron de la misma hoja.
 
 ## 2. Portada
 
@@ -237,10 +256,21 @@ colour cast.
 CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the tenon end-grain; the panel
 falls off into soft white.
 
-MATERIAL — Brand-new birch plywood, clean and unhandled. Faces matte natural
-birch; every cut edge shows the laminated core as a striped tan band, seven
-to nine plies. Crisp router-cut edges with the small radius the bit leaves.
-The striped core is the only warm colour in the frame.
+FACES — All panel faces are matte blue laminate: a deep, desaturated slate
+blue, roughly #2F4B6B. Smooth and perfectly even — no wood grain showing
+through, no stucco or orange-peel texture, no brush marks, a slight satin
+sheen only. The blue stops dead at the arris; no edge is ever painted blue.
+
+EDGES — Every exposed plywood edge in the frame is cut from the same sheet
+and must read that way: same ply count, same tone, same stripe rhythm — pale
+cream veneers with slightly warmer tan glue lines, low contrast, light
+overall. The end-grain of the tenon seen face-on and the edge of the side
+panel seen from the side must match exactly in colour and contrast. Do not
+make one darker, warmer or coarser than the other. No dark hardwood, no oak,
+no dark glue lines.
+
+Two colours in the whole frame: blue faces, tan striped edges. Brand-new
+stock, clean and unhandled.
 
 Reproduce the joint in IMAGE 1 exactly. Do not invent a different joinery, do
 not add a wedge, do not let the tenon protrude. No text, no watermark, no
@@ -276,11 +306,14 @@ A tight stack of CNC-cut birch plywood parts seen end-on, on a pure white
 studio sweep, so the camera looks straight into the laminated edges.
 
 SUBJECT — The stack fills the frame and is cropped by it, left to right.
-Every visible edge is a band of seven to nine thin light and dark plies read
-as stripes, crisp from the router, with the occasional tiny core void. The
-faces of the boards are finished — some matte white, some matte black, some
-raw birch — but every edge shows the same raw striped core. The stripes run
-across the frame in near-parallel lines.
+Every visible edge is a band of seven to nine thin plies read as stripes,
+crisp from the router, with the occasional tiny core void. The faces of the
+boards are finished — some matte white, some matte black, some matte blue —
+but every edge is cut from the same sheet and must read that way: identical
+ply count, identical tone, identical stripe rhythm, pale cream veneers with
+slightly warmer tan glue lines, low contrast. Not one edge darker, warmer or
+coarser than its neighbour. The stripes run across the frame in near-parallel
+lines.
 
 BACKGROUND — Pure white seamless studio sweep above and behind the stack,
 dissolving to clean white at the edges of the frame. No workshop, no bench,
@@ -458,9 +491,21 @@ thin shadow line inside the joint gap. No hard shadow, no colour cast.
 
 CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the tenon end-grain.
 
-MATERIAL — Brand-new birch plywood, matte natural birch faces, every cut edge
-a striped tan band of seven to nine plies, crisp router-cut edges with the
-bit's small radius. The striped core is the only warm colour in the frame.
+FACES — All panel faces are matte black laminate. Smooth and
+perfectly even — no wood grain showing through, no stucco or orange-peel
+texture, no brush marks, a slight satin sheen only. The face colour stops
+dead at the arris; no edge is ever painted.
+
+EDGES — Every exposed plywood edge in the frame is cut from the same
+sheet and must read that way: same ply count, same tone, same stripe
+rhythm — pale cream veneers with slightly warmer tan glue lines, low
+contrast, light overall. An edge seen face-on and an edge seen from the
+side must match exactly in colour and contrast. Do not make one darker,
+warmer or coarser than another. No dark hardwood, no oak, no dark glue
+lines.
+
+Two colours in the whole frame: black faces, tan striped edges. Brand-new
+stock, clean and unhandled.
 
 Reproduce the joint in IMAGE 1 exactly: do not add a wedge, do not let the
 tenon protrude. No hands, no tools, no text, no watermark.
@@ -528,10 +573,23 @@ cast.
 CAMERA — 100 mm macro at 35 cm, f/5.6. Sharp on the cross, the far edge of
 the top falling off.
 
-MATERIAL — Brand-new birch plywood, matte natural birch faces, the end-grain
-of the cross a striped tan band of plies. Crisp router-cut edges with the
-bit's radius and the small relief notches the cutter leaves in the inside
-corners of the mortise. The striped core is the only warm colour in frame.
+FACES — All panel faces are matte blue laminate, a deep desaturated slate blue,
+roughly #2F4B6B. Smooth and
+perfectly even — no wood grain showing through, no stucco or orange-peel
+texture, no brush marks, a slight satin sheen only. The face colour stops
+dead at the arris; no edge is ever painted.
+
+EDGES — Every exposed plywood edge in the frame is cut from the same
+sheet and must read that way: same ply count, same tone, same stripe
+rhythm — pale cream veneers with slightly warmer tan glue lines, low
+contrast, light overall. An edge seen face-on and an edge seen from the
+side must match exactly in colour and contrast. Do not make one darker,
+warmer or coarser than another. No dark hardwood, no oak, no dark glue
+lines. Router-cut edges keep the bit's small radius and
+the relief notches the cutter leaves in the inside corners of the mortise.
+
+Two colours in the whole frame: blue faces, tan striped edges. Brand-new
+stock, clean and unhandled.
 
 Reproduce the joint in IMAGE 1 exactly: two tenons meeting in a cross, flush
 with the top. No dust, no fingerprints, no text, no watermark.
@@ -603,9 +661,21 @@ cast.
 CAMERA — 100 mm macro at 30 cm, f/4. Sharp on the crossing, both boards
 falling off into soft white as they recede.
 
-MATERIAL — Brand-new birch plywood, matte natural birch faces, every cut edge
-a striped tan band, crisp router-cut edges with the bit's small radius. The
-striped core is the only warm colour in frame.
+FACES — All panel faces are matte white laminate. Smooth and
+perfectly even — no wood grain showing through, no stucco or orange-peel
+texture, no brush marks, a slight satin sheen only. The face colour stops
+dead at the arris; no edge is ever painted.
+
+EDGES — Every exposed plywood edge in the frame is cut from the same
+sheet and must read that way: same ply count, same tone, same stripe
+rhythm — pale cream veneers with slightly warmer tan glue lines, low
+contrast, light overall. An edge seen face-on and an edge seen from the
+side must match exactly in colour and contrast. Do not make one darker,
+warmer or coarser than another. No dark hardwood, no oak, no dark glue
+lines.
+
+Against the white sweep the piece reads almost entirely by its tan striped
+edges. That is the point of the shot. Brand-new stock, clean and unhandled.
 
 Reproduce the crossing in IMAGE 1 exactly. No dust, no fingerprints, no
 hands, no text, no watermark.
@@ -674,9 +744,21 @@ shadow on the next. No hard shadow, no colour cast.
 CAMERA — 100 mm macro at 35 cm, f/2.8. Sharp on the third or fourth rib, the
 rest falling off fast into soft white.
 
-MATERIAL — Brand-new birch plywood, matte natural birch faces, every cut edge
-a striped tan band, crisp router-cut edges. The striped core is the only warm
-colour in frame.
+FACES — All panel faces are matte black laminate. Smooth and
+perfectly even — no wood grain showing through, no stucco or orange-peel
+texture, no brush marks, a slight satin sheen only. The face colour stops
+dead at the arris; no edge is ever painted.
+
+EDGES — Every exposed plywood edge in the frame is cut from the same
+sheet and must read that way: same ply count, same tone, same stripe
+rhythm — pale cream veneers with slightly warmer tan glue lines, low
+contrast, light overall. An edge seen face-on and an edge seen from the
+side must match exactly in colour and contrast. Do not make one darker,
+warmer or coarser than another. No dark hardwood, no oak, no dark glue
+lines.
+
+Two colours in the whole frame: black faces, tan striped edges. Brand-new
+stock, clean and unhandled.
 
 Reproduce the rib spacing, the varying rib widths and the two spines exactly
 as in IMAGE 1. No dust, no fingerprints, no text, no watermark.
@@ -708,7 +790,12 @@ Para que los cuatro aparezcan y el conjunto no se vea monótono:
 | Abedul natural | hero, life-1, life-3, y la general de estudio de los cuatro muebles |
 | Blanco | life-5, librero tres cuartos |
 | Negro | life-2, silla lateral, banco tres cuartos |
-| Azul | life-4, mesa pata |
+| Azul | vp-1, life-4, mesa pata |
+
+**En los close-ups, nunca abedul natural.** Un macro de una cara sin color
+obliga al modelo a inventar veta y sale una superficie rugosa que no existe:
+el triplay lacado es liso. Los detalles van en acabado de color, que además
+separa la cara del canto — que es lo que la foto tiene que contar.
 
 ---
 
