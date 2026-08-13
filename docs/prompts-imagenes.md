@@ -283,54 +283,63 @@ hands, no tools.
 
 ### `brk-vp-2` · 3:2 apaisado · la máquina cortando
 
-IMAGEN 1 = la foto de la máquina real (la flatbed blanca de nesting).
-IMAGEN 2, opcional = el render de la silla, sólo para que las piezas ya
-cortadas en la hoja tengan el perfil correcto.
+Sin referencia de mueble. IMAGEN 1 = la foto editorial del cabezal cortando,
+sólo por el **punto de vista**: cámara apoyada casi sobre la lámina, el
+cabezal llenando el cuadro, el fondo disuelto.
 
-**Nunca escribir "workshop" a secas.** El modelo asocia esa palabra a taller
-rústico y saca máquinas viejas, madera vieja y hierro oxidado. Hay que
-describir la nave: piso de concreto pulido claro, muros blancos, luz pareja,
-nada tirado. Y hay que describir la máquina, o inventa una.
+**El fallo aquí no es la máquina, es la distancia.** Pedir "un CNC en un
+taller" da foto de nave con máquina adentro, y ninguna nave se ve bien. En la
+toma editorial el local no existe: la cámara baja al nivel del material, el
+husillo llena el encuadre y detrás sólo queda estructura desenfocada. Y hay
+que decir **fresa, no láser** — las referencias de corte editorial casi
+siempre son láser o plasma y el modelo copia la chispa.
 
 ```
-IMAGE 1 = the CNC machine. Copy its design exactly: a modern industrial
-flatbed nesting router, enamelled white and light grey steel, one blue accent
-panel, a dark grey vacuum table with a pale wooden edge strip, a gantry
-carrying the spindle and a row of boring heads, a ribbed dust-extraction hose
-looping down to the head, pop-up locating pins along the front rail, a
-separate control console cabinet. Use IMAGE 1 only for the MACHINE — ignore
-its white product-shot background and build a real room around it.
+IMAGE 1 = a reference for the CAMERA POSITION and the LOOK only, not for the
+machine and not for the material. Copy from it: the camera dropped right down
+to the level of the sheet, the cutting head filling the frame and cropped at
+the top by the gantry beam, the razor-thin plane of focus, the background
+dissolved into dark defocused machine structure, the editorial industrial
+mood. Do not copy: the black and white, the metal sheet, the laser head.
 
-SCENE — The machine mid-cut on a full 2440 x 1220 mm sheet of birch plywood.
-The bit is down in the material, a curl of shavings lifting into the air, the
-extraction hood right above it. Around the bit, parts already cut and still
-held by tabs: long curved leg profiles, rectangular tenons, a big square top
-with cross-shaped mortises.
+SUBJECT — The nose of a CNC router spindle, seen almost side-on from sheet
+level, coming straight down into a sheet of birch plywood. The steel spindle
+nose and its knurled collet nut, a two-flute spiral compression router bit
+gripped in it, the bristle dust shoe pushed up around it. The bit is buried
+in the material and moving: a fine spray of pale chips and dust throwing off
+the cut, motion blur only in the chips.
 
-THE ROOM — A new, clean production shop. Pale polished concrete floor, plain
-white walls, high ceiling, everything squared away. No clutter, no offcuts on
-the floor, no timber stacks, no rust, no old machines, no tool boards, no
-workbenches, no sawdust anywhere except the fine line along the cut itself.
-Lean, minimal, modern.
+THE CUT — Behind the bit, the kerf it has already opened runs away across the
+sheet as a crisp curved slot, its walls showing the striped laminated core.
+Further back, parts already cut and still held by tabs, reading as sharp
+graphic shapes in the sheet.
 
-FRAMING — Horizontal 3:2, landscape. The bit and the cut it is making sit in
-the middle of the frame and are the subject; the sheet runs out of frame left
-and right. The white gantry crosses the upper part of the frame, out of
-focus, and the bright empty shop is a soft field beyond it.
+BACKGROUND — Dark and abstract: the shadowed underside of the gantry beam and
+the machine's own structure, thrown completely out of focus. NO room, NO
+walls, NO windows, NO floor, NO workshop, no tools, no clutter, nobody. The
+environment must be unreadable.
 
-LIGHT — Bright, cool and even, from a high skylight and overhead LED bays. No
-direct sun, no hard shadow, no warm tungsten. Neutral white, a faint blue-grey
-in the shadows, against the warm tan of the freshly cut plywood.
+FRAMING — Horizontal 3:2, landscape. The spindle stands vertically, slightly
+off centre, running from the top edge of the frame down to the sheet. The
+plane of the sheet runs across the lower third. Camera about 12 cm above the
+surface, tilted a few degrees down.
 
-CAMERA — 85 mm lens at about 70 cm, f/2.8. Sharp on the bit and the cut line;
-the machine and the room fall off progressively. Motion blur only in the
-flying shavings.
+CAMERA — 100 mm macro, f/2.8, very shallow. Only the bit tip and the first
+few centimetres of the kerf are sharp; everything nearer and further melts.
 
-MATERIAL — Birch plywood. The freshly routed edges show the laminated core as
-a striped tan band, every edge the same tone and the same stripe rhythm.
+LIGHT — Hard, low, raking light from one side, cool and directional, in a
+dark surround. Bright specular highlights along the machined steel of the
+spindle, deep shadow behind. High contrast and moody, but in colour: cold
+steel greys against the warm tan of the freshly cut plywood.
 
-Photographic realism. No people, no hands, no text, no watermark, and no
-brand names or logos anywhere on the machine.
+MATERIAL — Birch plywood. Every freshly routed edge shows the laminated core
+as a striped tan band, the same tone and stripe rhythm on every edge.
+
+NOT A LASER — This is mechanical milling with a rotating bit. No beam, no
+spark, no glowing point, no molten edge, no burn mark, no smoke.
+
+Photographic realism, editorial industrial photography. No people, no hands,
+no text, no watermark, no brand names or logos.
 ```
 
 ### `brk-vp-3` · 3:2 apaisado · cantos apilados
