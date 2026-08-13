@@ -31,28 +31,28 @@ const PILARES = [
 const LIFESTYLE = [
   {
     slot: 'brk-life-1',
-    ph: 'Comedor completo, plano abierto',
-    cap: 'Mesa LLANO en un comedor de Colonia Americana, Guadalajara.',
+    ph: 'Mesa LLANO en una terraza frente a la laguna, vertical',
+    cap: 'Mesa LLANO en una terraza de Bacalar, al amanecer.',
   },
   {
     slot: 'brk-life-2',
-    ph: 'Librero contra muro blanco',
-    cap: 'Librero RETÍCULA en un despacho de arquitectura.',
+    ph: 'Librero RETÍCULA sobre un piso de damero, vertical',
+    cap: 'Librero RETÍCULA sobre el damero de una terraza recuperada por la selva.',
   },
   {
     slot: 'brk-life-3',
-    ph: 'Entrada de casa con banco',
-    cap: 'Banco TRAMO en la entrada de una casa en Valle de Bravo.',
+    ph: 'Banco TRAMO en un mirador sobre el agua, vertical',
+    cap: 'Banco TRAMO en un mirador sobre el agua, antes de que salga el sol.',
   },
   {
     slot: 'brk-life-4',
-    ph: 'Escritorio junto a ventana',
-    cap: 'Escritorio VERTIENTE frente a la ventana, a media mañana.',
+    ph: 'Silla CRESTA sola sobre el damero, vertical',
+    cap: 'Silla CRESTA sola en el damero, a la hora en que baja la luz.',
   },
   {
     slot: 'brk-life-5',
-    ph: 'Buró en recámara',
-    cap: 'Buró NUDO en recámara principal, con lámpara de lectura.',
+    ph: 'Mesa LLANO y Silla CRESTA frente a la laguna, vertical',
+    cap: 'Mesa LLANO y Silla CRESTA frente a la laguna.',
   },
 ];
 
@@ -174,7 +174,7 @@ export default function HomePage() {
           <h2 className="text-[clamp(24px,3.4vw,46px)] font-normal tracking-[-0.032em]">
             Nuestros productos en casa
           </h2>
-          <p className="text-[10px] tracking-[0.16em] uppercase">Cinco interiores</p>
+          <p className="text-[10px] tracking-[0.16em] uppercase">Cinco escenas</p>
         </div>
         <div className="flex gap-[clamp(12px,1.6vw,22px)] overflow-x-auto px-[clamp(16px,4vw,52px)] pb-1.5">
           {LIFESTYLE.map((l) => (
