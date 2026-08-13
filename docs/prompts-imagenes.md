@@ -240,7 +240,8 @@ striped plywood end-grain — the end of the tenon — sitting perfectly level
 with the surface, ringed by the hairline gap of the joint. Nothing sticks
 out. There is no wedge, no peg, no screw, no dowel, no visible hardware.
 
-FRAMING — The joint fills the frame and is cropped by it: the rectangle of
+FRAMING — Horizontal 3:2, landscape, clearly wider than tall. The joint
+fills the frame and is cropped by it: the rectangle of
 striped end-grain sits just off centre, the panel runs edge to edge, and the
 board it locks recedes to one side and out of focus. Camera a hand's width
 away, angled about 20 degrees off the panel face so the flushness reads.
@@ -307,6 +308,8 @@ Estudio. Sin referencia de mueble: es una foto de material.
 ```
 A tight stack of CNC-cut birch plywood parts seen end-on, on a pure white
 studio sweep, so the camera looks straight into the laminated edges.
+
+FRAMING — Horizontal 3:2, landscape, clearly wider than tall.
 
 SUBJECT — The stack fills the frame and is cropped by it, left to right.
 Every visible edge is a band of seven to nine thin plies read as stripes,
@@ -836,6 +839,12 @@ un canto café plano.
 ---
 
 ## 5. Qué revisar antes de dar una imagen por buena
+
+**Lo primero, la proporción.** Cada prompt la lleva escrita porque el hueco la
+impone y `object-cover` recorta lo que sobre: `brk-hero` es 2:1, los `brk-vp-*`
+son 3:2 apaisados, las `brk-life-*` 3:4 verticales y las de ficha 1:1. Si el
+modelo entrega otra cosa, repetir el prompt con la línea de proporción al
+principio, no al final.
 
 1. **El canto.** Si algún tablero no muestra la banda rayada del corazón, la
    imagen no sirve: el modelo lo laminó.
