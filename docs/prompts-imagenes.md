@@ -283,22 +283,54 @@ hands, no tools.
 
 ### `brk-vp-2` · 3:2 apaisado · la máquina cortando
 
-Sin referencia de mueble. Escena de taller.
+IMAGEN 1 = la foto de la máquina real (la flatbed blanca de nesting).
+IMAGEN 2, opcional = el render de la silla, sólo para que las piezas ya
+cortadas en la hoja tengan el perfil correcto.
+
+**Nunca escribir "workshop" a secas.** El modelo asocia esa palabra a taller
+rústico y saca máquinas viejas, madera vieja y hierro oxidado. Hay que
+describir la nave: piso de concreto pulido claro, muros blancos, luz pareja,
+nada tirado. Y hay que describir la máquina, o inventa una.
 
 ```
-A 3-axis CNC router mid-cut on a full 2440 × 1220 mm sheet of birch plywood.
-The bit is down in the material, a curl of shavings lifting into the air,
-vacuum hose just out of frame. Already-cut parts visible in the sheet around
-it, still held by tabs — long curved leg profiles and a big square top with
-cross-shaped mortises.
+IMAGE 1 = the CNC machine. Copy its design exactly: a modern industrial
+flatbed nesting router, enamelled white and light grey steel, one blue accent
+panel, a dark grey vacuum table with a pale wooden edge strip, a gantry
+carrying the spindle and a row of boring heads, a ribbed dust-extraction hose
+looping down to the head, pop-up locating pins along the front rail, a
+separate control console cabinet. Use IMAGE 1 only for the MACHINE — ignore
+its white product-shot background and build a real room around it.
 
-Cold overcast daylight from a high workshop window, no direct sun. Fine dust
-suspended in the light. Blue-grey palette, warm tan wood.
+SCENE — The machine mid-cut on a full 2440 x 1220 mm sheet of birch plywood.
+The bit is down in the material, a curl of shavings lifting into the air, the
+extraction hood right above it. Around the bit, parts already cut and still
+held by tabs: long curved leg profiles, rectangular tenons, a big square top
+with cross-shaped mortises.
 
-Horizontal 3:2. 50 mm lens, f/2.8, sharp on the bit, motion blur only in the
+THE ROOM — A new, clean production shop. Pale polished concrete floor, plain
+white walls, high ceiling, everything squared away. No clutter, no offcuts on
+the floor, no timber stacks, no rust, no old machines, no tool boards, no
+workbenches, no sawdust anywhere except the fine line along the cut itself.
+Lean, minimal, modern.
+
+FRAMING — Horizontal 3:2, landscape. The bit and the cut it is making sit in
+the middle of the frame and are the subject; the sheet runs out of frame left
+and right. The white gantry crosses the upper part of the frame, out of
+focus, and the bright empty shop is a soft field beyond it.
+
+LIGHT — Bright, cool and even, from a high skylight and overhead LED bays. No
+direct sun, no hard shadow, no warm tungsten. Neutral white, a faint blue-grey
+in the shadows, against the warm tan of the freshly cut plywood.
+
+CAMERA — 85 mm lens at about 70 cm, f/2.8. Sharp on the bit and the cut line;
+the machine and the room fall off progressively. Motion blur only in the
 flying shavings.
 
-Photographic realism. No text, no watermark, no people.
+MATERIAL — Birch plywood. The freshly routed edges show the laminated core as
+a striped tan band, every edge the same tone and the same stripe rhythm.
+
+Photographic realism. No people, no hands, no text, no watermark, and no
+brand names or logos anywhere on the machine.
 ```
 
 ### `brk-vp-3` · 3:2 apaisado · cantos apilados
