@@ -21,8 +21,11 @@ export function imageManifest(): Record<string, string> {
 
   const out: Record<string, string> = {};
   for (const f of files) {
-    const ext = path.extname(f).toLowerCase();
-    if (!EXTS.includes(ext)) continue;
+    // `basename` recorta el sufijo comparando tal cual, así que hay que pasarle
+    // la extensión con sus mayúsculas: con `.png` un `foto.PNG` se quedaría
+    // con la extensión pegada a la clave y el hueco nunca la encontraría.
+    const ext = path.extname(f);
+    if (!EXTS.includes(ext.toLowerCase())) continue;
     out[path.basename(f, ext)] = `/img/${f}`;
   }
   return out;
