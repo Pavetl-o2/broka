@@ -9,22 +9,22 @@ const PILARES = [
     no: '01 · Diseño',
     t: 'Diseño elevado',
     slot: 'brk-vp-1',
-    ph: 'Detalle de unión machihembrada, macro vertical',
-    b: 'Cada pieza nace de un modelo paramétrico. Ajustas proporción, altura y profundidad sin rehacer un molde, porque no hay molde: hay archivo. Lo que configuras es lo que entra a la máquina.',
+    ph: 'Detalle de espiga pasante enrasada en el costado, macro horizontal',
+    b: 'La espiga cruza el costado y queda enrasada con la cara: sin tornillos, sin tarugos, sin herrajes. Cada mueble sale de un archivo probado en taller, y ése es el que entra a la máquina.',
   },
   {
     no: '02 · Precisión',
     t: 'Precisión CNC',
     slot: 'brk-vp-2',
-    ph: 'Router CNC cortando tablero, viruta en el aire, vertical',
+    ph: 'Router CNC cortando tablero, viruta en el aire, horizontal',
     b: 'Tolerancia de 0.1 mm en cada trayectoria. Las uniones entran a presión, se alinean solas y sostienen la estructura sin holgura después de años de uso.',
   },
   {
     no: '03 · Materia',
     t: 'Materiales honestos',
     slot: 'brk-vp-3',
-    ph: 'Cantos de contrachapado apilados, textura de capas, vertical',
-    b: 'Contrachapado de abedul báltico y MDF de fibra fina con acabados al agua. Dejamos el canto a la vista: la capa es el ornamento, no hay chapa que finja madera maciza.',
+    ph: 'Cantos de contrachapado apilados, textura de capas, horizontal',
+    b: 'Contrachapado de abedul con acabados al agua. Dejamos el canto a la vista: la capa es el ornamento, no hay chapa que finja madera maciza.',
   },
 ];
 
@@ -142,7 +142,11 @@ export default function HomePage() {
             </h3>
             <p className="col-span-2 max-w-[42ch] text-[13.5px] leading-[1.62] text-pretty">{v.b}</p>
             <div className="aspect-[3/2] bg-n93">
-              <ImageSlot id={v.slot} placeholder={v.ph} sizes="(max-width: 768px) 100vw, 25vw" />
+              <ImageSlot
+                id={v.slot}
+                placeholder={v.ph}
+                sizes="(max-width: 768px) 65vw, (max-width: 1200px) 30vw, 20vw"
+              />
             </div>
           </article>
         ))}
@@ -176,7 +180,11 @@ export default function HomePage() {
           {LIFESTYLE.map((l) => (
             <figure key={l.slot} className="w-[clamp(240px,30vw,400px)] flex-none">
               <div className="aspect-[3/4] bg-n93">
-                <ImageSlot id={l.slot} placeholder={l.ph} sizes="(max-width: 768px) 80vw, 30vw" />
+                <ImageSlot
+                  id={l.slot}
+                  placeholder={l.ph}
+                  sizes="(max-width: 800px) 240px, (max-width: 1333px) 30vw, 400px"
+                />
               </div>
               <figcaption className="mt-2.5 text-[11.5px] leading-[1.5] text-n44">
                 {l.cap}
