@@ -283,24 +283,39 @@ hands, no tools.
 
 ### `brk-vp-2` · 3:2 apaisado · la máquina cortando
 
-Sin referencia de mueble. IMAGEN 1 = la foto editorial del cabezal cortando,
-sólo por el **punto de vista**: cámara apoyada casi sobre la lámina, el
-cabezal llenando el cuadro, el fondo disuelto.
+Sin referencia de mueble. **IMAGEN 1 = la foto de la máquina real** (la
+flatbed blanca de nesting), de donde salen el diseño y el color. **IMAGEN 2 =
+la foto editorial del cabezal cortando**, de donde sale sólo el punto de
+vista: cámara apoyada casi sobre la lámina y fondo disuelto.
 
-**El fallo aquí no es la máquina, es la distancia.** Pedir "un CNC en un
-taller" da foto de nave con máquina adentro, y ninguna nave se ve bien. En la
-toma editorial el local no existe: la cámara baja al nivel del material, el
-husillo llena el encuadre y detrás sólo queda estructura desenfocada. Y hay
-que decir **fresa, no láser** — las referencias de corte editorial casi
+**El fallo no es la máquina, es la distancia.** Pedir "un CNC en un taller"
+da foto de nave con máquina adentro, y ninguna nave se ve bien. En la toma
+editorial el local no existe: la cámara baja al nivel del material, el
+husillo llena el encuadre y detrás sólo queda estructura desenfocada.
+
+**Editorial no es oscuro.** La referencia de encuadre es un blanco y negro de
+mucho contraste, y copiarle la clave saca una foto negra que pelea con la
+máquina —blanca esmaltada— y con el resto de la página. Los tres pilares se
+ven casi seguidos al bajar: los tres van en clave alta. Lo editorial lo pone
+el plano de foco delgadísimo y el entorno ilegible, no la penumbra.
+
+Y hay que decir **fresa, no láser**: las referencias de corte editorial casi
 siempre son láser o plasma y el modelo copia la chispa.
 
 ```
-IMAGE 1 = a reference for the CAMERA POSITION and the LOOK only, not for the
-machine and not for the material. Copy from it: the camera dropped right down
-to the level of the sheet, the cutting head filling the frame and cropped at
-the top by the gantry beam, the razor-thin plane of focus, the background
-dissolved into dark defocused machine structure, the editorial industrial
-mood. Do not copy: the black and white, the metal sheet, the laser head.
+IMAGE 1 = THE MACHINE. This is the equipment in the photograph and its
+design must be copied: a modern industrial flatbed nesting router in
+enamelled white and light grey steel, one deep blue accent panel, a dark grey
+vacuum table with a pale wooden edge strip, a ribbed dust-extraction hose
+looping down to the head, a row of boring spindles beside the router spindle.
+Everything metal on it is either white enamel or clean machined steel — no
+rust, no grime, no old iron, no yellowed plastic.
+
+IMAGE 2 = the CAMERA POSITION only. Copy from it: the camera dropped right
+down to the level of the sheet, the cutting head filling the frame and
+cropped at the top by the gantry beam, the razor-thin plane of focus, the
+background dissolved to nothing. Do NOT copy its darkness, its black and
+white, its metal sheet or its laser head.
 
 SUBJECT — The nose of a CNC router spindle, seen almost side-on from sheet
 level, coming straight down into a sheet of birch plywood. The steel spindle
@@ -314,10 +329,11 @@ sheet as a crisp curved slot, its walls showing the striped laminated core.
 Further back, parts already cut and still held by tabs, reading as sharp
 graphic shapes in the sheet.
 
-BACKGROUND — Dark and abstract: the shadowed underside of the gantry beam and
-the machine's own structure, thrown completely out of focus. NO room, NO
-walls, NO windows, NO floor, NO workshop, no tools, no clutter, nobody. The
-environment must be unreadable.
+BACKGROUND — Bright and abstract: the white enamel of the gantry beam and the
+machine's own structure, thrown completely out of focus into a pale field of
+white and light grey, with the blue accent panel as one soft defocused note.
+NO room, NO walls, NO windows, NO floor, NO workshop, no tools, no clutter,
+nobody. The environment must be unreadable — but it must be LIGHT, not dark.
 
 FRAMING — Horizontal 3:2, landscape. The spindle stands vertically, slightly
 off centre, running from the top edge of the frame down to the sheet. The
@@ -327,10 +343,14 @@ surface, tilted a few degrees down.
 CAMERA — 100 mm macro, f/2.8, very shallow. Only the bit tip and the first
 few centimetres of the kerf are sharp; everything nearer and further melts.
 
-LIGHT — Hard, low, raking light from one side, cool and directional, in a
-dark surround. Bright specular highlights along the machined steel of the
-spindle, deep shadow behind. High contrast and moody, but in colour: cold
-steel greys against the warm tan of the freshly cut plywood.
+LIGHT — High key. Bright, cool, even daylight filling the whole frame: the
+white enamel reads white, not grey, and the shadows stay open and full of
+detail. Keep one directional component low and from the side so the machined
+steel of the spindle picks up crisp specular highlights and the kerf gets a
+thin shadow line — that edge is what keeps it from going flat. Overall pale
+and clean: whites, light greys and cool steel, with the warm tan of the
+freshly cut plywood as the only warm colour. NOT dark, NOT moody, NOT
+low-key, no black background, no dramatic chiaroscuro.
 
 MATERIAL — Birch plywood. Every freshly routed edge shows the laminated core
 as a striped tan band, the same tone and stripe rhythm on every edge.
