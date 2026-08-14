@@ -183,6 +183,13 @@ los cantos: el modelo trata cada canto como una madera distinta y saca uno
 claro de frente y otro oscuro de perfil. Por eso el bloque EDGES insiste en
 que salieron de la misma hoja.
 
+**Una sola cámara.** Los prompts de locación no llevan su propia distancia
+focal: la pone el bloque base, 85 mm a f/2.8. Los objetivos cortos y los
+diafragmas cerrados que traía la primera versión —28, 35, 40 mm, "sharp
+throughout"— son exactamente la receta del paisaje con el mueble diminuto.
+Si un hueco necesita otra cosa, se escribe como desviación de una línea
+(la altura de cámara del banco, por ejemplo), no como una cámara nueva.
+
 ## 2. Portada
 
 ### `brk-hero` · 2:1 apaisado · Mesa LLANO, abedul natural
@@ -406,12 +413,13 @@ Pie de foto propuesto: *Mesa LLANO en una terraza de Bacalar, al amanecer.*
 IMAGE 1 = a CNC-cut birch plywood square table. IMAGE 2 = a terrace
 overlooking a lagoon at dawn.
 
-Place the table from IMAGE 1 on the terrace of IMAGE 2, centred, seen from
-seated height, slightly from the front. The table is 116 × 116 cm and 73 cm
-tall. Two enamel cups and a folded linen cloth on the top — nothing else. The
-lagoon, the cloud break and the rays behind it. Finish: natural birch.
+Place the table from IMAGE 1 on the terrace of IMAGE 2, off centre and close
+to the camera, seen from seated height and slightly from the front. The table
+is 116 × 116 cm and 73 cm tall. Two enamel cups and a folded linen cloth on
+the top — nothing else. The lagoon, the cloud break and the rays behind it.
+Finish: natural birch.
 
-Vertical 3:4. 40 mm lens, f/4.
+Vertical 3:4. Camera and lens exactly as in the block below.
 
 [BLOQUE BASE]
 ```
@@ -431,7 +439,8 @@ scale against the trees. Empty shelves, or two or three books flat. The green
 wall of vegetation behind it, storm cloud above. Finish: matte black, so the
 tan plywood edges draw the whole grid of shelves and fins.
 
-Vertical 3:4. 35 mm lens, f/5.6, sharp throughout.
+Vertical 3:4. Camera and lens exactly as in the block below — the unit is
+sharp front to back, the jungle behind it is not.
 
 [BLOQUE BASE]
 ```
@@ -451,7 +460,8 @@ recedes and the curve of the seat reads against the horizon. It is 178 cm
 long, 60 cm deep and 45 cm tall. Keep the terrace tiles, the railing, the
 pole and the pale misted water. Finish: natural birch.
 
-Vertical 3:4. 28 mm lens, f/5.6, low camera at about 60 cm.
+Vertical 3:4. Lens and aperture exactly as in the block below, but drop the
+camera to about 60 cm so the seat curve reads against the horizon.
 
 [BLOQUE BASE]
 ```
@@ -474,7 +484,8 @@ tall. Nothing else in the frame. The checkerboard runs to the wall of
 vegetation. Finish: matte blue, deep and desaturated, with the tan plywood
 edges outlining every panel.
 
-Vertical 3:4. 50 mm lens, f/2.8, sharp on the chair, vegetation soft.
+Vertical 3:4. Camera and lens exactly as in the block below: sharp on the
+chair, vegetation soft.
 
 [BLOQUE BASE]
 ```
@@ -495,7 +506,8 @@ height of 1.6 m. Table 116 × 116 × 73 cm, chair 45 × 72 × 76 cm — the chai
 seat must sit well below the table top. The lagoon and the rays behind.
 Finish: both in matte white, so the tan plywood edges draw every part.
 
-Vertical 3:4. 35 mm lens, f/4.
+Vertical 3:4. Lens and aperture exactly as in the block below, but stand the
+camera at 1.6 m so both pieces read at once.
 
 [BLOQUE BASE]
 ```
