@@ -636,11 +636,24 @@ no screws.
 Photographic realism, catalogue quality. No text, no watermark, no logos.
 ```
 
-Para los otros tres, cambiar la primera línea y el sujeto por el mueble que
-toque, y la vista: la mesa en tres cuartos ligeramente desde arriba, el
-librero de frente, el banco de lado. **Todo lo demás igual** — mismo damero,
-misma luz, misma cámara —, que es lo que hace que la fila se lea como una
-colección.
+### Qué cambia y qué no, de una tarjeta a otra
+
+**No cambia nada del set:** mismo barrido, misma luz, misma cámara, mismo
+encuadre 4:5 con piso bajo las patas. Eso es lo que hace que las cuatro se
+lean como una colección y no como cuatro fotos sueltas.
+
+**Cambian dos cosas:** el ángulo y el accesorio. Un accesorio por mueble,
+propio de su función — todas con la misma planta se vería a plantilla.
+
+| Mueble | Vista | Accesorio |
+|---|---|---|
+| Silla CRESTA | tres cuartos, a la altura del asiento | planta de hoja grande en maceta blanca, al lado |
+| Mesa LLANO | tres cuartos, un poco desde arriba, para que se vean las cruces | dos libros de tapa dura y un cuenco de cerámica mate, sobre la cubierta |
+| Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
+| Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada, colgando de un extremo |
+
+El accesorio siempre va **sin tocar el mueble por delante**: acompaña, no
+tapa. Y nunca más de uno.
 
 ---
 
