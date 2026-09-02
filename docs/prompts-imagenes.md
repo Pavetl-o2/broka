@@ -545,7 +545,7 @@ camera at 1.6 m so both pieces read at once.
 
 ---
 
-## 2b. Tarjetas del catálogo · 4:5 · en el damero
+## 2b. Tarjetas del catálogo · 4:5 · estudio claro
 
 Los huecos `brk-p-cresta`, `brk-p-llano`, `brk-p-reticula` y `brk-p-tramo`.
 
@@ -555,21 +555,18 @@ y en favoritos es `aspect-square` (`:58`). Una sola imagen sirve a los dos, y
 `object-cover` recorta. Por eso se generan en **4:5 y con aire arriba y
 abajo**: el recorte cuadrado se come el 20% del alto y no debe tocar la pieza.
 
-**Las tarjetas no llevan el bloque base de la §1.** Ése pide amanecer
-nublado, frío y sin sol directo; las tarjetas van con sol bajo filtrado por
-la vegetación, que es lo que las hace parecer fotografiadas: las sombras
-moteadas de las hojas cruzan el mueble y el suelo en un solo patrón, y eso un
-recorte pegado no lo puede fingir. El prompt de abajo se basta solo.
+**Las tarjetas no llevan ningún bloque base: el prompt se basta solo.** Van
+en estudio claro, con el piso a la vista y una planta al lado. La sombra
+suave que el mueble proyecta sobre ese piso es lo que lo planta en el suelo,
+y sale bien a la primera — mucho más seguro que componer sobre una foto de
+locación, donde el mueble acaba pareciendo un recorte.
 
-**Las cuatro van en el mismo sitio y con la misma luz.** Se ven una junto a
-otra en una fila; si cada mueble sale en una locación distinta, la fila se
-lee como un álbum de recortes en vez de como una colección. El damero es la
-locación de las tarjetas.
+**Las cuatro van en el mismo set y con la misma luz.** Se ven una junto a
+otra en una fila; si cada mueble sale en un sitio distinto, la fila se lee
+como un álbum de recortes en vez de como una colección.
 
-**No confundir con `brk-life-4`,** que también es la silla en el damero. La
-tarjeta es una foto de producto: mueble de frente, completo, centrado y
-cerca. La `life-4` es la atmosférica: la silla de espaldas, lejos, el damero
-corriendo hasta la vegetación.
+Como vuelve a ser estudio, **el mismo archivo sirve para `brk-g-<id>-0`**,
+la general de la ficha: son ocho huecos y cuatro imágenes.
 
 **El cojín de la silla.** Va suelto sobre el asiento, gris azulado, y una vez
 que aparece en una foto tiene que aparecer en todas las de la silla —
@@ -578,77 +575,59 @@ DXF, así que el visor 3D lo muestra sin cojín y el precio no lo cobra. Si es
 un accesorio de venta hay que darlo de alta; si es sólo utilería, la foto
 promete de más.
 
-Referencias: IMAGEN 1 = el render del mueble, capturado del visor sin
-cuadrícula ni rótulos. IMAGEN 2 = la foto del damero.
+Referencia: sólo el render del mueble, capturado del visor sin cuadrícula ni
+rótulos.
 
 ```
-IMAGE 1 = a CNC-cut birch plywood chair. IMAGE 2 = an abandoned checkerboard
-tile terrace swallowed by jungle. Use IMAGE 2 for the PLACE — the tiles, the
-vegetation, the ruin — but not for its weather: this photograph is taken
-later, in low sun.
+IMAGE 1 = a CNC-cut birch plywood chair.
 
-Place the chair from IMAGE 1 alone on the checkerboard floor of IMAGE 2,
+Product photograph of the chair from IMAGE 1 for a furniture catalogue,
 three-quarter front view, camera at seat height. Finish: natural birch.
 
-FRAMING — Vertical 4:5. This is a product card, so the piece is presented,
-not staged: the chair is complete, roughly centred left to right, and fills
-about 60% of the frame width. Leave a band of open checkerboard floor below
-it and open space above: a square crop through the middle of this frame must
-still contain the whole chair, feet included. Never crop the piece and never
+FRAMING — Vertical 4:5. The chair is complete, roughly centred left to
+right, and fills about 60% of the frame height. Leave open floor below it
+and open space above: a square crop through the middle of this frame must
+still contain the whole chair, feet included. Never crop the chair and never
 let it touch an edge.
 
-LIGHT — Low late-afternoon sun, warm, raking in from one side through the
-trees. This is the most important element of the photograph: the foliage
-breaks the sun into DAPPLED LEAF SHADOWS that fall across everything — the
-seat, the cushion, the side frames, the legs, and the checkerboard floor
-around and beyond the chair, all in one continuous pattern. Warm honeyed
-light in the patches, soft cool shade between them. Not overcast, not flat,
-not grey.
+SET — A clean, bright studio corner: a seamless pale warm-grey sweep, and
+the floor plane visible and reading as floor, with the wall dissolving into
+it in a soft gradient behind the chair. No horizon line, no skirting, no
+texture, no room, no location.
 
-INTEGRATION — That dapple is what welds the chair to the floor: the same
-leaf-shadow pattern must run across the chair and continue onto the tiles
-without a break, at the same angle and the same softness. On top of it:
-· the chair's own long shadow, thrown low across the checkerboard away from
-  the sun, with the tile pattern showing through it
-· a small dark contact patch under each foot, tight where wood meets tile
-· ambient occlusion under the seat, under the cushion, in every corner
-· green bounce from the vegetation on the undersides and the shaded faces
-· the same grain, haze and colour cast as the rest of the frame
+PROP — One potted plant, and nothing else: a green leafy plant in a plain
+white ceramic pot, standing on the floor to one side and slightly behind the
+chair, partly cropped by the edge of the frame. It is a companion, not the
+subject: smaller in the frame than the chair and never overlapping it. No
+other props, no rugs, no people, no lamps, no books.
 
-FOREGROUND — Something real and very close to the lens, cropped by the frame
-and thrown completely out of focus in one lower corner: a branch, a frond, a
-clump of grass growing through the tiles. It is a soft shape, not a subject.
-This near layer is what gives the picture depth.
+LIGHT — One very large soft source high and to the front-left, plus soft
+fill from the right. Bright, even, cool daylight with open shadows. The
+chair casts one soft grey shadow low across the floor to the right, and each
+foot has a small darker contact patch where it meets the floor — that
+shadow is what stands it on the ground.
 
-COMPOSITION — Three layers: the soft foreground, the sharp chair in the
-middle distance, and the wall of vegetation behind. The tree line sits high,
-behind the chair. Nothing else in the frame: no other furniture, no people,
-no lamps, no props, no debris.
-
-CAMERA — 135 mm lens, about 3 m from the chair, at roughly seat height,
-f/2.8. Telephoto compression: the vegetation reads flattened and pushed
-close behind the chair. The chair is razor sharp front to back; the
-foreground and the tree line both dissolve. No wide angle, no deep focus.
+CAMERA — 85 mm lens, about 2.5 m away, at seat height, f/5.6. The chair is
+sharp front to back; the plant and the sweep behind it fall very gently off.
 
 CUSHION — Add one loose seat cushion and nothing else: a single flat pad of
 grey-blue woven fabric, slightly domed, resting inside the frame on the seat
-panel between the two side frames. It fills the seat exactly, its front edge
-flush with the front of the seat, about 6 cm thick so it reads clearly, with
-soft rounded corners and a visible fabric weave. Loose and unattached: no
-buttons, no tufting, no piping, no straps, and no back cushion.
+panel between the two side frames. It fills the seat exactly, about 6 cm
+thick, with soft rounded corners and a visible fabric weave. Loose and
+unattached: no buttons, no tufting, no piping, no straps, no back cushion.
 
 MATERIAL — Matte natural birch laminate on the faces: smooth and even, no
-stucco or orange-peel texture, no brush marks. Every cut edge shows the
-laminated core as a striped tan band, and every edge in the frame is cut
-from the same sheet: same ply count, same tone, same stripe rhythm. The face
-colour stops dead at the arris.
+stucco or orange-peel texture, no brush marks, a slight satin sheen only.
+Every cut edge shows the laminated core as a striped tan band, and every
+edge in the frame is cut from the same sheet: same ply count, same tone,
+same stripe rhythm. The face colour stops dead at the arris.
 
 NON-NEGOTIABLE — Reproduce the chair in IMAGE 1 exactly: same number of
 parts, same splay of the legs, same wrap of the back, same flush through
-tenons. The seat cushion described above is the ONLY thing added to it. No
-visible hardware, no screws, no other upholstery.
+tenons. The seat cushion is the ONLY thing added to it. No visible hardware,
+no screws.
 
-Photographic realism. No people, no text, no watermark, no logos.
+Photographic realism, catalogue quality. No text, no watermark, no logos.
 ```
 
 Para los otros tres, cambiar la primera línea y el sujeto por el mueble que
