@@ -514,7 +514,7 @@ camera at 1.6 m so both pieces read at once.
 
 ---
 
-## 2b. Tarjetas del catálogo · 4:5
+## 2b. Tarjetas del catálogo · 4:5 · en el damero
 
 Los huecos `brk-p-cresta`, `brk-p-llano`, `brk-p-reticula` y `brk-p-tramo`.
 
@@ -524,41 +524,61 @@ y en favoritos es `aspect-square` (`:58`). Una sola imagen sirve a los dos, y
 `object-cover` recorta. Por eso se generan en **4:5 y con aire arriba y
 abajo**: el recorte cuadrado se come el 20% del alto y no debe tocar la pieza.
 
-Y como la toma es la misma que la general de estudio de la ficha, **el
-archivo puede subirse dos veces**, como `brk-p-<id>.jpg` y como
-`brk-g-<id>-0.jpg`. Son ocho huecos y cuatro imágenes.
+**Las cuatro van en el mismo sitio y con la misma luz.** Se ven una junto a
+otra en una fila; si cada mueble sale en una locación distinta, la fila se
+lee como un álbum de recortes en vez de como una colección. El damero es la
+locación de las tarjetas.
 
-Referencia: sólo el render del mueble, capturado del visor sin cuadrícula ni
-rótulos, en el acabado que pida el prompt.
+**No confundir con `brk-life-4`,** que también es la silla en el damero. La
+tarjeta es una foto de producto: mueble de frente, completo, centrado y
+cerca. La `life-4` es la atmosférica: la silla de espaldas, lejos, el damero
+corriendo hasta la vegetación.
+
+Referencias: IMAGEN 1 = el render del mueble, capturado del visor sin
+cuadrícula ni rótulos. IMAGEN 2 = la foto del damero.
 
 ```
-IMAGE 1 = a CNC-cut birch plywood chair.
+IMAGE 1 = a CNC-cut birch plywood chair. IMAGE 2 = an abandoned checkerboard
+tile terrace swallowed by jungle, under heavy cloud.
 
-Studio product photograph of the chair from IMAGE 1 for a furniture
-catalogue, three-quarter front view, camera at seat height.
+Place the chair from IMAGE 1 alone on the checkerboard floor of IMAGE 2,
+three-quarter front view, camera low at seat height and close to the piece.
+Finish: natural birch.
 
-FRAMING — Vertical 4:5. The chair is centred and complete, with generous
-empty margin above and below it: a square crop through the middle of this
-frame must still contain the whole chair, feet included. Do not crop the
-piece, do not let it touch the edges.
+FRAMING — Vertical 4:5. This is a product card, so the piece is presented,
+not staged: the chair is complete, roughly centred left to right, and fills
+about 60% of the frame width. Leave a band of open checkerboard floor below
+it and open space above: a square crop through the middle of this frame must
+still contain the whole chair, feet included. Never crop the piece and never
+let it touch an edge.
 
-BACKGROUND — Pure white seamless studio sweep, no horizon line, no visible
-floor, no props, no room. It dissolves to clean white at the edges.
+COMPOSITION — This block REPLACES the base block's composition rule. The
+horizon and the tree line sit high, behind the chair, and the checkerboard
+runs from the bottom edge up to them. Nothing else in the frame: no other
+furniture, no people, no props, no debris.
 
-LIGHT — One very large soft source high and slightly to the left, white
-bounce from the right, and a soft grounded contact shadow under each foot so
-the chair sits on something. Open shadows, no hard shadow, no colour cast.
+CAMERA — 85 mm lens, camera about 45 cm above the floor, roughly 2 m from
+the chair, f/2.8. The chair is razor sharp front to back; the jungle behind
+dissolves into soft green shapes and the far checkerboard blurs. No wide
+angle, no deep focus.
 
-CAMERA — 85 mm lens, f/8, the whole chair sharp front to back.
+LIGHT — Overcast, tropical, heavy grey storm cloud, exactly the weather of
+IMAGE 2. No hard sun, no sun disc, no golden warmth. Cool, humid, still,
+with open shadows that keep detail.
 
-FACES — Matte natural birch laminate: smooth and even, no stucco or
-orange-peel texture, no brush marks, a slight satin sheen only. The face
+INTEGRATION — The chair is standing on that floor, not pasted on it:
+· a dark contact shadow where each foot meets the tile, tight at the point
+  of contact and softening outward
+· ambient occlusion under the seat and in every inside corner
+· green bounce from the vegetation on the underside and the shaded faces
+· the same overcast light direction as the background
+· the same haze, grain and colour cast as IMAGE 2
+
+MATERIAL — Matte natural birch laminate on the faces: smooth and even, no
+stucco or orange-peel texture, no brush marks. Every cut edge shows the
+laminated core as a striped tan band, and every edge in the frame is cut
+from the same sheet: same ply count, same tone, same stripe rhythm. The face
 colour stops dead at the arris.
-
-EDGES — Every exposed plywood edge is cut from the same sheet and must read
-that way: same ply count, same tone, same stripe rhythm, pale cream veneers
-with slightly warmer tan glue lines. An edge seen face-on and an edge seen
-from the side must match. No dark hardwood, no oak, no dark glue lines.
 
 NON-NEGOTIABLE — Reproduce the chair in IMAGE 1 exactly: same number of
 parts, same splay of the legs, same wrap of the back, same flush through
@@ -569,7 +589,9 @@ Photographic realism. No people, no text, no watermark, no logos.
 
 Para los otros tres, cambiar la primera línea y el sujeto por el mueble que
 toque, y la vista: la mesa en tres cuartos ligeramente desde arriba, el
-librero de frente, el banco de lado.
+librero de frente, el banco de lado. **Todo lo demás igual** — mismo damero,
+misma luz, misma cámara —, que es lo que hace que la fila se lea como una
+colección.
 
 ---
 

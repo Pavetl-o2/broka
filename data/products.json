@@ -20,7 +20,7 @@
     },
     "descriptionES": "Una silla de tres planos: dos costados ruteados que hacen de estructura y de pata, un asiento que entra a presión y un respaldo que curva apenas lo necesario. Sin tornillos a la vista.",
     "images": [
-      "Silla CRESTA · fondo neutro, tres cuartos",
+      "Silla CRESTA sobre el damero, tres cuartos",
       "Silla CRESTA · detalle de unión",
       "Silla CRESTA · vista lateral"
     ]
@@ -46,7 +46,7 @@
     },
     "descriptionES": "La mesa de la casa. Dos caballetes ruteados con un arco que aligera el volumen, un travesaño que amarra la estructura y una cubierta de canto vivo. Se arma en veinte minutos y se desarma igual.",
     "images": [
-      "Mesa LLANO · fondo neutro, tres cuartos",
+      "Mesa LLANO sobre el damero, tres cuartos",
       "Mesa LLANO · detalle de caballete",
       "Mesa LLANO · cubierta desde arriba"
     ]
@@ -72,7 +72,7 @@
     },
     "descriptionES": "Costados pasantes y entrepaños que entran en caja. La retícula se calcula sola: al cambiar la altura, el librero reparte los entrepaños para que ningún claro se venza.",
     "images": [
-      "Librero RETÍCULA · fondo neutro, frontal",
+      "Librero RETÍCULA sobre el damero, frontal",
       "Librero RETÍCULA · detalle de caja",
       "Librero RETÍCULA · en tres cuartos"
     ]
@@ -98,7 +98,7 @@
     },
     "descriptionES": "Un asiento largo para la entrada, el pie de cama o la mesa. Mismo caballete que la Mesa LLANO, a la mitad de altura, para que las piezas de la casa se lean como familia.",
     "images": [
-      "Banco TRAMO · fondo neutro, lateral",
+      "Banco TRAMO sobre el damero, lateral",
       "Banco TRAMO · detalle de canto",
       "Banco TRAMO · en tres cuartos"
     ]
