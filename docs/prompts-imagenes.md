@@ -596,10 +596,11 @@ crop through the middle of this frame must still contain the whole chair,
 feet included, with room to spare. Never crop the chair and never let it
 touch an edge.
 
-SET — A clean, bright studio corner: a seamless pale warm-grey sweep, and
-the floor plane visible and reading as floor, with the wall dissolving into
-it in a soft gradient behind the chair. No horizon line, no skirting, no
-texture, no room, no location.
+SET — A clean, bright studio sweep: pale warm grey, with the floor plane
+visible and reading as floor and the wall dissolving into it in a soft
+gradient behind the chair. NO vertical corner line, no second wall, no
+skirting, no horizon line, no texture, no room, no location — the background
+is one continuous surface.
 
 PROP — One potted plant, and nothing else: a green leafy plant in a plain
 white ceramic pot, standing on the floor to one side and slightly behind the
@@ -654,6 +655,10 @@ propio de su función — todas con la misma planta se vería a plantilla.
 
 El accesorio siempre va **sin tocar el mueble por delante**: acompaña, no
 tapa. Y nunca más de uno.
+
+**El fondo, sin esquina.** En la de la mesa se coló la arista vertical de un
+rincón y en la de la silla no la hay, así que las dos no casan del todo. El
+bloque SET pide ahora una sola superficie continua.
 
 ---
 
