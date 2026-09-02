@@ -534,6 +534,13 @@ tarjeta es una foto de producto: mueble de frente, completo, centrado y
 cerca. La `life-4` es la atmosférica: la silla de espaldas, lejos, el damero
 corriendo hasta la vegetación.
 
+**El cojín de la silla.** Va suelto sobre el asiento, gris azulado, y una vez
+que aparece en una foto tiene que aparecer en todas las de la silla —
+tarjeta, ficha y `life-4`—, o el catálogo se contradice. Ojo: no está en el
+DXF, así que el visor 3D lo muestra sin cojín y el precio no lo cobra. Si es
+un accesorio de venta hay que darlo de alta; si es sólo utilería, la foto
+promete de más.
+
 Referencias: IMAGEN 1 = el render del mueble, capturado del visor sin
 cuadrícula ni rótulos. IMAGEN 2 = la foto del damero.
 
@@ -574,6 +581,13 @@ INTEGRATION — The chair is standing on that floor, not pasted on it:
 · the same overcast light direction as the background
 · the same haze, grain and colour cast as IMAGE 2
 
+CUSHION — Add one loose seat cushion and nothing else: a single flat pad of
+grey-blue woven fabric, slightly domed, resting inside the frame on the seat
+panel between the two side frames. It fills the seat exactly, its front edge
+flush with the front of the seat, about 6 cm thick so it reads clearly, with
+soft rounded corners and a visible fabric weave. Loose and unattached: no
+buttons, no tufting, no piping, no straps, and no back cushion.
+
 MATERIAL — Matte natural birch laminate on the faces: smooth and even, no
 stucco or orange-peel texture, no brush marks. Every cut edge shows the
 laminated core as a striped tan band, and every edge in the frame is cut
@@ -582,7 +596,8 @@ colour stops dead at the arris.
 
 NON-NEGOTIABLE — Reproduce the chair in IMAGE 1 exactly: same number of
 parts, same splay of the legs, same wrap of the back, same flush through
-tenons. No cushions, no visible hardware, no screws.
+tenons. The seat cushion described above is the ONLY thing added to it. No
+visible hardware, no screws, no other upholstery.
 
 Photographic realism. No people, no text, no watermark, no logos.
 ```
