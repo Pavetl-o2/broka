@@ -568,6 +568,11 @@ como un álbum de recortes en vez de como una colección.
 Como vuelve a ser estudio, **el mismo archivo sirve para `brk-g-<id>-0`**,
 la general de la ficha: son ocho huecos y cuatro imágenes.
 
+**Medido en la primera: el piso de abajo se queda corto.** La de la silla
+salió 825×1024 con las patas en y=925, y el recorte cuadrado del catálogo
+corta justo en 925: cero holgura. Se ve bien, pero es filo de navaja. Por eso
+el prompt pide ahora un 12% de piso vacío bajo las patas.
+
 **El cojín de la silla.** Va suelto sobre el asiento, gris azulado, y una vez
 que aparece en una foto tiene que aparecer en todas las de la silla —
 tarjeta, ficha y `life-4`—, o el catálogo se contradice. Ojo: no está en el
@@ -585,10 +590,11 @@ Product photograph of the chair from IMAGE 1 for a furniture catalogue,
 three-quarter front view, camera at seat height. Finish: natural birch.
 
 FRAMING — Vertical 4:5. The chair is complete, roughly centred left to
-right, and fills about 60% of the frame height. Leave open floor below it
-and open space above: a square crop through the middle of this frame must
-still contain the whole chair, feet included. Never crop the chair and never
-let it touch an edge.
+right, and fills about 60% of the frame height. Leave at least 12% of the
+frame height as empty floor BELOW the feet, and open space above: a square
+crop through the middle of this frame must still contain the whole chair,
+feet included, with room to spare. Never crop the chair and never let it
+touch an edge.
 
 SET — A clean, bright studio corner: a seamless pale warm-grey sweep, and
 the floor plane visible and reading as floor, with the wall dissolving into
