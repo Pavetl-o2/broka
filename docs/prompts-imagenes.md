@@ -555,6 +555,12 @@ y en favoritos es `aspect-square` (`:58`). Una sola imagen sirve a los dos, y
 `object-cover` recorta. Por eso se generan en **4:5 y con aire arriba y
 abajo**: el recorte cuadrado se come el 20% del alto y no debe tocar la pieza.
 
+**Las tarjetas no llevan el bloque base de la §1.** Ése pide amanecer
+nublado, frío y sin sol directo; las tarjetas van con sol bajo filtrado por
+la vegetación, que es lo que las hace parecer fotografiadas: las sombras
+moteadas de las hojas cruzan el mueble y el suelo en un solo patrón, y eso un
+recorte pegado no lo puede fingir. El prompt de abajo se basta solo.
+
 **Las cuatro van en el mismo sitio y con la misma luz.** Se ven una junto a
 otra en una fila; si cada mueble sale en una locación distinta, la fila se
 lee como un álbum de recortes en vez de como una colección. El damero es la
@@ -577,11 +583,12 @@ cuadrícula ni rótulos. IMAGEN 2 = la foto del damero.
 
 ```
 IMAGE 1 = a CNC-cut birch plywood chair. IMAGE 2 = an abandoned checkerboard
-tile terrace swallowed by jungle, under heavy cloud.
+tile terrace swallowed by jungle. Use IMAGE 2 for the PLACE — the tiles, the
+vegetation, the ruin — but not for its weather: this photograph is taken
+later, in low sun.
 
 Place the chair from IMAGE 1 alone on the checkerboard floor of IMAGE 2,
-three-quarter front view, camera low at seat height and close to the piece.
-Finish: natural birch.
+three-quarter front view, camera at seat height. Finish: natural birch.
 
 FRAMING — Vertical 4:5. This is a product card, so the piece is presented,
 not staged: the chair is complete, roughly centred left to right, and fills
@@ -590,27 +597,38 @@ it and open space above: a square crop through the middle of this frame must
 still contain the whole chair, feet included. Never crop the piece and never
 let it touch an edge.
 
-COMPOSITION — This block REPLACES the base block's composition rule. The
-horizon and the tree line sit high, behind the chair, and the checkerboard
-runs from the bottom edge up to them. Nothing else in the frame: no other
-furniture, no people, no props, no debris.
+LIGHT — Low late-afternoon sun, warm, raking in from one side through the
+trees. This is the most important element of the photograph: the foliage
+breaks the sun into DAPPLED LEAF SHADOWS that fall across everything — the
+seat, the cushion, the side frames, the legs, and the checkerboard floor
+around and beyond the chair, all in one continuous pattern. Warm honeyed
+light in the patches, soft cool shade between them. Not overcast, not flat,
+not grey.
 
-CAMERA — 85 mm lens, camera about 45 cm above the floor, roughly 2 m from
-the chair, f/2.8. The chair is razor sharp front to back; the jungle behind
-dissolves into soft green shapes and the far checkerboard blurs. No wide
-angle, no deep focus.
+INTEGRATION — That dapple is what welds the chair to the floor: the same
+leaf-shadow pattern must run across the chair and continue onto the tiles
+without a break, at the same angle and the same softness. On top of it:
+· the chair's own long shadow, thrown low across the checkerboard away from
+  the sun, with the tile pattern showing through it
+· a small dark contact patch under each foot, tight where wood meets tile
+· ambient occlusion under the seat, under the cushion, in every corner
+· green bounce from the vegetation on the undersides and the shaded faces
+· the same grain, haze and colour cast as the rest of the frame
 
-LIGHT — Overcast, tropical, heavy grey storm cloud, exactly the weather of
-IMAGE 2. No hard sun, no sun disc, no golden warmth. Cool, humid, still,
-with open shadows that keep detail.
+FOREGROUND — Something real and very close to the lens, cropped by the frame
+and thrown completely out of focus in one lower corner: a branch, a frond, a
+clump of grass growing through the tiles. It is a soft shape, not a subject.
+This near layer is what gives the picture depth.
 
-INTEGRATION — The chair is standing on that floor, not pasted on it:
-· a dark contact shadow where each foot meets the tile, tight at the point
-  of contact and softening outward
-· ambient occlusion under the seat and in every inside corner
-· green bounce from the vegetation on the underside and the shaded faces
-· the same overcast light direction as the background
-· the same haze, grain and colour cast as IMAGE 2
+COMPOSITION — Three layers: the soft foreground, the sharp chair in the
+middle distance, and the wall of vegetation behind. The tree line sits high,
+behind the chair. Nothing else in the frame: no other furniture, no people,
+no lamps, no props, no debris.
+
+CAMERA — 135 mm lens, about 3 m from the chair, at roughly seat height,
+f/2.8. Telephoto compression: the vegetation reads flattened and pushed
+close behind the chair. The chair is razor sharp front to back; the
+foreground and the tree line both dissolve. No wide angle, no deep focus.
 
 CUSHION — Add one loose seat cushion and nothing else: a single flat pad of
 grey-blue woven fabric, slightly domed, resting inside the frame on the seat
