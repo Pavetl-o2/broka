@@ -514,6 +514,65 @@ camera at 1.6 m so both pieces read at once.
 
 ---
 
+## 2b. Tarjetas del catálogo · 4:5
+
+Los huecos `brk-p-cresta`, `brk-p-llano`, `brk-p-reticula` y `brk-p-tramo`.
+
+**Cuidado con la proporción: el mismo id se pinta en dos formatos.** En la
+portada la tarjeta es `aspect-[4/5]` (`product-card.tsx:17`) y en el catálogo
+y en favoritos es `aspect-square` (`:58`). Una sola imagen sirve a los dos, y
+`object-cover` recorta. Por eso se generan en **4:5 y con aire arriba y
+abajo**: el recorte cuadrado se come el 20% del alto y no debe tocar la pieza.
+
+Y como la toma es la misma que la general de estudio de la ficha, **el
+archivo puede subirse dos veces**, como `brk-p-<id>.jpg` y como
+`brk-g-<id>-0.jpg`. Son ocho huecos y cuatro imágenes.
+
+Referencia: sólo el render del mueble, capturado del visor sin cuadrícula ni
+rótulos, en el acabado que pida el prompt.
+
+```
+IMAGE 1 = a CNC-cut birch plywood chair.
+
+Studio product photograph of the chair from IMAGE 1 for a furniture
+catalogue, three-quarter front view, camera at seat height.
+
+FRAMING — Vertical 4:5. The chair is centred and complete, with generous
+empty margin above and below it: a square crop through the middle of this
+frame must still contain the whole chair, feet included. Do not crop the
+piece, do not let it touch the edges.
+
+BACKGROUND — Pure white seamless studio sweep, no horizon line, no visible
+floor, no props, no room. It dissolves to clean white at the edges.
+
+LIGHT — One very large soft source high and slightly to the left, white
+bounce from the right, and a soft grounded contact shadow under each foot so
+the chair sits on something. Open shadows, no hard shadow, no colour cast.
+
+CAMERA — 85 mm lens, f/8, the whole chair sharp front to back.
+
+FACES — Matte natural birch laminate: smooth and even, no stucco or
+orange-peel texture, no brush marks, a slight satin sheen only. The face
+colour stops dead at the arris.
+
+EDGES — Every exposed plywood edge is cut from the same sheet and must read
+that way: same ply count, same tone, same stripe rhythm, pale cream veneers
+with slightly warmer tan glue lines. An edge seen face-on and an edge seen
+from the side must match. No dark hardwood, no oak, no dark glue lines.
+
+NON-NEGOTIABLE — Reproduce the chair in IMAGE 1 exactly: same number of
+parts, same splay of the legs, same wrap of the back, same flush through
+tenons. No cushions, no visible hardware, no screws.
+
+Photographic realism. No people, no text, no watermark, no logos.
+```
+
+Para los otros tres, cambiar la primera línea y el sujeto por el mueble que
+toque, y la vista: la mesa en tres cuartos ligeramente desde arriba, el
+librero de frente, el banco de lado.
+
+---
+
 ## 3. Fichas de producto · 1:1
 
 Tres por mueble. Aquí **no** hay locación: estudio o taller, y el sujeto es la
