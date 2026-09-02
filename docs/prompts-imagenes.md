@@ -98,17 +98,48 @@ pedirlo y bajarlo al recibirlo — el hero pasó de 5824×2880 / 6.6 MB a
 
 ## 1b. Cómo trabajarlo
 
-**Dos pasadas.** Los dos modelos corrigen mejor de lo que crean. Pasada 1:
-sacar la escena con la geometría correcta, aunque quede plana. Pasada 2:
-volver a meter ese resultado como referencia con sólo esto:
+**Dos pasadas, siempre.** Los dos modelos corrigen mejor de lo que crean, y
+el bloque INTEGRATION lo ignoran en la primera. Pasada 1: sacar la escena con
+la geometría y el encuadre correctos, aunque el mueble parezca pegado.
+Pasada 2: volver a meter ese resultado como única referencia y pedir sólo la
+integración.
+
+**Las cuatro señales de que está pegado**, en el orden en que aparecen: no
+proyecta sombra sobre el suelo; está más claro que la escena, porque el
+modelo lo ilumina como producto de estudio; no recibe el color del entorno; y
+el fondo está desenfocado de más, como una lámina borrosa detrás de un
+recorte, en vez de tener profundidad progresiva.
 
 ```
-Keep the composition and the object exactly as they are. Only fix the
-integration: add the contact shadow under each foot, ambient occlusion in the
-inside corners, bounce light from the ground onto the underside, rim light on
-the top edges from the bright sky, and a soft reflection in the wet floor.
-Throw the background further out of focus. The object must look photographed
-in place, not composited.
+Keep the piece, its design, its position and the framing exactly as they are.
+Change only how it sits in the scene.
+
+EXPOSURE — The piece is lit like a studio product and is far brighter than
+its surroundings. Bring it down into the same exposure as the background: no
+white highlights, the same muted, cool, slightly desaturated values as the
+ground and the vegetation. Under an overcast sky nothing is brighter than
+the sky.
+
+SHADOW — The piece casts no shadow and floats. Add the shadow it must cast:
+a soft diffuse overcast shadow spreading away from it across the ground,
+plus a small dark contact patch under each foot — tight and dark where it
+meets the ground, softening outward. The ground's own texture and pattern
+show through the shadow.
+
+BOUNCE — Add the colour of the surroundings onto the piece: green from the
+vegetation, or the ground's own tone, on the undersides, the inner faces and
+the lower legs. Add ambient occlusion in every inside corner and wherever
+two parts meet.
+
+FOCUS — The background is blurred like a pasted backdrop. Reduce the blur so
+it reads as real depth of field: the ground immediately around the feet is
+nearly as sharp as the piece, and the blur increases gradually toward the
+horizon.
+
+TEXTURE — Match the plate: the same photographic grain, the same haze and
+the same colour cast as the scene. The surface is real timber, not smooth CG.
+
+It must look photographed there, not composited onto it.
 ```
 
 **Si la locación pelea.** Las fotos de locación son vistas amplias tomadas de
