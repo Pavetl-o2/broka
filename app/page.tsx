@@ -31,28 +31,28 @@ const PILARES = [
 const LIFESTYLE = [
   {
     slot: 'brk-life-1',
-    ph: 'Mesa LLANO en una terraza frente a la laguna, vertical',
-    cap: 'Mesa LLANO en una terraza de Bacalar, al amanecer.',
+    ph: 'Mesa LLANO en una terraza sobre la laguna, vertical',
+    cap: 'Mesa LLANO en una terraza sobre la laguna de Bacalar.',
   },
   {
     slot: 'brk-life-2',
-    ph: 'Librero RETÍCULA sobre un piso de damero, vertical',
-    cap: 'Librero RETÍCULA sobre el damero de una terraza recuperada por la selva.',
+    ph: 'Librero RETÍCULA en un loft industrial, vertical',
+    cap: 'Librero RETÍCULA en un loft industrial, contra el ventanal.',
   },
   {
     slot: 'brk-life-3',
-    ph: 'Banco TRAMO en un mirador sobre el agua, vertical',
-    cap: 'Banco TRAMO en un mirador sobre el agua, antes de que salga el sol.',
+    ph: 'Banco TRAMO en un muelle de madera, vertical',
+    cap: 'Banco TRAMO en un muelle de Bacalar, al caer la tarde.',
   },
   {
     slot: 'brk-life-4',
-    ph: 'Silla CRESTA sola sobre el damero, vertical',
-    cap: 'Silla CRESTA sola en el damero, a la hora en que baja la luz.',
+    ph: 'Silla CRESTA junto a un ventanal industrial, vertical',
+    cap: 'Silla CRESTA junto al ventanal, a media tarde.',
   },
   {
     slot: 'brk-life-5',
-    ph: 'Mesa LLANO y Silla CRESTA frente a la laguna, vertical',
-    cap: 'Mesa LLANO y Silla CRESTA frente a la laguna.',
+    ph: 'Mesa LLANO y Silla CRESTA al final de un muelle, vertical',
+    cap: 'Mesa LLANO y Silla CRESTA al final del muelle.',
   },
 ];
 

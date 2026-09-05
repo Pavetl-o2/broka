@@ -54,10 +54,16 @@ frame or hidden behind the piece, never cutting through the middle. Leave the
 foreground ground plane open and textured — it is the stage the piece stands
 on.
 
-LIGHT — Overcast dawn, tropical. Heavy grey cloud with a single break where
-diffuse rays fan down. No hard sun, no visible sun disc. Cool blue-grey
-palette, silver on water and wet stone, open shadows with detail. Soft,
-humid, still. Golden hour warmth is WRONG — this is cold, quiet, dramatic.
+LIGHT — Take the weather, the hour and the direction of the light from
+IMAGE 2 and keep them exactly. Do not invent a different sky.
+
+PALETTE — This is the rule that holds the whole set together. The LOCATION is
+desaturated, cool and weathered: greyed timber, salt-bleached paint, dull
+concrete, muted green, pale water, low-contrast sky. Pull its saturation
+down. The PIECE is the opposite and the only exception: clean, warm, precise,
+the one thing in the frame with fresh colour and a crisp edge. That contrast
+— cool worn place, warm new object — IS the photograph. Never let the
+location be more saturated than the piece.
 
 INTEGRATION — The piece is physically present in the scene, not pasted on
 top. It must show ALL of this:
@@ -436,60 +442,77 @@ clean and unhandled: no dust, no sawdust, no fingerprints, no tools, no
 hands. Photographic realism. No text, no watermark.
 ```
 
-### `brk-life-1` · 3:4 vertical · Mesa LLANO en la terraza de la laguna
+### Las tres locaciones
 
-Pie de foto propuesto: *Mesa LLANO en una terraza de Bacalar, al amanecer.*
+Tres fotos tuyas, que se reparten entre los cinco huecos. Todas comparten la
+misma paleta: desaturadas, frías, rústicas.
+
+| Clave | Qué es |
+|---|---|
+| **MUELLE** | pasarela de madera sobre la laguna de Bacalar al atardecer, agua quieta como espejo, cielo pastel bajo, casi sin saturación |
+| **TERRAZA** | plataforma de loseta blanca con barandal, sobre el agua turquesa, mediodía con cúmulos |
+| **LOFT** | nave industrial de fotografía: piso de concreto, muros blancos, vigas de madera, ventanal de retícula metálica, manchas de sol duro en el suelo |
+
+Reparto, sin repetir pareja: la mesa va a la TERRAZA, el librero y la silla al
+LOFT, el banco y la pareja mesa+silla al MUELLE.
+
+### `brk-life-1` · 3:4 vertical · Mesa LLANO en la terraza
+
+Pie propuesto: *Mesa LLANO en una terraza sobre la laguna de Bacalar.*
 
 ```
-IMAGE 1 = a CNC-cut birch plywood square table. IMAGE 2 = a terrace
-overlooking a lagoon at dawn.
+IMAGE 1 = a CNC-cut birch plywood square table. IMAGE 2 = a white tiled
+terrace with a painted railing, over turquoise water, under cumulus cloud.
 
-Place the table from IMAGE 1 on the terrace of IMAGE 2, off centre and close
-to the camera, seen from seated height and slightly from the front. The table
-is 116 × 116 cm and 73 cm tall. Two enamel cups and a folded linen cloth on
-the top — nothing else. The lagoon, the cloud break and the rays behind it.
-Finish: natural birch.
+Place the table from IMAGE 1 on the tiled terrace of IMAGE 2, off centre and
+close to the camera, seen from seated height and slightly from the front.
+The table is 116 × 116 cm and 73 cm tall. Two enamel cups and a folded linen
+cloth on the top — nothing else. The railing, the lagoon and the clouds
+behind it. Finish: natural birch.
 
 Vertical 3:4. Camera and lens exactly as in the block below.
 
 [BLOQUE BASE]
 ```
 
-### `brk-life-2` · 3:4 vertical · Librero RETÍCULA en el damero
+### `brk-life-2` · 3:4 vertical · Librero RETÍCULA en el loft
 
-Pie propuesto: *Librero RETÍCULA sobre el damero de una terraza recuperada por la selva.*
+Pie propuesto: *Librero RETÍCULA en un loft industrial, contra el ventanal.*
 
 ```
-IMAGE 1 = a tall CNC-cut birch plywood shelving unit. IMAGE 2 = an abandoned
-checkerboard tile terrace swallowed by jungle.
+IMAGE 1 = a tall CNC-cut birch plywood shelving unit. IMAGE 2 = an
+industrial photo loft: bare concrete floor, white walls, timber ceiling
+beams, a big steel-gridded window throwing hard patches of light on the
+floor.
 
-Stand the shelving unit from IMAGE 1 upright on the checkerboard floor of
+Stand the shelving unit from IMAGE 1 upright on the concrete floor of
 IMAGE 2, slightly left of centre, three-quarter view, camera at 1.4 m. It is
 110 cm wide, 38 cm deep and 183 cm tall — taller than a person, keep that
-scale against the trees. Empty shelves, or two or three books flat. The green
-wall of vegetation behind it, storm cloud above. Finish: matte black, so the
-tan plywood edges draw the whole grid of shelves and fins.
+scale against the window and the beams. Empty shelves, or two or three books
+lying flat. One patch of window light falls across the floor beside it, not
+on it. Finish: matte black, so the tan plywood edges draw the whole grid of
+shelves and fins.
 
 Vertical 3:4. Camera and lens exactly as in the block below — the unit is
-sharp front to back, the jungle behind it is not.
+sharp front to back, the loft behind it is not.
 
 [BLOQUE BASE]
 ```
 
-### `brk-life-3` · 3:4 vertical · Banco TRAMO en el mirador
+### `brk-life-3` · 3:4 vertical · Banco TRAMO en el muelle
 
-Pie propuesto: *Banco TRAMO en un mirador sobre el agua, antes de que salga el sol.*
+Pie propuesto: *Banco TRAMO en un muelle de Bacalar, al caer la tarde.*
 
 ```
-IMAGE 1 = a long CNC-cut birch plywood slatted bench with a curved dipping
-seat. IMAGE 2 = a tiled terrace with a white concrete bench overlooking water
-at dawn.
+IMAGE 1 = a long CNC-cut birch plywood slatted bench with a deep dipping
+seat. IMAGE 2 = a weathered timber jetty running out over a still lagoon at
+dusk, pastel sky, mirror water.
 
-Remove the white concrete bench from IMAGE 2 and put the bench from IMAGE 1
-in its place, along the railing, seen from one end so the row of slats
-recedes and the curve of the seat reads against the horizon. It is 178 cm
-long, 60 cm deep and 45 cm tall. Keep the terrace tiles, the railing, the
-pole and the pale misted water. Finish: natural birch.
+Place the bench from IMAGE 1 along the jetty of IMAGE 2, seen from one end so
+the row of ribs recedes and the dipping curve of the seat reads against the
+water. It is 178 cm long, 60 cm deep and 45 cm tall, and it sits flat on the
+boards along its whole length. Keep the grey planks, the still water and the
+low pastel sky. Finish: natural birch.
 
 Vertical 3:4. Lens and aperture exactly as in the block below, but drop the
 camera to about 60 cm so the seat curve reads against the horizon.
@@ -497,194 +520,48 @@ camera to about 60 cm so the seat curve reads against the horizon.
 [BLOQUE BASE]
 ```
 
-### `brk-life-4` · 3:4 vertical · Silla CRESTA en el damero
+### `brk-life-4` · 3:4 vertical · Silla CRESTA en el loft
 
-Pie propuesto: *Silla CRESTA sola en el damero, a la hora en que baja la luz.*
-
-> Este hueco pedía el Escritorio VERTIENTE, que ya no existe. Propuesta: la silla.
+Pie propuesto: *Silla CRESTA junto al ventanal, a media tarde.*
 
 ```
 IMAGE 1 = a CNC-cut birch plywood chair with splayed side frames and a
-wrap-around back. IMAGE 2 = an abandoned checkerboard tile terrace swallowed
-by jungle.
+wrap-around back. IMAGE 2 = an industrial photo loft: bare concrete floor,
+white walls, timber ceiling beams, a big steel-gridded window.
 
-Place a single chair from IMAGE 1 alone on the checkerboard floor of IMAGE 2,
-turned three-quarters away from the camera as if someone just left it, camera
-at 1.2 m, a little above the seat. It is 45 cm wide, 72 cm deep and 76 cm
-tall. Nothing else in the frame. The checkerboard runs to the wall of
-vegetation. Finish: matte blue, deep and desaturated, with the tan plywood
-edges outlining every panel.
+Place a single chair from IMAGE 1 alone on the concrete floor of IMAGE 2,
+near the window, turned three-quarters away from the camera as if someone
+just left it, camera at 1.2 m, a little above the seat. It is 45 cm wide,
+72 cm deep and 76 cm tall. Nothing else in the frame. The grid of the window
+and one hard patch of light on the floor beside the chair. Finish: matte
+blue, deep and desaturated, with the tan plywood edges outlining every panel.
 
 Vertical 3:4. Camera and lens exactly as in the block below: sharp on the
-chair, vegetation soft.
+chair, the loft soft.
 
 [BLOQUE BASE]
 ```
 
-### `brk-life-5` · 3:4 vertical · Silla y mesa en la terraza
+### `brk-life-5` · 3:4 vertical · Mesa y silla en el muelle
 
-Pie propuesto: *Mesa LLANO y Silla CRESTA frente a la laguna.*
-
-> Este hueco pedía el Buró NUDO, que ya no existe. Propuesta: la pareja.
+Pie propuesto: *Mesa LLANO y Silla CRESTA al final del muelle.*
 
 ```
 IMAGE 1 = a CNC-cut birch plywood square table and matching chair. IMAGE 2 =
-a terrace overlooking a lagoon at dawn.
+a weathered timber jetty over a still lagoon at dusk.
 
-Place the table and one chair from IMAGE 1 on the terrace of IMAGE 2, the
+Place the table and one chair from IMAGE 1 out on the jetty of IMAGE 2, the
 chair pulled out at an angle as if just used, both seen from a standing
 height of 1.6 m. Table 116 × 116 × 73 cm, chair 45 × 72 × 76 cm — the chair
-seat must sit well below the table top. The lagoon and the rays behind.
-Finish: both in matte white, so the tan plywood edges draw every part.
+seat must sit well below the table top. The planks run away underneath them,
+the still water and the pastel sky beyond. Finish: both in matte white, so
+the tan plywood edges draw every part.
 
 Vertical 3:4. Lens and aperture exactly as in the block below, but stand the
 camera at 1.6 m so both pieces read at once.
 
 [BLOQUE BASE]
 ```
-
----
-
-## 2b. Tarjetas del catálogo · 4:5 · estudio claro
-
-Los huecos `brk-p-cresta`, `brk-p-llano`, `brk-p-reticula` y `brk-p-tramo`.
-
-**Cuidado con la proporción: el mismo id se pinta en dos formatos.** En la
-portada la tarjeta es `aspect-[4/5]` (`product-card.tsx:17`) y en el catálogo
-y en favoritos es `aspect-square` (`:58`). Una sola imagen sirve a los dos, y
-`object-cover` recorta. Por eso se generan en **4:5 y con aire arriba y
-abajo**: el recorte cuadrado se come el 20% del alto y no debe tocar la pieza.
-
-**Las tarjetas no llevan ningún bloque base: el prompt se basta solo.** Van
-en estudio claro, con el piso a la vista y una planta al lado. La sombra
-suave que el mueble proyecta sobre ese piso es lo que lo planta en el suelo,
-y sale bien a la primera — mucho más seguro que componer sobre una foto de
-locación, donde el mueble acaba pareciendo un recorte.
-
-**Las cuatro van en el mismo set y con la misma luz.** Se ven una junto a
-otra en una fila; si cada mueble sale en un sitio distinto, la fila se lee
-como un álbum de recortes en vez de como una colección.
-
-Como vuelve a ser estudio, **el mismo archivo sirve para `brk-g-<id>-0`**,
-la general de la ficha: son ocho huecos y cuatro imágenes.
-
-**Medido en la primera: el piso de abajo se queda corto.** La de la silla
-salió 825×1024 con las patas en y=925, y el recorte cuadrado del catálogo
-corta justo en 925: cero holgura. Se ve bien, pero es filo de navaja. Por eso
-el prompt pide ahora un 12% de piso vacío bajo las patas.
-
-**El cojín de la silla.** Va suelto sobre el asiento, gris azulado, y una vez
-que aparece en una foto tiene que aparecer en todas las de la silla —
-tarjeta, ficha y `life-4`—, o el catálogo se contradice. Ojo: no está en el
-DXF, así que el visor 3D lo muestra sin cojín y el precio no lo cobra. Si es
-un accesorio de venta hay que darlo de alta; si es sólo utilería, la foto
-promete de más.
-
-Referencia: sólo el render del mueble, capturado del visor sin cuadrícula ni
-rótulos.
-
-```
-IMAGE 1 = a CNC-cut birch plywood chair.
-
-Product photograph of the chair from IMAGE 1 for a furniture catalogue,
-three-quarter front view, camera at seat height. Finish: natural birch.
-
-FRAMING — Vertical 4:5. The chair is complete, roughly centred left to
-right, and fills about 60% of the frame height. Leave at least 12% of the
-frame height as empty floor BELOW the feet, and open space above: a square
-crop through the middle of this frame must still contain the whole chair,
-feet included, with room to spare. Never crop the chair and never let it
-touch an edge.
-
-SET — A clean, bright studio sweep: pale warm grey, with the floor plane
-visible and reading as floor and the wall dissolving into it in a soft
-gradient behind the chair. NO vertical corner line, no second wall, no
-skirting, no horizon line, no texture, no room, no location — the background
-is one continuous surface.
-
-PROP — One potted plant, and nothing else: a green leafy plant in a plain
-white ceramic pot, standing on the floor to one side and slightly behind the
-chair, partly cropped by the edge of the frame. It is a companion, not the
-subject: smaller in the frame than the chair and never overlapping it. No
-other props, no rugs, no people, no lamps, no books.
-
-LIGHT — One very large soft source high and to the front-left, plus soft
-fill from the right. Bright, even, cool daylight with open shadows. The
-chair casts one soft grey shadow low across the floor to the right, and each
-foot has a small darker contact patch where it meets the floor — that
-shadow is what stands it on the ground.
-
-CAMERA — 85 mm lens, about 2.5 m away, at seat height, f/5.6. The chair is
-sharp front to back; the plant and the sweep behind it fall very gently off.
-
-CUSHION — Add one loose seat cushion and nothing else: a single flat pad of
-grey-blue woven fabric, slightly domed, resting inside the frame on the seat
-panel between the two side frames. It fills the seat exactly, about 6 cm
-thick, with soft rounded corners and a visible fabric weave. Loose and
-unattached: no buttons, no tufting, no piping, no straps, no back cushion.
-
-MATERIAL — Matte natural birch laminate on the faces: smooth and even, no
-stucco or orange-peel texture, no brush marks, a slight satin sheen only.
-Every cut edge shows the laminated core as a striped tan band, and every
-edge in the frame is cut from the same sheet: same ply count, same tone,
-same stripe rhythm. The face colour stops dead at the arris.
-
-NON-NEGOTIABLE — Reproduce the chair in IMAGE 1 exactly: same number of
-parts, same splay of the legs, same wrap of the back, same flush through
-tenons. The seat cushion is the ONLY thing added to it. No visible hardware,
-no screws.
-
-Photographic realism, catalogue quality. No text, no watermark, no logos.
-```
-
-### Qué cambia y qué no, de una tarjeta a otra
-
-**No cambia nada del set:** mismo barrido, misma luz, misma cámara, mismo
-encuadre 4:5 con piso bajo las patas. Eso es lo que hace que las cuatro se
-lean como una colección y no como cuatro fotos sueltas.
-
-**Cambian dos cosas:** el ángulo y el accesorio. Un accesorio por mueble,
-propio de su función — todas con la misma planta se vería a plantilla.
-
-| Mueble | Vista | Accesorio |
-|---|---|---|
-| Silla CRESTA | tres cuartos, a la altura del asiento | planta de hoja grande en maceta blanca, al lado |
-| Mesa LLANO | tres cuartos, un poco desde arriba, para que se vean las cruces | dos libros de tapa dura y un cuenco de cerámica mate, sobre la cubierta |
-| Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
-| Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada colgando de un extremo, y una planta alta en maceta de barro |
-
-> **La foto del banco que está puesta es provisional y está mal.** Enseña el
-> borde de arriba a nivel y el fondo arqueado, apoyado sólo en los extremos.
-> Se aceptó a sabiendas, porque el mueble va a cambiar. No debe publicarse
-> así: en cuanto exista el DXF nuevo hay que regenerarla con este prompt.
-
-**La silueta del banco, medida.** Proyectando el contorno de las 29 costillas
-al mundo: el asiento está a **452 mm en los dos extremos y baja hasta 184 mm
-en el centro** —268 mm, más de la mitad de la altura—, y **las 29 costillas
-apoyan en el suelo**, todas con la base en z≈2. Es una hamaca, no un puente:
-si en la foto el borde de arriba sale casi a nivel y lo que se arquea es el
-fondo, el mueble está mal y hay que repetir. Sin los números el modelo dibuja
-un arco.
-
-El accesorio siempre va **sin tocar el mueble por delante**: acompaña, no
-tapa.
-
-**Si se repite planta, que no sea la misma.** El banco es largo y bajo y deja
-mucho barrido vacío a los lados, así que lleva planta además de la manta. Pero
-la de la silla es una ficus lira en maceta blanca de cerámica; la del banco va
-alta y estrecha, en maceta de barro. Misma familia de accesorio, distinta
-pieza — si no, las dos tarjetas se ven calcadas.
-
-**El fondo, sin esquina.** En la de la mesa se coló la arista vertical de un
-rincón y en la de la silla no la hay, así que las dos no casan del todo. El
-bloque SET pide ahora una sola superficie continua.
-
-**Los muebles altos no caben en el recorte cuadrado.** El librero llegó
-ocupando el 79% del alto del 4:5, y en el cuadrado del catálogo eso deja unos
-20 px de margen en total: se comía 22 px de las patas. Hubo que prolongarle el
-piso 64 px. Para una pieza alta hay que pedirle al modelo que la deje **más
-pequeña dentro del cuadro**, no sólo que deje piso: un 60% del alto, no un
-79%.
 
 ---
 
