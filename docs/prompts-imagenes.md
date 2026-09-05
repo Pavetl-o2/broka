@@ -453,8 +453,13 @@ misma paleta: desaturadas, frías, rústicas.
 | **TERRAZA** | plataforma de loseta blanca con barandal, sobre el agua turquesa, mediodía con cúmulos |
 | **LOFT** | nave industrial de fotografía: piso de concreto, muros blancos, vigas de madera, ventanal de retícula metálica, manchas de sol duro en el suelo |
 
-Reparto, sin repetir pareja: la mesa va a la TERRAZA, el librero y la silla al
-LOFT, el banco y la pareja mesa+silla al MUELLE.
+Reparto: la mesa va a la TERRAZA, el librero y la silla al LOFT, el banco al
+MUELLE, y la pareja mesa+silla vuelve a la TERRAZA.
+
+**La terraza sale dos veces**, en `life-1` y en `life-5`, y la mesa aparece en
+las dos. Para que no se vean gemelas se separan por encuadre: la `life-1` es
+cerrada, a altura de sentado y mirando al agua; la `life-5` va de pie y
+mirando a lo largo de la terraza, con el barandal corriendo hacia el fondo.
 
 ### `brk-life-1` · 3:4 vertical · Mesa LLANO en la terraza
 
@@ -542,35 +547,33 @@ chair, the loft soft.
 [BLOQUE BASE]
 ```
 
-### `brk-life-5` · 3:4 vertical · Mesa y silla en el muelle
+### `brk-life-5` · 3:4 vertical · Mesa y silla en la terraza
 
-Pie propuesto: *Mesa LLANO y Silla CRESTA al final del muelle.*
+Pie propuesto: *Mesa LLANO y Silla CRESTA en la terraza, a media tarde.*
 
-**Éste lleva tres referencias, no dos.** El visor enseña un mueble por
-captura, así que no existe un render con la mesa y la silla juntas. Lo que
-conviene meter son las dos fotos de tarjeta ya hechas —`brk-p-llano.jpg` y
+**Éste lleva tres referencias.** El visor enseña un mueble por captura, así
+que no existe un render con la mesa y la silla juntas. Lo que conviene meter
+son las dos fotos de tarjeta ya hechas —`brk-p-llano.jpg` y
 `brk-p-cresta.jpg`—: son fotográficas y tienen la geometría correcta, así
 que el modelo copia mejor de ellas que de un render plano.
 
 ```
-IMAGE 1 = the square table. IMAGE 2 = the chair. IMAGE 3 = a weathered
-timber jetty over a still lagoon at dusk.
+IMAGE 1 = the square table. IMAGE 2 = the chair. IMAGE 3 = a white tiled
+terrace with a painted railing, over a wide pale lagoon, under cumulus cloud.
 
-Place the table from IMAGE 1 and the chair from IMAGE 2 out on the jetty of
-IMAGE 3, the
-chair pulled out at an angle as if just used, both seen from a standing
-height of 1.6 m. Table 116 × 116 × 73 cm, chair 45 × 72 × 76 cm — the chair
-seat must sit well below the table top. The planks run away underneath them, the still water and the pastel sky
-beyond. Finish: both in matte white, so the tan plywood edges draw every
+Remove the white concrete bench that stands in IMAGE 3 and put the table
+from IMAGE 1 and the chair from IMAGE 2 on those tiles instead. The chair is
+pulled out at an angle as if just used. Both seen from a standing height of
+1.6 m, looking ALONG the terrace with the railing running away into the
+frame — not straight out at the water. Table 116 × 116 × 73 cm, chair 45 cm
+wide, 72 cm deep and 76 cm tall — the chair seat must sit well below the
+table top. Finish: both in matte white, so the tan plywood edges draw every
 part.
 
-Vertical 3:4. Lens and aperture exactly as in the block below, but stand the
-camera at 1.6 m so both pieces read at once.
+Vertical 3:4.
 
-[BLOQUE BASE]
+[BLOQUE BASE, con IMAGEN 3 como la locación]
 ```
-
----
 
 ## 2b. Tarjetas del catálogo · 4:5 · estudio claro
 

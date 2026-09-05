@@ -51,8 +51,8 @@ const LIFESTYLE = [
   },
   {
     slot: 'brk-life-5',
-    ph: 'Mesa LLANO y Silla CRESTA al final de un muelle, vertical',
-    cap: 'Mesa LLANO y Silla CRESTA al final del muelle.',
+    ph: 'Mesa LLANO y Silla CRESTA en la terraza, vertical',
+    cap: 'Mesa LLANO y Silla CRESTA en la terraza, a media tarde.',
   },
 ];
 
