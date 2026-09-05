@@ -651,7 +651,7 @@ propio de su función — todas con la misma planta se vería a plantilla.
 | Silla CRESTA | tres cuartos, a la altura del asiento | planta de hoja grande en maceta blanca, al lado |
 | Mesa LLANO | tres cuartos, un poco desde arriba, para que se vean las cruces | dos libros de tapa dura y un cuenco de cerámica mate, sobre la cubierta |
 | Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
-| Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada, colgando de un extremo |
+| Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada colgando de un extremo, y una planta alta en maceta de barro |
 
 **La silueta del banco, medida.** Proyectando el contorno de las 29 costillas
 al mundo: el asiento está a **452 mm en los dos extremos y baja hasta 184 mm
@@ -662,7 +662,13 @@ fondo, el mueble está mal y hay que repetir. Sin los números el modelo dibuja
 un arco.
 
 El accesorio siempre va **sin tocar el mueble por delante**: acompaña, no
-tapa. Y nunca más de uno.
+tapa.
+
+**Si se repite planta, que no sea la misma.** El banco es largo y bajo y deja
+mucho barrido vacío a los lados, así que lleva planta además de la manta. Pero
+la de la silla es una ficus lira en maceta blanca de cerámica; la del banco va
+alta y estrecha, en maceta de barro. Misma familia de accesorio, distinta
+pieza — si no, las dos tarjetas se ven calcadas.
 
 **El fondo, sin esquina.** En la de la mesa se coló la arista vertical de un
 rincón y en la de la silla no la hay, así que las dos no casan del todo. El
