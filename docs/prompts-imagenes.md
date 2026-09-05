@@ -653,6 +653,14 @@ propio de su función — todas con la misma planta se vería a plantilla.
 | Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
 | Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada, colgando de un extremo |
 
+**La silueta del banco, medida.** Proyectando el contorno de las 29 costillas
+al mundo: el asiento está a **452 mm en los dos extremos y baja hasta 184 mm
+en el centro** —268 mm, más de la mitad de la altura—, y **las 29 costillas
+apoyan en el suelo**, todas con la base en z≈2. Es una hamaca, no un puente:
+si en la foto el borde de arriba sale casi a nivel y lo que se arquea es el
+fondo, el mueble está mal y hay que repetir. Sin los números el modelo dibuja
+un arco.
+
 El accesorio siempre va **sin tocar el mueble por delante**: acompaña, no
 tapa. Y nunca más de uno.
 
