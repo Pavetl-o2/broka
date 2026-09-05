@@ -570,9 +570,40 @@ wide, 72 cm deep and 76 cm tall — the chair seat must sit well below the
 table top. Finish: both in matte white, so the tan plywood edges draw every
 part.
 
+On the table top, off centre and away from the cross-shaped keys: a small
+stoneware plate with a pastry on it, and one little cup of coffee on its
+saucer. Nothing else — no flowers, no bottles, no phones, no people.
+
 Vertical 3:4.
 
 [BLOQUE BASE, con IMAGEN 3 como la locación]
+```
+
+**Los props se pusieron en segunda pasada**, sobre una imagen que ya estaba
+bien resuelta. Cuando una foto ya tiene la integración, las alturas y la
+paleta correctas, no se regenera para añadir un objeto: se le pide sólo el
+objeto y su sombra.
+
+```
+Keep everything in this image exactly as it is: the table, the chair, their
+position, the terrace, the railing, the water, the light, the framing and
+the colour. Change nothing that is already there.
+
+ADD ONLY THIS, on the table top: a small stoneware plate with a pastry on
+it, and one little cup of coffee on its saucer. Place them off centre,
+towards the near edge of the table, clear of the four cross-shaped keys so
+those stay visible. Small objects — the plate is about 15 cm across, the cup
+about 6 cm tall — scaled correctly against a 116 cm table.
+
+They must sit ON the table, not float: a tight dark contact shadow under the
+plate and under the saucer, a soft cast shadow falling in the SAME direction
+as every other shadow in the picture, and the same slightly warm reflected
+light on their undersides. Same grain, same haze, same muted palette as the
+rest of the frame — the ceramics are pale and chalky, not glossy or
+colourful.
+
+Nothing else is added: no flowers, no bottles, no cutlery, no napkins, no
+phones, no people.
 ```
 
 ## 2b. Tarjetas del catálogo · 4:5 · estudio claro
