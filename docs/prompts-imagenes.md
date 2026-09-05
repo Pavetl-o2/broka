@@ -660,6 +660,13 @@ tapa. Y nunca más de uno.
 rincón y en la de la silla no la hay, así que las dos no casan del todo. El
 bloque SET pide ahora una sola superficie continua.
 
+**Los muebles altos no caben en el recorte cuadrado.** El librero llegó
+ocupando el 79% del alto del 4:5, y en el cuadrado del catálogo eso deja unos
+20 px de margen en total: se comía 22 px de las patas. Hubo que prolongarle el
+piso 64 px. Para una pieza alta hay que pedirle al modelo que la deje **más
+pequeña dentro del cuadro**, no sólo que deje piso: un 60% del alto, no un
+79%.
+
 ---
 
 ## 3. Fichas de producto · 1:1
