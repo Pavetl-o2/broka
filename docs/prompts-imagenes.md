@@ -653,6 +653,11 @@ propio de su función — todas con la misma planta se vería a plantilla.
 | Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
 | Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada colgando de un extremo, y una planta alta en maceta de barro |
 
+> **La foto del banco que está puesta es provisional y está mal.** Enseña el
+> borde de arriba a nivel y el fondo arqueado, apoyado sólo en los extremos.
+> Se aceptó a sabiendas, porque el mueble va a cambiar. No debe publicarse
+> así: en cuanto exista el DXF nuevo hay que regenerarla con este prompt.
+
 **La silueta del banco, medida.** Proyectando el contorno de las 29 costillas
 al mundo: el asiento está a **452 mm en los dos extremos y baja hasta 184 mm
 en el centro** —268 mm, más de la mitad de la altura—, y **las 29 costillas
