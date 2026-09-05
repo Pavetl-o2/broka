@@ -565,6 +565,156 @@ camera at 1.6 m so both pieces read at once.
 
 ---
 
+## 2b. Tarjetas del catálogo · 4:5 · estudio claro
+
+Los huecos `brk-p-cresta`, `brk-p-llano`, `brk-p-reticula` y `brk-p-tramo`.
+
+**Cuidado con la proporción: el mismo id se pinta en dos formatos.** En la
+portada la tarjeta es `aspect-[4/5]` (`product-card.tsx:17`) y en el catálogo
+y en favoritos es `aspect-square` (`:58`). Una sola imagen sirve a los dos, y
+`object-cover` recorta. Por eso se generan en **4:5 y con aire arriba y
+abajo**: el recorte cuadrado se come el 20% del alto y no debe tocar la pieza.
+
+**Las tarjetas no llevan ningún bloque base: el prompt se basta solo.** Van
+en estudio claro, con el piso a la vista y una planta al lado. La sombra
+suave que el mueble proyecta sobre ese piso es lo que lo planta en el suelo,
+y sale bien a la primera — mucho más seguro que componer sobre una foto de
+locación, donde el mueble acaba pareciendo un recorte.
+
+**Las cuatro van en el mismo set y con la misma luz.** Se ven una junto a
+otra en una fila; si cada mueble sale en un sitio distinto, la fila se lee
+como un álbum de recortes en vez de como una colección.
+
+Como vuelve a ser estudio, **el mismo archivo sirve para `brk-g-<id>-0`**,
+la general de la ficha: son ocho huecos y cuatro imágenes.
+
+**Medido en la primera: el piso de abajo se queda corto.** La de la silla
+salió 825×1024 con las patas en y=925, y el recorte cuadrado del catálogo
+corta justo en 925: cero holgura. Se ve bien, pero es filo de navaja. Por eso
+el prompt pide ahora un 12% de piso vacío bajo las patas.
+
+**El cojín de la silla.** Va suelto sobre el asiento, gris azulado, y una vez
+que aparece en una foto tiene que aparecer en todas las de la silla —
+tarjeta, ficha y `life-4`—, o el catálogo se contradice. Ojo: no está en el
+DXF, así que el visor 3D lo muestra sin cojín y el precio no lo cobra. Si es
+un accesorio de venta hay que darlo de alta; si es sólo utilería, la foto
+promete de más.
+
+Referencia: sólo el render del mueble, capturado del visor sin cuadrícula ni
+rótulos.
+
+```
+IMAGE 1 = a CNC-cut birch plywood chair.
+
+Product photograph of the chair from IMAGE 1 for a furniture catalogue,
+three-quarter front view, camera at seat height. Finish: natural birch.
+
+FRAMING — Vertical 4:5. The chair is complete, roughly centred left to
+right, and fills about 60% of the frame height. Leave at least 12% of the
+frame height as empty floor BELOW the feet, and open space above: a square
+crop through the middle of this frame must still contain the whole chair,
+feet included, with room to spare. Never crop the chair and never let it
+touch an edge.
+
+SET — A clean, bright studio sweep: pale warm grey, with the floor plane
+visible and reading as floor and the wall dissolving into it in a soft
+gradient behind the chair. NO vertical corner line, no second wall, no
+skirting, no horizon line, no texture, no room, no location — the background
+is one continuous surface.
+
+PROP — One potted plant, and nothing else: a green leafy plant in a plain
+white ceramic pot, standing on the floor to one side and slightly behind the
+chair, partly cropped by the edge of the frame. It is a companion, not the
+subject: smaller in the frame than the chair and never overlapping it. No
+other props, no rugs, no people, no lamps, no books.
+
+LIGHT — One very large soft source high and to the front-left, plus soft
+fill from the right. Bright, even, cool daylight with open shadows. The
+chair casts one soft grey shadow low across the floor to the right, and each
+foot has a small darker contact patch where it meets the floor — that
+shadow is what stands it on the ground.
+
+CAMERA — 85 mm lens, about 2.5 m away, at seat height, f/5.6. The chair is
+sharp front to back; the plant and the sweep behind it fall very gently off.
+
+CUSHION — Add one loose seat cushion and nothing else: a single flat pad of
+grey-blue woven fabric, slightly domed, resting inside the frame on the seat
+panel between the two side frames. It fills the seat exactly, about 6 cm
+thick, with soft rounded corners and a visible fabric weave. Loose and
+unattached: no buttons, no tufting, no piping, no straps, no back cushion.
+
+MATERIAL — Matte natural birch laminate on the faces: smooth and even, no
+stucco or orange-peel texture, no brush marks, a slight satin sheen only.
+Every cut edge shows the laminated core as a striped tan band, and every
+edge in the frame is cut from the same sheet: same ply count, same tone,
+same stripe rhythm. The face colour stops dead at the arris.
+
+NON-NEGOTIABLE — Reproduce the chair in IMAGE 1 exactly: same number of
+parts, same splay of the legs, same wrap of the back, same flush through
+tenons. The seat cushion is the ONLY thing added to it. No visible hardware,
+no screws.
+
+Photographic realism, catalogue quality. No text, no watermark, no logos.
+```
+
+### Qué cambia y qué no, de una tarjeta a otra
+
+**No cambia nada del set:** mismo barrido, misma luz, misma cámara, mismo
+encuadre 4:5 con piso bajo las patas. Eso es lo que hace que las cuatro se
+lean como una colección y no como cuatro fotos sueltas.
+
+**Cambian dos cosas:** el ángulo y el accesorio. Un accesorio por mueble,
+propio de su función — todas con la misma planta se vería a plantilla.
+
+| Mueble | Vista | Accesorio |
+|---|---|---|
+| Silla CRESTA | tres cuartos, a la altura del asiento | planta de hoja grande en maceta blanca, al lado |
+| Mesa LLANO | tres cuartos, un poco desde arriba, para que se vean las cruces | dos libros de tapa dura y un cuenco de cerámica mate, sobre la cubierta |
+| Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
+| Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada colgando de un extremo, y una planta alta en maceta de barro |
+
+> **Las dos fotos del banco que están puestas son provisionales y están mal**
+> — la tarjeta (`brk-p-tramo`) y la de locación (`brk-life-3`). Las dos
+> enseñan el fondo arqueado, con el banco apoyado sólo en los extremos y el
+> piso o el muelle viéndose por debajo del centro. Se aceptaron a sabiendas,
+> porque el mueble va a cambiar. No deben publicarse así: en cuanto exista el
+> DXF nuevo hay que regenerar las dos.
+>
+> Dos intentos con el mismo fallo, el segundo con la silueta en números
+> dentro del prompt. Los modelos tienen muy metido el banco-puente. Para el
+> mueble nuevo, meter como referencia extra una captura del visor **en alzado
+> lateral puro**: enseñarle la silueta funciona mejor que describírsela.
+
+**La silueta del banco, medida.** Proyectando el contorno de las 29 costillas
+al mundo: el asiento está a **452 mm en los dos extremos y baja hasta 184 mm
+en el centro** —268 mm, más de la mitad de la altura—, y **las 29 costillas
+apoyan en el suelo**, todas con la base en z≈2. Es una hamaca, no un puente:
+si en la foto el borde de arriba sale casi a nivel y lo que se arquea es el
+fondo, el mueble está mal y hay que repetir. Sin los números el modelo dibuja
+un arco.
+
+El accesorio siempre va **sin tocar el mueble por delante**: acompaña, no
+tapa.
+
+**Si se repite planta, que no sea la misma.** El banco es largo y bajo y deja
+mucho barrido vacío a los lados, así que lleva planta además de la manta. Pero
+la de la silla es una ficus lira en maceta blanca de cerámica; la del banco va
+alta y estrecha, en maceta de barro. Misma familia de accesorio, distinta
+pieza — si no, las dos tarjetas se ven calcadas.
+
+**El fondo, sin esquina.** En la de la mesa se coló la arista vertical de un
+rincón y en la de la silla no la hay, así que las dos no casan del todo. El
+bloque SET pide ahora una sola superficie continua.
+
+**Los muebles altos no caben en el recorte cuadrado.** El librero llegó
+ocupando el 79% del alto del 4:5, y en el cuadrado del catálogo eso deja unos
+20 px de margen en total: se comía 22 px de las patas. Hubo que prolongarle el
+piso 64 px. Para una pieza alta hay que pedirle al modelo que la deje **más
+pequeña dentro del cuadro**, no sólo que deje piso: un 60% del alto, no un
+79%.
+
+---
+
 ## 3. Fichas de producto · 1:1
 
 Tres por mueble. Aquí **no** hay locación: estudio o taller, y el sujeto es la
