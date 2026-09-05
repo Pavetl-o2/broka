@@ -546,16 +546,23 @@ chair, the loft soft.
 
 Pie propuesto: *Mesa LLANO y Silla CRESTA al final del muelle.*
 
-```
-IMAGE 1 = a CNC-cut birch plywood square table and matching chair. IMAGE 2 =
-a weathered timber jetty over a still lagoon at dusk.
+**Éste lleva tres referencias, no dos.** El visor enseña un mueble por
+captura, así que no existe un render con la mesa y la silla juntas. Lo que
+conviene meter son las dos fotos de tarjeta ya hechas —`brk-p-llano.jpg` y
+`brk-p-cresta.jpg`—: son fotográficas y tienen la geometría correcta, así
+que el modelo copia mejor de ellas que de un render plano.
 
-Place the table and one chair from IMAGE 1 out on the jetty of IMAGE 2, the
+```
+IMAGE 1 = the square table. IMAGE 2 = the chair. IMAGE 3 = a weathered
+timber jetty over a still lagoon at dusk.
+
+Place the table from IMAGE 1 and the chair from IMAGE 2 out on the jetty of
+IMAGE 3, the
 chair pulled out at an angle as if just used, both seen from a standing
 height of 1.6 m. Table 116 × 116 × 73 cm, chair 45 × 72 × 76 cm — the chair
-seat must sit well below the table top. The planks run away underneath them,
-the still water and the pastel sky beyond. Finish: both in matte white, so
-the tan plywood edges draw every part.
+seat must sit well below the table top. The planks run away underneath them, the still water and the pastel sky
+beyond. Finish: both in matte white, so the tan plywood edges draw every
+part.
 
 Vertical 3:4. Lens and aperture exactly as in the block below, but stand the
 camera at 1.6 m so both pieces read at once.
