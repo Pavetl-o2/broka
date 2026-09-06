@@ -834,20 +834,49 @@ Reproduce the joint in IMAGE 1 exactly: do not add a wedge, do not let the
 tenon protrude. No hands, no tools, no text, no watermark.
 ```
 
-**2 · lateral, taller**
+**2 · en el muelle, alzado lateral**
 ```
-IMAGE 1 = a CNC-cut birch plywood chair.
+IMAGE 1 = a CNC-cut birch plywood chair. IMAGE 2 = a weathered timber jetty
+over a still lagoon at dusk.
 
-The chair from IMAGE 1 in pure side elevation, so the A-shaped side frame
-reads as a flat silhouette: the two splayed legs, the void between them, the
-rising back. Against a plain plywood workshop wall, chair standing on a
-concrete floor. Cold overcast light from a high window, long soft shadow to
-one side. Finish: matte black, so the tan edges outline the silhouette.
+Stand the chair from IMAGE 1 alone on the planks of the jetty in IMAGE 2, in
+pure side elevation, camera exactly level with the seat, no perspective
+distortion, so the A-shaped side frame reads as a flat silhouette against
+the pale water and sky: the two splayed legs, the void between them, the
+rising back. It is 45 cm wide, 72 cm deep and 76 cm tall, and it stands flat
+on the boards. Nothing else in the frame. Finish: matte white, so the tan
+plywood edges outline every panel.
 
-Square 1:1, camera exactly level with the seat, no perspective distortion.
-85 mm lens, f/8.
+Square 1:1.
 
-Reproduce the profile in IMAGE 1 line for line. No text, no watermark.
+FRAMING — This is a FURNITURE CATALOGUE photograph, not a landscape. The
+CHAIR is the subject and must fill roughly 60% of the frame. The jetty is
+context: crop it, throw it out of focus, let it run out of frame. Do not
+centre the horizon, do not show the whole vista.
+
+CAMERA — 85 mm lens, about 2.5 m away, level with the seat, f/2.8. The chair
+is razor sharp, the planks and the water dissolve behind it.
+
+PALETTE — The LOCATION is desaturated, cool and weathered: greyed salt-worn
+planks, pale mirror water, a low pastel sky with almost no colour left in
+it. Pull its saturation down. The CHAIR is the exception: clean and precise,
+its tan plywood edges the one warm thing in the frame.
+
+INTEGRATION — A dark contact shadow under each foot, tight where it meets
+the plank and softening outward; ambient occlusion under the seat and in
+every inside corner; the deck's own colour bouncing up onto the underside;
+the same light direction, haze, grain and colour cast as the background.
+
+MATERIAL — Matte white laminate on the faces. Every cut edge shows the
+laminated core as a striped tan band, and every edge in the frame is cut
+from the same sheet: same ply count, same tone, same stripe rhythm.
+
+NON-NEGOTIABLE — Reproduce the profile in IMAGE 1 line for line: the same
+splay of the legs, the same void in the side frame, the same wrap of the
+back, and the through-tenons flush with the outer face of the side panel. No
+cushion, no visible hardware, no screws.
+
+Photographic realism. No people, no text, no watermark.
 ```
 
 ### Mesa LLANO — 116 × 116 × 73 cm
@@ -920,22 +949,47 @@ Reproduce the joint in IMAGE 1 exactly: two tenons meeting in a cross, flush
 with the top. No dust, no fingerprints, no text, no watermark.
 ```
 
-**2 · la pata, taller**
+**2 · en el loft, tres cuartos bajo**
 ```
-IMAGE 1 = a CNC-cut birch plywood square table.
+IMAGE 1 = a CNC-cut birch plywood square table. IMAGE 2 = an industrial
+photo loft: bare concrete floor, white walls, timber ceiling beams, a big
+steel-gridded window.
 
-Low three-quarter view of one corner of the table from IMAGE 1, camera at
-30 cm from the floor, looking up along the leg to where it crosses its
-neighbour under the top and continues into the table surface. The half-lap
-where the two legs cross is the centre of the frame.
+Place the table from IMAGE 1 on the concrete floor of IMAGE 2, low
+three-quarter view with the camera about 30 cm from the floor, looking up
+along one leg to where it crosses its neighbour under the top and continues
+through the surface. The crossing of the two legs is the centre of the
+frame. Finish: matte black, deep and neutral, so the tan plywood edges draw
+every part.
 
-Plywood workshop wall behind, concrete floor, cold overcast light. Finish:
-matte blue, deep and desaturated, tan edges drawing every part.
+Square 1:1.
 
-Square 1:1. 35 mm lens, f/5.6.
+FRAMING — This is a FURNITURE CATALOGUE photograph, not an interior. The
+TABLE is the subject and must fill roughly 60% of the frame. The loft is
+context: crop it, throw it out of focus, let it run out of frame.
 
-Reproduce the crossing of the legs exactly as in IMAGE 1. No text, no
-watermark.
+CAMERA — 85 mm lens, about 1.5 m away, 30 cm above the floor, f/2.8. The
+crossing of the legs is razor sharp, the loft behind dissolves.
+
+PALETTE — The LOCATION is desaturated and cool: dull concrete, off-white
+walls, grey steel. Pull its saturation down. The TABLE is the exception, its
+tan plywood edges the one warm thing in the frame.
+
+INTEGRATION — A dark contact shadow under each foot, tight where it meets
+the concrete and softening outward; ambient occlusion where the legs cross
+and under the top; the floor's own colour bouncing up onto the undersides;
+the same light direction, haze, grain and colour cast as the background.
+
+MATERIAL — Matte black laminate on the faces. Every cut edge shows the
+laminated core as a striped tan band, and every edge in the frame is cut
+from the same sheet: same ply count, same tone, same stripe rhythm.
+
+NON-NEGOTIABLE — Reproduce the crossing of the legs exactly as in IMAGE 1:
+the pinwheel where each leg passes its neighbour, and the tenons continuing
+up through the top. No apron beyond the real frame rails, no visible
+hardware, no screws.
+
+Photographic realism. No people, no text, no watermark.
 ```
 
 ### Librero RETÍCULA — 110 × 38 × 183 cm
@@ -1015,19 +1069,45 @@ hands, no text, no watermark.
 > llegue el archivo de corte del librero — la foto está afirmando una
 > carpintería que el código no respalda.
 
-**2 · tres cuartos, taller**
+**2 · en el loft, tres cuartos**
 ```
-IMAGE 1 = a tall CNC-cut birch plywood shelving unit.
+IMAGE 1 = a tall CNC-cut birch plywood shelving unit. IMAGE 2 = an
+industrial photo loft: bare concrete floor, white walls, timber ceiling
+beams, a big steel-gridded window.
 
-The unit from IMAGE 1 in three-quarter view, camera at 1.4 m, against a
-plywood workshop wall on a concrete floor, so the 38 cm depth and the
-staggered rhythm of the fins read. A few books lying flat on two shelves.
-Cold overcast light from a high window on the left, long soft shadow to the
-right. Finish: matte white, tan edges drawing the whole grid.
+Stand the unit from IMAGE 1 on the concrete floor of IMAGE 2 in three-quarter
+view, camera at 1.4 m, so the 38 cm depth and the staggered rhythm of the
+fins read. It is 110 cm wide, 38 cm deep and 183 cm tall. A few books lying
+flat on two shelves. Finish: natural birch, warm against the grey room.
 
-Square 1:1. 35 mm lens, f/5.6, sharp throughout.
+Square 1:1.
 
-Reproduce the unit in IMAGE 1 exactly. No text, no watermark.
+FRAMING — This is a FURNITURE CATALOGUE photograph, not an interior. The
+UNIT is the subject and must fill roughly 60% of the frame. The loft is
+context: crop it, throw it out of focus, let it run out of frame.
+
+CAMERA — 85 mm lens, about 3.5 m away, at 1.4 m, f/4. The unit is sharp top
+to bottom, the loft behind dissolves.
+
+PALETTE — The LOCATION is desaturated and cool: dull concrete, off-white
+walls, grey steel. Pull its saturation down. The UNIT is the exception:
+clean, warm, precise, the one thing in the frame with fresh colour.
+
+INTEGRATION — A dark contact shadow under each foot, tight where it meets
+the concrete and softening outward; ambient occlusion under every shelf and
+in every corner; the floor's own colour bouncing up onto the undersides; the
+same light direction, haze, grain and colour cast as the background.
+
+MATERIAL — Matte natural birch on the faces. Every cut edge shows the
+laminated core as a striped tan band, and every edge in the frame is cut
+from the same sheet: same ply count, same tone, same stripe rhythm.
+
+NON-NEGOTIABLE — Reproduce the unit in IMAGE 1 exactly: same number of
+shelves, same three verticals, same overhang of the shelves past the outer
+verticals. Boards 12 mm thick. No screws, no brackets, no dowels, no back
+panel.
+
+Photographic realism. No people, no text, no watermark.
 ```
 
 ### Banco TRAMO — 178 × 60 × 45 cm
@@ -1100,19 +1180,50 @@ Reproduce the rib spacing, the varying rib widths and the two spines exactly
 as in IMAGE 1. No dust, no fingerprints, no text, no watermark.
 ```
 
-**2 · tres cuartos, taller**
+**2 · en la terraza, de frente**
 ```
-IMAGE 1 = a long CNC-cut birch plywood slatted bench.
+IMAGE 1 = a long CNC-cut birch plywood slatted bench. IMAGE 2 = a white
+tiled terrace with a painted railing, over a wide pale lagoon, under cumulus
+cloud.
 
-The bench from IMAGE 1 in three-quarter view, camera at 1.2 m and slightly
-above, on a concrete workshop floor against a plywood wall, so both the
-length and the dip of the seat read at once. Cold overcast light from a high
-window. Finish: matte black, the tan plywood edges drawing every single rib.
+Place the bench from IMAGE 1 on the tiles of IMAGE 2, seen from the front
+and slightly above, camera at 1.2 m, so both the length and the dipping
+curve of the seat read at once. It is 178 cm long, 60 cm deep and 45 cm
+tall. The seat line drops from 452 mm at both ends to 184 mm at the centre —
+a deep hammock — and the bench sits FLAT ON THE TILES along its whole
+length: all 29 ribs touch the ground, there is no arch underneath. Finish:
+matte blue, deep and desaturated, so the tan plywood edges draw every rib.
 
-Square 1:1. 35 mm lens, f/5.6, sharp throughout.
+Square 1:1.
 
-Reproduce the bench in IMAGE 1 exactly — same rib count, same curve. No text,
-no watermark.
+FRAMING — This is a FURNITURE CATALOGUE photograph, not a landscape. The
+BENCH is the subject and must fill roughly 60% of the frame. The terrace is
+context: crop it, throw it out of focus, let it run out of frame. Do not
+centre the horizon.
+
+CAMERA — 85 mm lens, about 3 m away, at 1.2 m, f/2.8. The bench is razor
+sharp end to end, the water and the sky dissolve.
+
+PALETTE — The LOCATION is desaturated, cool and weathered: chalky worn
+tiles, salt-bleached white paint, pale flat water, a low-contrast sky — no
+vivid turquoise, no postcard blue. Pull its saturation down. The BENCH is
+the exception, its tan plywood edges the one warm thing in the frame.
+
+INTEGRATION — A continuous dark contact shadow all along where the bench
+meets the tiles; ambient occlusion between every pair of ribs and under the
+seat; the tiles' own colour bouncing up onto the lower ribs; the same light
+direction, haze, grain and colour cast as the background.
+
+MATERIAL — Matte blue laminate on the faces. Every cut edge shows the
+laminated core as a striped tan band, and every edge in the frame is cut
+from the same sheet: same ply count, same tone, same stripe rhythm.
+
+NON-NEGOTIABLE — 29 ribs of different heights, about 450 mm at the ends and
+180 mm at the centre, with even gaps between them, and the two long spines
+threading through them. Do not smooth the ribs into a solid mass. Do not
+lift the bench off the tiles.
+
+Photographic realism. No people, no text, no watermark.
 ```
 
 ---
