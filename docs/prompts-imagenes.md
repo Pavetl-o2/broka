@@ -714,17 +714,17 @@ propio de su función — todas con la misma planta se vería a plantilla.
 | Librero RETÍCULA | de frente, sin fuga | unos libros acostados en dos entrepaños y una vasija de cerámica |
 | Banco TRAMO | de lado, la curva del asiento contra el fondo | una manta de lino doblada colgando de un extremo, y una planta alta en maceta de barro |
 
-> **Las dos fotos del banco que están puestas son provisionales y están mal**
-> — la tarjeta (`brk-p-tramo`) y la de locación (`brk-life-3`). Las dos
-> enseñan el fondo arqueado, con el banco apoyado sólo en los extremos y el
-> piso o el muelle viéndose por debajo del centro. Se aceptaron a sabiendas,
-> porque el mueble va a cambiar. No deben publicarse así: en cuanto exista el
-> DXF nuevo hay que regenerar las dos.
+> **Las cuatro fotos del banco que están puestas son provisionales y ninguna
+> enseña el banco que corta el DXF.** `brk-p-tramo` (= `brk-g-tramo-0`) y
+> `brk-life-3` salen con el fondo arqueado, apoyadas sólo en los extremos.
+> `brk-g-tramo-2` es la peor: las costillas cuelgan de la espina y el banco
+> no toca el suelo en ninguna parte. `brk-g-tramo-1`, el macro entre
+> costillas, es la única plausible. Se aceptaron a sabiendas, porque el
+> mueble va a cambiar. Ninguna debe publicarse así.
 >
-> Dos intentos con el mismo fallo, el segundo con la silueta en números
-> dentro del prompt. Los modelos tienen muy metido el banco-puente. Para el
-> mueble nuevo, meter como referencia extra una captura del visor **en alzado
-> lateral puro**: enseñarle la silueta funciona mejor que describírsela.
+> Tres intentos fallaron describiendo la silueta con palabras y con números.
+> Para el mueble nuevo, meter como referencia extra una captura del visor
+> **en alzado lateral puro**: enseñársela funciona mejor que describírsela.
 
 **La silueta del banco, medida.** Proyectando el contorno de las 29 costillas
 al mundo: el asiento está a **452 mm en los dos extremos y baja hasta 184 mm
