@@ -1009,6 +1009,12 @@ Reproduce the crossing in IMAGE 1 exactly. No dust, no fingerprints, no
 hands, no text, no watermark.
 ```
 
+> **Ojo con lo que enseña esta foto.** La entregada muestra los dos tableros
+> cruzándose en cruz, y eso implica una caja a media madera. `armarCuerpo`
+> arma cajas a tope: no modela esa unión. Es una cosa más a confirmar cuando
+> llegue el archivo de corte del librero — la foto está afirmando una
+> carpintería que el código no respalda.
+
 **2 · tres cuartos, taller**
 ```
 IMAGE 1 = a tall CNC-cut birch plywood shelving unit.
