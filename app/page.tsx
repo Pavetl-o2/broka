@@ -59,18 +59,18 @@ const LIFESTYLE = [
 const PASOS = [
   {
     no: '01',
-    t: 'Modelo del archivo de corte',
-    b: 'Cada mueble sale de un archivo de corte probado en taller. Eliges el acabado y ves el despiece real, pieza por pieza.',
+    t: 'El archivo, probado en taller',
+    b: 'Cada mueble se dibujó, se cortó y se armó hasta que la unión entraba a presión. Ese archivo es el que ves girar en 3D y el que entra a la máquina: no hay una versión de catálogo y otra de producción.',
   },
   {
     no: '02',
-    t: 'Optimización de corte',
-    b: 'Acomodamos las piezas en la hoja para desperdiciar lo menos posible. Ese anidado define el costo.',
+    t: 'Una medida por mueble',
+    b: 'La que quedó en ese archivo. No hay tallas ni medidas especiales: cambiar el tamaño cambiaría los esfuerzos de cada unión, y eso no se corrige estirando un dibujo.',
   },
   {
     no: '03',
-    t: 'Ruteo CNC',
-    b: 'La hoja entra a la máquina y sale en piezas numeradas, con las cajas y espigas ya cortadas.',
+    t: 'Corte al recibir el pedido',
+    b: 'No hay bodega. Eliges acabado, se rutea la hoja y sale en piezas numeradas, con las cajas y espigas ya cortadas, a 0.1 mm de tolerancia.',
   },
   {
     no: '04',

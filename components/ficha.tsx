@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { ImageSlot } from '@/components/image-slot';
 import { Lienzo } from '@/components/visor/lienzo';
 import { money, sizeLabel } from '@/lib/format';
+import { ESPESOR } from '@/lib/parametric/armados';
 import { cost, FIN, IVA } from '@/lib/parametric/precio';
 import { useTienda } from '@/lib/store';
 import type { FinishKey, Producto } from '@/lib/types';
@@ -219,7 +220,7 @@ export function Ficha({ producto: p }: { producto: Producto }) {
           {[
             {
               t: 'Materiales y acabado',
-              b: `${p.materialES} de 18 mm, con canto visto sellado a mano.\nAcabado al agua de bajo VOC en ${FIN[finish].n.toLowerCase()}.\nSe limpia con paño húmedo y jabón neutro; nunca con solventes.`,
+              b: `${p.materialES} de ${ESPESOR[p.type]} mm, con canto visto sellado a mano.\nAcabado al agua de bajo VOC en ${FIN[finish].n.toLowerCase()}.\nSe limpia con paño húmedo y jabón neutro; nunca con solventes.`,
             },
             {
               t: 'Medidas y despiece',
