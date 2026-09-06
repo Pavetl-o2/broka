@@ -28,7 +28,8 @@ export async function abrirOrdenDeProduccion(pedido: string, lineas: LineaPedido
   });
 
   const apiKey = process.env.RESEND_API_KEY;
-  const destino = process.env.COTIZACIONES_EMAIL;
+  // COTIZACIONES_EMAIL es el nombre viejo: se lee por compatibilidad.
+  const destino = process.env.PRODUCCION_EMAIL ?? process.env.COTIZACIONES_EMAIL;
 
   if (!apiKey || !destino) {
     console.info(

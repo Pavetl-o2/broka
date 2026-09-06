@@ -1,8 +1,13 @@
-# Broka — mobiliario CNC a la medida
+# Broka — mobiliario de contrachapado cortado en CNC
 
-Tienda en Next.js con configurador paramétrico 3D. El mueble se genera por código
-a partir de sus medidas, y de esa misma lista de piezas salen el visor, el precio
-y el despiece de corte.
+Tienda en Next.js con visor 3D del despiece. Cada mueble tiene **una sola
+medida**, la del archivo de corte con el que se armó y se probó en taller, y de
+esa misma lista de piezas salen el visor, el precio y el DXF de producción.
+
+No se fabrica a la medida. El sitio no lo ofrece y el código no lo soporta: la
+deformación que existía era un cambio de ejes, sin ningún criterio estructural
+detrás, y se quitó. Añadir medidas libres exige antes valores admisibles del
+tablero, ensayos de las uniones y los casos de carga de EN 12520 / EN 1728.
 
 - **Stack:** Next.js 15 (App Router) · TypeScript · Tailwind CSS 4 · React Three Fiber · Stripe
 - **Idioma:** español de México (`es-MX`), precios en MXN sin IVA
@@ -32,7 +37,7 @@ cp .env.example .env.local
 | `STRIPE_SECRET_KEY` | Cobro real. Con `sk_test_…` usa la tarjeta 4242 4242 4242 4242 |
 | `STRIPE_WEBHOOK_SECRET` | Firma del webhook que dispara el despiece |
 | `NEXT_PUBLIC_SITE_URL` | Solo si usas dominio propio; en Vercel se detecta sola |
-| `RESEND_API_KEY` + `COTIZACIONES_EMAIL` | Envío de cotizaciones y archivos de corte por correo |
+| `RESEND_API_KEY` + `PRODUCCION_EMAIL` | Envío de las órdenes de producción con sus archivos de corte. Se sigue leyendo `COTIZACIONES_EMAIL` por compatibilidad |
 
 Otros comandos:
 
@@ -50,13 +55,12 @@ npm run typecheck  # TypeScript sin emitir
 app/
   page.tsx                    Home
   catalogo/page.tsx           catálogo con filtros (por URL, compartible)
-  producto/[id]/page.tsx      ficha + configurador, prerenderizada por producto
+  producto/[id]/page.tsx      ficha de producto, prerenderizada por producto
   favoritos/  checkout/       favoritos y compra
   api/checkout/               crea la sesión de Stripe
-  api/cotizacion/             solicitudes de medida especial
   api/webhooks/stripe/        pago confirmado → orden de producción + DXF
 components/
-  configurador.tsx            precio en vivo, acabados, tallas, medida especial
+  ficha.tsx                   precio, acabados y medida única
   visor/                      canvas R3F, geometría paramétrica, encuadre
 lib/
   parametric/partList.ts      ← la fuente de verdad
@@ -149,29 +153,19 @@ lifestyle libre.
 
 ## Poner tus modelos 3D
 
-Hoy la geometría se genera en código, así que responde a las medidas al
-milímetro. Un GLB fijo no hace eso. Dos caminos:
+Hoy la geometría sale del archivo de corte de cada mueble, así que lo que ves en
+el visor es lo que la máquina rutea. Un GLB dibujado a mano rompería esa
+garantía, que es el argumento del sitio.
 
-**Seguir paramétrico** (recomendado para medida especial). No toques `partList`;
-cambia solo el material por texturas reales con `useTexture` en
-`components/visor/mueble.tsx`, apuntando a
-`/public/textures/roble/{albedo,normal,roughness}.jpg`.
+Si aun así quieres GLB, exporta uno por mueble y nómbralo `acabado` al material
+para poder intercambiarlo por código. Escala en metros, origen en el centro de
+la base, eje Y hacia arriba. El campo `model3d` ya existe en el modelo de datos.
+Antes de hacerlo, ten presente que el DXF de producción se seguirá generando de
+la lista de piezas, no del GLB: si los dos se separan, la foto miente.
 
-**Usar tus GLB** (recomendado para tallas estándar). Exporta un GLB por talla, no
-por producto:
-
-```
-public/models/
-  mesa-llano-160.glb
-  mesa-llano-200.glb
-```
-
-Cárgalos con `useGLTF(producto.model3d)`. Nombra `acabado` al material del GLB
-para poder intercambiarlo por código. Escala en metros, origen en el centro de la
-base, eje Y hacia arriba. El campo `model3d` ya existe en el modelo de datos.
-
-Lo probablemente correcto es el híbrido: GLB en tallas estándar, geometría
-paramétrica en cuanto el usuario entra a medida especial.
+Lo barato y honesto es lo de ahora: cambiar el material por texturas reales con
+`useTexture` en `components/visor/mueble.tsx`, apuntando a
+`/public/textures/abedul/{albedo,normal,roughness}.jpg`.
 
 Si el visor falla, la ficha cae sola a la galería fotográfica.
 
@@ -226,9 +220,8 @@ La UI no se toca.
 ## Pendientes antes de producción
 
 1. Cotejar `TARIFA` contra `mueble-calc`.
-2. Definir los límites reales de medida especial por producto (`rango`); los
-   actuales son estimados razonables, no restricciones de taller.
-3. El anidado asume 0.82 de aprovechamiento parejo; el real varía por producto.
-4. Fotografía y modelos.
-5. Persistencia de pedidos: hoy el carrito vive en `localStorage` y el pedido en
+2. El anidado asume 0.82 de aprovechamiento parejo; el real varía por producto.
+3. Verificar el armado del librero contra un archivo de corte: es el único de
+   los cuatro que no pasa por el solver, y su despiece no está probado.
+4. Persistencia de pedidos: hoy el carrito vive en `localStorage` y el pedido en
    Stripe. No hay base de datos.

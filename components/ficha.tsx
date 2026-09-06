@@ -18,7 +18,7 @@ const pill = (activo: boolean) =>
     activo ? 'bg-ink text-white' : 'bg-paper text-n35'
   }`;
 
-export function Configurador({ producto: p }: { producto: Producto }) {
+export function Ficha({ producto: p }: { producto: Producto }) {
   const [finish, setFinish] = useState<FinishKey>(p.finishes[0]);
   const [stage, setStage] = useState<'3d' | 'foto'>('3d');
   const [galIx, setGalIx] = useState(0);
@@ -128,7 +128,7 @@ export function Configurador({ producto: p }: { producto: Producto }) {
         )}
       </div>
 
-      {/* ── Configurador ── */}
+      {/* ── Compra ── */}
       <div>
         <div className="mt-0.5 mb-[26px]">
           <div className="flex flex-wrap items-baseline gap-3">

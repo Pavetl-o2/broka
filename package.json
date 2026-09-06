@@ -2,7 +2,7 @@
   "name": "broka",
   "version": "1.0.0",
   "private": true,
-  "description": "Broka — mobiliario CNC a la medida. Tienda con configurador paramétrico 3D.",
+  "description": "Broka — mobiliario de contrachapado cortado en CNC. Tienda con visor 3D del despiece.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

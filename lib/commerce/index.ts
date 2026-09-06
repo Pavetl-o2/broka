@@ -20,16 +20,6 @@ export type DatosPedido = {
   estado: string;
 };
 
-export type Cotizacion = {
-  nombre: string;
-  email: string;
-  mensaje?: string;
-  producto: string;
-  acabado: string;
-  medidas: string;
-  estimado: number;
-};
-
 /**
  * Toda la UI habla con esta interfaz y nunca con el motor de comercio.
  * Cambiar de motor (Medusa, Shopify) es escribir otra implementación aquí
@@ -38,14 +28,13 @@ export type Cotizacion = {
 export interface CommerceService {
   listProducts(filtros?: Filtros): Promise<Producto[]>;
   getProduct(id: string): Promise<Producto | undefined>;
-  /** El precio se calcula en el servidor a partir de las medidas, nunca se confía al cliente. */
+  /** El precio se calcula en el servidor, nunca se confía al cliente. */
   quoteLines(lines: CartLine[]): Promise<{ lines: CartLine[]; subtotal: number; iva: number; envio: number; total: number }>;
   createCheckoutSession(
     lines: CartLine[],
     origin: string,
     datos: DatosPedido,
   ): Promise<{ url: string | null }>;
-  requestQuote(payload: Cotizacion): Promise<void>;
 }
 
 export const commerce: CommerceService = local;

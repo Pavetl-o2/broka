@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Configurador } from '@/components/configurador';
+import { Ficha } from '@/components/ficha';
 import { ImageSlot } from '@/components/image-slot';
 import { getProduct, PRODUCTS } from '@/lib/data/products';
 import { money } from '@/lib/format';
@@ -88,7 +88,7 @@ export default async function ProductoPage({ params }: { params: Promise<{ id: s
         </div>
       </div>
 
-      <Configurador producto={p} />
+      <Ficha producto={p} />
 
       <section className="mx-auto max-w-[1480px] border-t border-ink px-[clamp(16px,4vw,52px)] py-[clamp(46px,6vw,84px)]">
         <h2 className="mb-[clamp(24px,3vw,40px)] text-[clamp(26px,3.4vw,44px)] font-light tracking-[-0.032em]">

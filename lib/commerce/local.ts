@@ -1,7 +1,7 @@
 import 'server-only';
 
 import Stripe from 'stripe';
-import type { Cotizacion, DatosPedido, Filtros } from '@/lib/commerce';
+import type { DatosPedido, Filtros } from '@/lib/commerce';
 import { getProduct as findProduct, PRODUCTS } from '@/lib/data/products';
 import { cost, precioDe, ENVIO, ENVIO_GRATIS_DESDE, IVA } from '@/lib/parametric/precio';
 import type { CartLine, Producto } from '@/lib/types';
@@ -124,39 +124,4 @@ export async function createCheckoutSession(
   });
 
   return { url: session.url };
-}
-
-export async function requestQuote(payload: Cotizacion) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const destino = process.env.COTIZACIONES_EMAIL;
-
-  const cuerpo = [
-    `Producto: ${payload.producto}`,
-    `Acabado: ${payload.acabado}`,
-    `Medidas: ${payload.medidas}`,
-    `Estimado del configurador: $${payload.estimado} MXN sin IVA`,
-    '',
-    `Nombre: ${payload.nombre}`,
-    `Correo: ${payload.email}`,
-    `Mensaje: ${payload.mensaje || '—'}`,
-  ].join('\n');
-
-  if (!apiKey || !destino) {
-    console.info('[cotización]\n%s', cuerpo);
-    return;
-  }
-
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { authorization: `Bearer ${apiKey}`, 'content-type': 'application/json' },
-    body: JSON.stringify({
-      from: 'Broka <cotizaciones@broka.mx>',
-      to: [destino],
-      reply_to: payload.email,
-      subject: `Cotización · ${payload.producto} · ${payload.medidas}`,
-      text: cuerpo,
-    }),
-  });
-
-  if (!res.ok) throw new Error(`Resend respondió ${res.status}`);
 }

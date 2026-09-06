@@ -45,7 +45,7 @@ export function ProductCardHome({ p }: { p: Producto }) {
         href={`/producto/${p.id}`}
         className="mt-3 bg-ink px-5 py-[13px] text-center text-[9.5px] tracking-[0.18em] text-white uppercase"
       >
-        Personalizar
+        Ver pieza
       </Link>
     </article>
   );
@@ -87,7 +87,7 @@ export function ProductCardGrid({ p, children }: { p: Producto; children?: React
           href={`/producto/${p.id}`}
           className="mt-4 border border-ink px-5 py-[13px] text-center text-[10px] tracking-[0.19em] uppercase transition-colors duration-200 hover:bg-ink hover:text-white"
         >
-          Personalizar
+          Ver pieza
         </Link>
       )}
     </article>

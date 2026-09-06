@@ -27,7 +27,7 @@ export default function FavoritosPage() {
                   href={`/producto/${p.id}`}
                   className="flex-1 bg-ink px-4 py-[13px] text-center text-[10px] tracking-[0.16em] text-white uppercase"
                 >
-                  Personalizar
+                  Ver pieza
                 </Link>
                 <button
                   type="button"

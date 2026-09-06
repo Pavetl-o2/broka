@@ -65,7 +65,7 @@ npm run dev
 ```
 
 Abre <http://localhost:3000> en el navegador. Deberías ver el sitio completo con
-el configurador 3D funcionando.
+el visor 3D funcionando.
 
 Para detener el servidor: `Ctrl + C` y confirma con `S`.
 
@@ -76,7 +76,7 @@ Para detener el servidor: `Ctrl + C` y confirma con `S`.
 ```cmd
 git init
 git add .
-git commit -m "Broka: tienda CNC con configurador parametrico 3D"
+git commit -m "Broka: tienda CNC con visor 3D del despiece"
 ```
 
 Si es la primera vez que usas Git en esta computadora, te pedirá identificarte:
@@ -131,7 +131,7 @@ listo. Recarga la página de GitHub: ya deben estar todos los archivos.
 4. Pulsa **Deploy** y espera un par de minutos.
 
 Te queda una URL tipo `https://broka.vercel.app`. El sitio funciona completo en
-**modo demo**: el configurador, el carrito y los favoritos son reales, y el
+**modo demo**: la ficha, el carrito y los favoritos son reales, y el
 checkout confirma el pedido sin cobrar.
 
 ---

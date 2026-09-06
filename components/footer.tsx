@@ -40,7 +40,7 @@ export function Footer() {
           <p className={colTitle}>Materiales</p>
           <div className="flex flex-col gap-[9px] text-[12.5px] leading-[1.45] text-n50">
             <span>Contrachapado de abedul báltico, 18 mm</span>
-            <span>MDF de fibra fina, 18 mm</span>
+            <span>Contrachapado de abedul, 12 mm, en el librero</span>
             <span>Acabados al agua, bajo VOC</span>
             <span>Cantos vistos sellados a mano</span>
           </div>
