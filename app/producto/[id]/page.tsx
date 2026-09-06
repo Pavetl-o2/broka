@@ -71,7 +71,7 @@ export default async function ProductoPage({ params }: { params: Promise<{ id: s
         <h1 className="max-w-[14ch] text-[clamp(38px,7.4vw,116px)] leading-[0.92] font-normal tracking-[-0.045em] text-balance">
           {p.nameES}
         </h1>
-        <div className="mt-[clamp(22px,3vw,40px)] grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-[clamp(16px,3vw,48px)] border-t border-ink pt-[18px]">
+        <div className="mt-[clamp(22px,3vw,40px)] grid grid-cols-[repeat(auto-fit,minmax(min(230px,100%),1fr))] gap-[clamp(16px,3vw,48px)] border-t border-ink pt-[18px]">
           <p className="text-[10px] tracking-[0.16em] uppercase">
             {p.category}
             <br />
@@ -94,7 +94,7 @@ export default async function ProductoPage({ params }: { params: Promise<{ id: s
         <h2 className="mb-[clamp(24px,3vw,40px)] text-[clamp(26px,3.4vw,44px)] font-light tracking-[-0.032em]">
           También te puede interesar
         </h2>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-[clamp(20px,2.4vw,36px)]">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(240px,100%),1fr))] gap-[clamp(20px,2.4vw,36px)]">
           {related.map((r) => (
             <article key={r.id}>
               <Link href={`/producto/${r.id}`} className="block aspect-square bg-n93">

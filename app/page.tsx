@@ -86,13 +86,13 @@ export default function HomePage() {
         <h1 className="max-w-[13ch] text-[clamp(38px,8.6vw,142px)] leading-[0.9] font-normal tracking-[-0.045em] text-balance">
           Mobiliario cortado al milímetro
         </h1>
-        <div className="mt-[clamp(30px,4vw,58px)] grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-[clamp(18px,3vw,48px)] border-t border-ink pt-5">
+        <div className="mt-[clamp(30px,4vw,58px)] grid grid-cols-[repeat(auto-fit,minmax(min(230px,100%),1fr))] gap-[clamp(18px,3vw,48px)] border-t border-ink pt-5">
           <p className="text-[10px] tracking-[0.16em] uppercase">
             Control numérico
             <br />
             Guadalajara, México
           </p>
-          <p className="col-span-2 max-w-[34ch] text-[14px] leading-[1.55]">
+          <p className="max-w-[34ch] text-[14px] leading-[1.55] min-[520px]:col-span-2">
             Panel de ingeniería, ruteado con tolerancia de 0.1 mm y ensamblado sin tornillos a la
             vista. Cada pieza se corta al recibir el pedido.
           </p>
@@ -134,13 +134,15 @@ export default function HomePage() {
         {PILARES.map((v) => (
           <article
             key={v.no}
-            className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] items-start gap-[clamp(18px,3vw,48px)] border-t border-ink py-[clamp(20px,2.6vw,34px)]"
+            className="grid grid-cols-[repeat(auto-fit,minmax(min(230px,100%),1fr))] items-start gap-[clamp(18px,3vw,48px)] border-t border-ink py-[clamp(20px,2.6vw,34px)]"
           >
             <p className="text-[10px] tracking-[0.16em] uppercase">{v.no}</p>
             <h3 className="max-w-[14ch] text-[clamp(20px,2.2vw,30px)] font-normal tracking-[-0.026em]">
               {v.t}
             </h3>
-            <p className="col-span-2 max-w-[42ch] text-[13.5px] leading-[1.62] text-pretty">{v.b}</p>
+            <p className="max-w-[42ch] text-[13.5px] leading-[1.62] text-pretty min-[520px]:col-span-2">
+              {v.b}
+            </p>
             <div className="aspect-[3/2] bg-n93">
               <ImageSlot
                 id={v.slot}
@@ -162,7 +164,7 @@ export default function HomePage() {
             Cuatro piezas · cuatro acabados
           </Link>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[clamp(20px,2.4vw,38px)]">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(280px,100%),1fr))] gap-[clamp(20px,2.4vw,38px)]">
           {PRODUCTS.map((p) => (
             <ProductCardHome key={p.id} p={p} />
           ))}
@@ -206,13 +208,15 @@ export default function HomePage() {
         {PASOS.map((s) => (
           <div
             key={s.no}
-            className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] items-baseline gap-[clamp(16px,2.6vw,44px)] border-t border-n82 py-[clamp(16px,2vw,26px)]"
+            className="grid grid-cols-[repeat(auto-fit,minmax(min(220px,100%),1fr))] items-baseline gap-[clamp(16px,2.6vw,44px)] border-t border-n82 py-[clamp(16px,2vw,26px)]"
           >
             <p className="text-[clamp(30px,4vw,58px)] leading-none font-light tracking-[-0.04em]">
               {s.no}
             </p>
             <h3 className="text-[17px] font-normal tracking-[-0.018em]">{s.t}</h3>
-            <p className="col-span-2 max-w-[46ch] text-[13.5px] leading-[1.62] text-pretty">{s.b}</p>
+            <p className="max-w-[46ch] text-[13.5px] leading-[1.62] text-pretty min-[520px]:col-span-2">
+              {s.b}
+            </p>
           </div>
         ))}
         <div className="border-t border-ink pt-[clamp(28px,3.4vw,48px)]">

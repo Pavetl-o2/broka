@@ -136,7 +136,7 @@ export default async function CatalogoPage({
         </div>
 
         {list.length > 0 ? (
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(292px,1fr))] gap-[clamp(22px,2.6vw,40px)]">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(min(292px,100%),1fr))] gap-[clamp(22px,2.6vw,40px)]">
             {list.map((p) => (
               <ProductCardGrid key={p.id} p={p} />
             ))}

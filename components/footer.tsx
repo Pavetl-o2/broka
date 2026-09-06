@@ -6,7 +6,7 @@ const colTitle = 'mb-4 text-[9.5px] tracking-[0.2em] text-n50 uppercase';
 export function Footer() {
   return (
     <footer className="border-t border-ink">
-      <div className="mx-auto grid max-w-[1480px] grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-[clamp(28px,3.4vw,52px)] px-[clamp(16px,4vw,52px)] pt-[clamp(46px,6vw,80px)] pb-[30px]">
+      <div className="mx-auto grid max-w-[1480px] grid-cols-[repeat(auto-fit,minmax(min(190px,100%),1fr))] gap-[clamp(28px,3.4vw,52px)] px-[clamp(16px,4vw,52px)] pt-[clamp(46px,6vw,80px)] pb-[30px]">
         <div>
           <p className="mb-[18px] text-[13px] font-medium tracking-[0.5em] indent-[0.5em]">BROKA</p>
           <p className="max-w-[30ch] text-[12.5px] leading-[1.7] text-n50">

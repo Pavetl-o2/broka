@@ -124,7 +124,7 @@ function CheckoutInner() {
         Finalizar compra
       </h1>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-start gap-[clamp(30px,4vw,68px)]">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] items-start gap-[clamp(30px,4vw,68px)]">
         <form onSubmit={pagar}>
           <p className={seccion}>Contacto</p>
           <div className="mb-[30px] flex flex-col gap-[9px]">

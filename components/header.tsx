@@ -3,7 +3,10 @@
 import Link from 'next/link';
 import { useHydrated, useTienda } from '@/lib/store';
 
-const linkCls = 'text-[10px] tracking-[0.17em] whitespace-nowrap uppercase';
+// -my-3 recupera el alto que el padding añade, para no crecer la barra: el
+// área de toque queda en 44 px sin mover nada de sitio.
+const linkCls =
+  'flex items-center -my-[15px] py-[15px] text-[10px] tracking-[0.17em] whitespace-nowrap uppercase';
 
 export function Header() {
   const hydrated = useHydrated();
@@ -18,7 +21,7 @@ export function Header() {
       <div className="mx-auto flex max-w-[1480px] flex-col items-center gap-2 px-[clamp(16px,4vw,52px)] py-3 min-[900px]:grid min-[900px]:h-[58px] min-[900px]:grid-cols-[1fr_auto_1fr] min-[900px]:items-center min-[900px]:gap-4 min-[900px]:py-0">
         <Link
           href="/"
-          className="order-1 text-[15px] leading-none font-medium tracking-[0.5em] whitespace-nowrap indent-[0.5em] min-[900px]:order-2"
+          className="order-1 -my-[15px] flex items-center py-[15px] text-[15px] leading-none font-medium tracking-[0.5em] whitespace-nowrap indent-[0.5em] min-[900px]:order-2"
         >
           BROKA
         </Link>

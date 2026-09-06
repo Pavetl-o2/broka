@@ -38,7 +38,7 @@ export function Ficha({ producto: p }: { producto: Producto }) {
   const showViewer = stage === '3d' && !viewerFailed;
 
   return (
-    <div className="mx-auto grid max-w-[1480px] grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-start gap-[clamp(28px,3.6vw,64px)] px-[clamp(16px,4vw,52px)] pb-[clamp(56px,7vw,96px)]">
+    <div className="mx-auto grid max-w-[1480px] grid-cols-[repeat(auto-fit,minmax(min(340px,100%),1fr))] items-start gap-[clamp(28px,3.6vw,64px)] px-[clamp(16px,4vw,52px)] pb-[clamp(56px,7vw,96px)]">
       {/* ── Visor ── */}
       <div className="sticky top-[76px]">
         <div className="mb-3 flex w-max border border-ink">
@@ -56,7 +56,7 @@ export function Ficha({ producto: p }: { producto: Producto }) {
 
         {showViewer ? (
           <>
-            <div className="relative aspect-square min-h-[380px] overflow-hidden border border-ink bg-paper">
+            <div className="relative aspect-square overflow-hidden border border-ink bg-paper">
               <Lienzo
                 type={p.type}
                 color={FIN[finish].c}

@@ -19,7 +19,7 @@ export default function FavoritosPage() {
       </h1>
 
       {items.length > 0 ? (
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(292px,1fr))] gap-[clamp(22px,2.6vw,40px)]">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(292px,100%),1fr))] gap-[clamp(22px,2.6vw,40px)]">
           {items.map((p) => (
             <ProductCardGrid key={p.id} p={p}>
               <div className="mt-4 flex gap-2">

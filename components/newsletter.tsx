@@ -11,7 +11,7 @@ export function Newsletter() {
         Regístrate y obtén 10% en tu primer pedido
       </h2>
 
-      <div className="mt-[clamp(26px,3.2vw,44px)] grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-center gap-[clamp(20px,3vw,48px)]">
+      <div className="mt-[clamp(26px,3.2vw,44px)] grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] items-center gap-[clamp(20px,3vw,48px)]">
         <p className="max-w-[36ch] text-[13.5px] leading-[1.62] text-n76">
           Novedades de colección y piezas nuevas del taller. Un correo al mes, ni uno más.
         </p>
